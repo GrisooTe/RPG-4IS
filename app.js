@@ -647,7 +647,7 @@ const chapters = [
   }
 ];
 
-let pdfReady = false;
+let pdfReady = true;
 let toastTimer;
 let originalReaderMarkup = '';
 const main = document.getElementById('conteudo');
@@ -730,18 +730,21 @@ function chapterPage(chapter) {
       <div class="topic-list">${chapter.points.map((x,j)=>`<div class="topic-row"><span class="topic-index">${String(j+1).padStart(2,'0')}</span><div><h3>${x[0]}</h3><p>${x[1]}</p></div><span></span></div>`).join('')}</div>
       <div class="reading-note"><strong>Nota de edição</strong><p>Estas notas resumem o PDF. O texto completo da seção oficial prevalece em qualquer decisão de jogo.</p></div>
       <div class="topic-tags">${chapter.tags.map(t=>`<span class="topic-tag">${e(t)}</span>`).join('')}</div>
-      <div class="page-actions"><a class="btn primary" href="${PDF_PATH}#page=${chapter.page}" target="_blank" rel="noopener">Ler página ${chapter.page} no PDF <span class="arrow">↗</span></a></div>
+      <div class="page-actions"><a class="btn primary" href="${PDF_PATH}#page=${chapter.page}" target="_blank" rel="noopener">Ampliar página ${chapter.page} do PDF <span class="arrow">↗</span></a><a class="btn outline" href="${PDF_PATH}" download>Baixar livro completo ↓</a></div>
+       <div class="reading-note"><strong>Texto original do manual · página ${chapter.page}</strong><p>O documento abaixo é o livro oficial 3.0.1, preservado integralmente. Use a barra do leitor para avançar pelas demais páginas.</p></div>
+       <iframe class="pdf-frame" title="Livro oficial Os Quatro Ís — ${e(chapter.title)} — página ${chapter.page}" src="${PDF_PATH}#page=${chapter.page}&view=FitH" loading="lazy"></iframe>
       ${referenceBox()}
       <div class="next-topic"><span>${i>0?`<a href="#regras/${chapters[i-1].slug}">← ${chapters[i-1].title}</a>`:`<a href="#regras">← Índice geral</a>`}</span><span>${i<chapters.length-1?`<a href="#regras/${chapters[i+1].slug}">${chapters[i+1].title} →</a>`:`<a href="#regras/pdf">PDF oficial →</a>`}</span></div></div>
     </article></div>`;
 }
 function pdfPage() {
-  return `${heading('ACERVO / FONTE PRIMÁRIA','PDF oficial','O manual oficial 3.0.1 tem 42 páginas, com índice, exemplos visuais, módulos de exploração e glossário.')}
+  return `${heading('ACERVO / FONTE PRIMÁRIA','PDF oficial','A edição 3.0.1 contém 42 páginas. Leia o manual integral ou acesse diretamente os capítulos pelo índice.')}
     <div class="container">${pdfSourcePanel()}</div>
-    <div class="book-shell container">${sidebar('pdf')}<section class="reader-area" id="reader-area"><div class="reader-top"><span>EDIÇÃO 3.0.1</span><span>${pdfReady?'42 PÁGINAS':'VERIFICANDO'}</span></div>
-    <div class="reader-kicker">FONTE DO SISTEMA</div><h2>${pdfReady?'Leitor do documento':'Adicione o livro oficial.'}</h2>
-    ${pdfReady ? `<p class="reader-lead">Visualize o livro aqui ou abra-o em uma nova guia para leitura ampliada.</p><div class="page-actions"><a class="btn primary" href="${PDF_PATH}" target="_blank" rel="noopener">Abrir em nova guia <span class="arrow">↗</span></a><a class="btn outline" href="${PDF_PATH}" download>Baixar PDF <span class="arrow">↓</span></a></div><iframe class="pdf-frame" title="Livro de regras oficial — Os Quatro Ís" src="${PDF_PATH}#view=FitH" loading="lazy"></iframe>`:
-    `<p class="reader-lead">O arquivo oficial não está disponível neste momento. Confira a publicação do GitHub Pages ou abra a versão no repositório.</p><div class="reading-note"><strong>Como ativar o leitor</strong><p>Envie o PDF oficial para a pasta <strong>assets</strong> do repositório usando exatamente o nome abaixo. Ao publicar novamente, o leitor passará a exibir o arquivo.</p><div class="file-path">${PDF_PATH}</div><div><button type="button" class="small-btn" data-copy="${PDF_PATH}">Copiar caminho do arquivo</button></div></div><p>Se o PDF oficial mudar de versão ou nome, atualize o arquivo e a constante <code>PDF_PATH</code> no início de <code>app.js</code>.</p>`}
+    <div class="book-shell container">${sidebar('pdf')}<section class="reader-area" id="reader-area"><div class="reader-top"><span>EDIÇÃO 3.0.1</span><span>42 PÁGINAS</span></div>
+    <div class="reader-kicker">FONTE DO SISTEMA</div><h2>Leia o manual completo.</h2>
+    <p class="reader-lead">Este é o PDF original, sem alterações. Caso a visualização embutida não funcione no seu navegador, utilize o botão de abertura em nova aba.</p>
+    <div class="page-actions"><a class="btn primary" href="${PDF_PATH}" target="_blank" rel="noopener">Abrir PDF em nova aba ↗</a><a class="btn outline" href="${PDF_PATH}" download>Baixar PDF ↓</a></div>
+    <iframe class="pdf-frame" title="Livro de regras oficial — Os Quatro Ís — edição 3.0.1" src="${PDF_PATH}#page=1&view=FitH" loading="lazy"></iframe>
     ${referenceBox()}</section></div>`;
 }
 function aboutPage() {
