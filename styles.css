@@ -149,3 +149,7 @@ p { color:var(--muted); }
 @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation-duration:.01ms!important; transition-duration:.01ms!important; } }
 @media print { .site-header,.site-footer,.book-sidebar,.page-actions,.toast,.next-topic { display:none!important; } body { background:white; color:black; } .container { width:100%; } .book-shell { display:block; } }
 .sr-only { position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important; overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important; }
+
+/* Referências de páginas do sumário oficial */
+.page-index{font-family:inherit;font-size:.72em;font-weight:500;letter-spacing:.03em;white-space:nowrap;color:var(--muted);margin-left:.35rem}
+.chapter-menu a .page-index{display:inline-block;font-size:.7rem;margin-top:.1rem}

@@ -1,10 +1,2 @@
-COLOQUE AQUI O PDF OFICIAL DO LIVRO DE REGRAS.
-
-Nome exato esperado pelo site:
-Os_Quatro_Is_Livro_de_Regras_v2_2.pdf
-
-Caminho completo:
-assets/Os_Quatro_Is_Livro_de_Regras_v2_2.pdf
-
-ATENÇÃO: o PDF não foi incluído neste pacote porque o arquivo original não estava acessível.
-Não altere ou reescreva as regras sem atualizar o documento oficial.
+O manual oficial preservado nesta pasta é Os_Quatro_Is_Livro_de_Regras_v3_0_1_Sumario_Corrigido.pdf (edição indicada no arquivo: 3.0.1, 42 páginas).
+O arquivo é a fonte normativa. O site contém resumos de navegação e pesquisa textual para facilitar o acesso.

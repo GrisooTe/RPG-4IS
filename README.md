@@ -10,28 +10,21 @@ Uma edição web editorial e minimalista, pensada para GitHub Pages. Sem backend
 - Leitor do PDF oficial, ativado assim que o arquivo correto for incluído.
 - Alternância entre temas claro e escuro, navegação em celular e acesso por teclado.
 
-## Importante: o PDF é a fonte oficial
+## Manual oficial — v3.0.1 (42 páginas)
 
-Este pacote **não inclui** `Os_Quatro_Is_Livro_de_Regras_v2_2.pdf` porque o arquivo não estava disponível para a montagem. Não foram inventados cálculos, tabelas, atributos ou procedimentos para preencher as lacunas.
+O PDF **Os_Quatro_Is_Livro_de_Regras_v3_0_1_Sumario_Corrigido.pdf** está incluído integralmente em `assets/` e é a fonte normativa. O conteúdo do site foi atualizado para espelhar o sumário do documento original, inclusive as seções 02A, 02B, 03A, 03B, 03C, 05A, 06A e 07A. As notas e resumos editoriais não substituem o texto completo das regras.
 
-Para habilitar a leitura do livro:
-
-1. Abra a pasta `assets`.
-2. Coloque nela uma cópia do PDF oficial com o nome exato `Os_Quatro_Is_Livro_de_Regras_v2_2.pdf`.
-3. Faça o upload e publique. A aba **Livro de regras → PDF oficial** identificará automaticamente a presença do PDF.
-4. Se o livro mudar de nome/versão, ajuste `PDF_PATH` no início de `app.js`.
-
-Os tópicos 01–07 são **ordenação editorial do site**, não páginas ou capítulos oficiais. Antes de transcrever regras e numerar subitens (2A, 2B etc.), confira o conteúdo no PDF original.
+A pesquisa do site também consulta o texto extraído de todas as 42 páginas por meio de `rules-search.js` e oferece links para abrir a página do PDF; não substitui a leitura do original.
 
 ## Publicação no GitHub Pages
 
 Na conta GitHub `GrisooTe`:
 
-1. Crie um repositório público chamado `os-quatro-is` (ou o nome de sua preferência) em https://github.com/new.
+1. Use o repositório já conectado [RPG-4IS](https://github.com/GrisooTe/RPG-4IS).
 2. Extraia o ZIP e envie **os arquivos e pastas de dentro da pasta** para a raiz do repositório; o `index.html` precisa ficar diretamente na raiz, não em uma subpasta.
 3. Abra **Settings → Pages → Build and deployment**.
 4. Em **Source**, escolha **Deploy from a branch**; em **Branch**, selecione `main` e `/(root)`; clique em **Save**.
-5. Quando o GitHub publicar, o endereço esperado será `https://grisooTe.github.io/os-quatro-is/` (o endereço efetivo é mostrado em Settings → Pages).
+5. Quando o GitHub publicar, o endereço esperado será `https://grisoote.github.io/RPG-4IS/` (o endereço efetivo é mostrado em Settings → Pages).
 
 Documentação: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
 
@@ -51,13 +44,15 @@ Depois abra http://localhost:8000. O servidor local é recomendado para verifica
 
 - `index.html` — estrutura HTML e metadados.
 - `styles.css` — identidade visual e responsividade.
-- `app.js` — rotas, biblioteca e busca.
+- `app.js` — rotas, índice do sumário e busca.
+- `rules-search.js` — índice de pesquisa textual extraído do PDF original.
+- `assets/Os_Quatro_Is_Livro_de_Regras_v3_0_1_Sumario_Corrigido.pdf` — livro de regras oficial na íntegra.
 - `assets/favicon.svg` — ícone do projeto.
 - `assets/LEIA-ME.txt` — instruções para o PDF.
 - `.nojekyll` — compatibilidade com publicação direta no GitHub Pages.
 
 ## Próximo passo editorial
 
-Integrar o PDF oficial e transcrever seus capítulos com correspondência fiel às versões publicadas, incluindo o sumário e as subdivisões, sem divergir do livro original.
+Revisar a experiência de leitura e acrescentar futuras ferramentas interativas sem alterar o texto oficial do manual.
 
 © Autor de Os Quatro Ís. Material do RPG e sua documentação reservados ao titular dos direitos. Nenhuma licença de reutilização é concedida por este pacote.
