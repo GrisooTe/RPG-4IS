@@ -672,30 +672,32 @@ function pdfSourcePanel() {
   return `<div class="source-panel"><div><strong>Documento de referência · Os Quatro Ís · edição ${PDF_VERSION}</strong><small>O PDF oficial prevalece sobre notas, resumos e índices deste site.</small></div>${pdfStatusPill()}</div>`;
 }
 function homePage() {
-  return `<section class="registry-home container" aria-labelledby="registry-title">
-    <div class="registry-toolbar"><span>ARQUIVO DA ASCENSÃO / ÍNDICE DE CONSULTA</span><span>REGISTRO 00 · MANUAL 3.0.1</span></div>
-    <div class="registry-heading"><div><span class="registry-kicker">Os Quatro Ís · Sistema de RPG</span>
-      <h1 id="registry-title">Arquivo da Ascensão</h1>
-      <p>Documentos de regras e registros de personagens para uso durante a campanha. Esta edição reúne as ferramentas da mesa sem substituir as decisões do narrador.</p>
-      </div><div class="registry-mark" aria-hidden="true">${archiveSeal()}<span>ARQUIVO 04/Í</span></div></div>
-    <div class="registry-grid">
-      <section class="registry-primary" aria-labelledby="registry-access"><div class="registry-panel-head"><h2 id="registry-access">Consultas e registros</h2><span>04 SEÇÕES</span></div>
-        <nav class="registry-directory" aria-label="Acessos às ferramentas do RPG">
-          <a href="#regras"><span class="registry-id">01</span><span class="registry-entry"><strong>Livro de regras</strong><small>Índice do manual, capítulos, exemplos e consulta textual.</small></span><span class="registry-arrow" aria-hidden="true">↗</span></a>
-          <a href="personagem.html"><span class="registry-id">02</span><span class="registry-entry"><strong>Registro de personagem</strong><small>Criação oficial, atributos, origem e histórico acadêmico.</small></span><span class="registry-arrow" aria-hidden="true">↗</span></a>
-          <a href="personagens.html"><span class="registry-id">03</span><span class="registry-entry"><strong>Fichas de sessão</strong><small>Personagens salvos, recursos, testes, inventário e notas.</small></span><span class="registry-arrow" aria-hidden="true">↗</span></a>
-          <a href="#regras/pdf"><span class="registry-id">04</span><span class="registry-entry"><strong>Manual oficial em PDF</strong><small>Documento integral da edição 3.0.1, com 42 páginas.</small></span><span class="registry-arrow" aria-hidden="true">↗</span></a>
-        </nav>
-        <div class="registry-inline-note"><span class="registry-code">NOTA 01</span><p>As fichas ficam armazenadas somente neste navegador. Faça uma cópia de segurança antes de trocar de dispositivo.</p></div>
-      </section>
-      <aside class="registry-aside" aria-labelledby="registry-reference"><div class="registry-aside-head"><span>QUADRO DE REFERÊNCIA</span><span>ED. 3.0.1</span></div>
-        <h2 id="registry-reference">A Ascensão</h2>
-        <p>A competição organiza-se em quatro provas. O manual descreve sua estrutura, a criação dos estudantes e as consequências de cada sessão.</p>
-        <dl class="registry-facts"><div><dt>Convocados</dt><dd>1.000</dd></div><div><dt>Reconhecidos ao final</dt><dd>10</dd></div><div><dt>Provas</dt><dd>04</dd></div><div><dt>Manual</dt><dd>3.0.1</dd></div></dl>
-        <div class="registry-trials"><span>ETAPAS</span><ol><li><a href="#regras/ascensao">Interferência</a></li><li><a href="#regras/ascensao">Intuito</a></li><li><a href="#regras/ascensao">Instinto</a></li><li><a href="#regras/ascensao">Iscas</a></li></ol></div>
-      </aside>
+  return `<section class="folio-home container" aria-labelledby="folio-title">
+    <div class="folio-locator"><span>OQÍ / BASE DE JOGO</span><span>ARQUIVO 00—04</span><span>MANUAL 3.0.1</span></div>
+    <div class="folio-canvas">
+      <div class="folio-heading">
+        <div class="folio-heading-code"><span>DOCUMENTAÇÃO INTERNA</span><span>REGISTROS DE CAMPANHA</span></div>
+        <h1 id="folio-title">Os Quatro <span>Ís</span><sup>04</sup></h1>
+        <p>Arquivo digital de consulta. Regras, estudantes e registros de sessão disponíveis neste dispositivo.</p>
+        <div class="folio-classify"><span>Tipo / Sistema de RPG</span><span>Fonte / Edição 3.0.1</span><span>Local / Navegador</span></div>
+      </div>
+      <div class="folio-imprint" aria-label="Diagrama abstrato das quatro provas da Ascensão">
+        <div class="folio-scanlines" aria-hidden="true"><span class="raster-ring r1"></span><span class="raster-ring r2"></span><span class="raster-ring r3"></span><span class="raster-cross">+</span><span class="raster-center">04</span></div>
+        <div class="folio-imprint-meta"><span>FIG. 01 / ASCENSÃO</span><span>4 PROVAS · 1 SISTEMA</span></div>
+      </div>
     </div>
-    <div class="registry-foot"><span>DOCUMENTAÇÃO DE JOGO / ACESSO LOCAL</span><span>As regras e os procedimentos definitivos constam no livro oficial.</span></div>
+    <div class="folio-strip"><span>ARQUIVOS DISPONÍVEIS</span><span>SELECIONE UM REGISTRO PARA CONSULTAR</span><span>01 — 04</span></div>
+    <div class="folio-modules">
+      <a href="#regras" class="folio-module"><span class="folio-module-no">01 / MANUAL</span><div class="folio-module-symbol" aria-hidden="true">≡</div><div><h2>Livro de regras</h2><p>Sumário, capítulos e pesquisa textual.</p></div><span class="folio-link" aria-hidden="true">↗</span></a>
+      <a href="personagem.html" class="folio-module"><span class="folio-module-no">02 / CADASTRO</span><div class="folio-module-symbol" aria-hidden="true">⊞</div><div><h2>Criar personagem</h2><p>Origem, atributos e histórico acadêmico.</p></div><span class="folio-link" aria-hidden="true">↗</span></a>
+      <a href="personagens.html" class="folio-module"><span class="folio-module-no">03 / SESSÃO</span><div class="folio-module-symbol" aria-hidden="true">◎</div><div><h2>Fichas de jogo</h2><p>Recursos, rolagens e registros da mesa.</p></div><span class="folio-link" aria-hidden="true">↗</span></a>
+      <a href="#regras/pdf" class="folio-module"><span class="folio-module-no">04 / FONTE</span><div class="folio-module-symbol" aria-hidden="true">⌑</div><div><h2>PDF oficial</h2><p>Texto integral do manual, 42 páginas.</p></div><span class="folio-link" aria-hidden="true">↗</span></a>
+    </div>
+    <div class="folio-bottom">
+      <div class="folio-trials"><div class="folio-smallheading"><span>ESTRUTURA DA ASCENSÃO</span><span>04 ETAPAS</span></div><div class="folio-trial-grid"><a href="#regras/ascensao"><span>01</span>Interferência</a><a href="#regras/ascensao"><span>02</span>Intuito</a><a href="#regras/ascensao"><span>03</span>Instinto</a><a href="#regras/ascensao"><span>04</span>Iscas</a></div></div>
+      <div class="folio-manual"><div class="folio-smallheading"><span>NOTA DO ARQUIVO</span><span>3.0.1</span></div><p>Este site auxilia o jogo. As regras permanecem no manual original; a interpretação de situações cabe ao narrador.</p><a href="#regras/pdf">Consultar documento de referência ↗</a></div>
+    </div>
+    <div class="folio-end"><span>OS QUATRO ÍS / ARQUIVO DIGITAL</span><span>DADOS DE PERSONAGENS SALVOS NESTE NAVEGADOR</span></div>
   </section>`;
 }
 function archiveSeal() {

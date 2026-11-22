@@ -116,3 +116,8 @@ O sistema de criação e rolagens permanece nas implementações anteriores (`pe
 - Biblioteca e criação com nomes funcionais e hierarquia de documento.
 - `documental-v22.css` é uma camada visual isolada, aplicada após o tema 2.1.
 - PDF oficial 3.0.1 e scripts de armazenamento, criação e rolagens preservados.
+
+
+## Design 2.3 — Grade modular de consulta
+
+Uma atualização exclusivamente de apresentação. A entrada organiza consultas, fichas e o manual em uma grade de arquivo com tipografia utilitária, preto, cinza técnico e laranja usado como sinalização. O desenho gráfico é feito em CSS, sem imagens ou dependências externas. Não existem textos de marketing ou métricas fictícias. O livro oficial 3.0.1, as regras e os dados dos personagens não foram alterados.
