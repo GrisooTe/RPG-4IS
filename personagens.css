@@ -22,3 +22,55 @@
 .session-buttons button:disabled{opacity:.4;cursor:not-allowed}
 .resource-count [data-resource-value]{font:inherit}
 @media(max-width:720px){.library-notice:not([hidden]){right:10px;bottom:10px;max-width:calc(100vw - 20px)}.library-actions .library-btn{flex:1 1 auto}.session-buttons a,.session-buttons button{min-height:42px}}
+
+/* VERSÃO 1.9 — consulta rápida de testes e embates */
+.roll-panel { margin:30px 0 34px; border:1px solid var(--line); padding:26px 27px 20px; background:var(--surface); }
+.roll-panel-head { display:flex; align-items:flex-end; justify-content:space-between; gap:18px; border-bottom:1px solid var(--line); padding-bottom:19px; margin-bottom:16px; }
+.roll-panel-head h3 { font-size:clamp(27px,3vw,36px); margin:6px 0 0; }
+.roll-panel-head a { font-size:11px; border-bottom:1px solid var(--accent); color:var(--accent); white-space:nowrap; font-weight:700; }
+.dice-eyebrow { font-size:10px; font-weight:800; color:var(--accent); letter-spacing:.15em; }
+.dice-form-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px 18px; margin-top:17px; }
+.dice-form-grid label { display:flex; flex-direction:column; gap:7px; color:var(--ink); font-size:12px; font-weight:700; }
+.dice-form-grid [hidden] { display:none!important; }
+.dice-form-grid select { width:100%; min-height:42px; min-width:0; border:1px solid var(--line); padding:9px 11px; background:var(--paper); color:var(--ink); font-size:13px; }
+.dice-form-grid select:disabled { opacity:.55; }
+.dice-checks { display:grid; grid-template-columns:1fr 1fr; gap:10px 18px; margin:19px 0 10px; }
+.dice-checks label { font-size:12px; font-weight:500; color:var(--ink); display:flex; gap:9px; align-items:flex-start; line-height:1.45; cursor:pointer; }
+.dice-checks input { accent-color:var(--accent); width:16px; height:16px; flex:0 0 16px; }
+.dice-explainer,.dice-official { font-size:11px; color:var(--muted); line-height:1.8; }
+.dice-primary,.luck-controls button { border:1px solid var(--ink); background:var(--ink); color:var(--paper); padding:12px 18px; font-size:13px; font-weight:800; cursor:pointer; margin:7px 0 5px; min-height:45px; }
+.dice-primary:disabled,.luck-controls button:disabled { cursor:not-allowed; opacity:.45; }
+.dice-empty { background:var(--soft); padding:20px; border-left:2px solid var(--accent); font-size:12px; color:var(--muted); margin-top:21px; }
+.dice-result { margin-top:23px; padding:21px; background:var(--paper); border:1px solid var(--line); }
+.dice-result-head { display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; }
+.dice-result-head h4 { font-size:31px; line-height:1.25; margin:4px 0 0; font-weight:400; }
+.dice-result-head h4 small { font-size:13px; color:var(--muted); font-weight:600; }
+.dice-outcome { font-size:11px; letter-spacing:.07em; padding:7px 10px; border:1px solid var(--line); }
+.dice-outcome.pass { color:#34744e; background:rgba(53,136,89,.08); }
+.dice-outcome.fail { color:#a65b40; background:rgba(195,88,57,.08); }
+.dice-subtitle { font-size:12px; color:var(--muted); margin-top:14px; }
+.dice-faces { display:flex; flex-wrap:wrap; gap:9px; margin-top:17px; }
+.dice-result-die { display:flex; flex-direction:column; align-items:center; gap:6px; width:104px; min-height:95px; padding:10px 6px; background:var(--surface); border:1px solid var(--line); }
+.die-face { display:grid; place-items:center; width:48px; height:48px; background:var(--soft); border:1px solid var(--line); font:700 24px Georgia,serif; }
+.dice-result-die.success .die-face { border-color:#8ba99a; color:#358056; }
+.dice-result-die.failure .die-face { color:var(--ink); }
+.dice-result-die small { font-size:10px; color:var(--muted); }
+.dice-result-die button { color:var(--ink); background:var(--paper); border:1px solid var(--line); padding:6px 5px; font-size:10px; font-weight:700; width:100%; margin-top:2px; min-height:32px; cursor:pointer; }
+.dice-result-die button[aria-pressed="true"] { border-color:var(--accent); background:var(--soft); }
+.dice-hint { font-size:11px; color:var(--muted); margin:13px 0 0; }
+.luck-controls { margin-top:17px; padding:16px; background:var(--soft); border-left:2px solid var(--accent); }
+.luck-controls p { color:var(--ink); font-size:12px; margin-bottom:9px; }
+.dice-attack-result { margin-top:19px; border-top:1px solid var(--line); padding-top:18px; }
+.dice-attack-result p { color:var(--ink); font-size:12px; }
+.dice-attack-result select { background:var(--surface); color:var(--ink); font-size:13px; border:1px solid var(--line); padding:8px; margin-left:8px; }
+.dice-damage-row { display:flex; gap:14px; align-items:center; border-top:1px solid var(--line); border-bottom:1px solid var(--line); padding:12px 0; }
+.dice-damage-row strong { font:400 33px Georgia,serif; white-space:nowrap; }
+.dice-damage-row span { font-size:12px; color:var(--muted); }
+.dice-damage-net { background:var(--soft); padding:12px; margin-top:18px; }
+.dice-secondary { background:none; border:1px solid var(--line); color:var(--ink); padding:9px 12px; cursor:pointer; font-size:11px; font-weight:700; margin-top:12px; }
+.dice-secondary:hover,.dice-result-die button:hover { border-color:var(--accent); }
+.dice-result-foot { display:flex; justify-content:space-between; flex-wrap:wrap; align-items:center; gap:10px; margin-top:16px; border-top:1px solid var(--line); }
+.dice-result-foot span { font-size:10px; color:var(--muted); }
+.dice-official { margin-top:17px; margin-bottom:0; }
+@media(max-width:720px){.roll-panel{padding:18px 14px 15px}.dice-form-grid,.dice-checks{grid-template-columns:1fr}.dice-result{padding:14px}.dice-result-die{width:calc(33.333% - 6px);min-width:86px}.dice-attack-result select{margin-left:0;display:block;margin-top:7px}.roll-panel-head{align-items:flex-start;flex-direction:column}.dice-primary{width:100%}}
+@media print{.dice-form,.dice-result-die button,.dice-result-foot button,.dice-primary{display:none!important}}

@@ -47,12 +47,26 @@
   obj.inventory=Array.isArray(v.inventory)?v.inventory.slice(0,80).map(i=>({name:text(i.name,120),ei:number(i.ei,1,30,1),integrity:i.integrity===null?null:number(i.integrity,0,3,2),notes:text(i.notes,250)})).filter(x=>x.name.trim()):[];
   return obj;
  }
+ function normalizeRoll(raw){
+  if(!raw||typeof raw!=='object')return null;
+  const dice=raw.dice;
+  if(!Array.isArray(dice)||!dice.length||dice.length>7||!dice.every(n=>Number.isInteger(n)&&n>=1&&n<=6))return null;
+  const kind=raw.kind==='ataque'?'ataque':'teste';
+  const attribute=['INT','IMP','INF'].includes(raw.attribute)?raw.attribute:'INT';
+  return {kind,attribute,difficulty:number(raw.difficulty,1,4,2),defense:number(raw.defense,0,7,0),
+   specialty:specNames.includes(raw.specialty)?raw.specialty:'',specialtyUsed:!!raw.specialtyUsed,
+   luckUsed:!!raw.luckUsed,dice:[...dice],pool:dice.length,
+   initial:text(raw.initial,60),notes:text(raw.notes,240),createdAt:text(raw.createdAt,40),
+   spentPrep:!!raw.spentPrep,spentDet:!!raw.spentDet,rawPool:number(raw.rawPool,-10,30,dice.length),
+   armor:!!raw.armor,defenderDet:!!raw.defenderDet};
+ }
  function normalizeSession(raw){const x=raw&&typeof raw==='object'?raw:{};return{
   number:number(x.number,1,9999,1),day:number(x.day,1,9999,1),shortRestDay:x.shortRestDay==null?null:number(x.shortRestDay,1,9999),medicalDay:x.medicalDay==null?null:number(x.medicalDay,1,9999),
   determinationAwarded:!!x.determinationAwarded,evolutionBase:!!x.evolutionBase,evolutionBonus:!!x.evolutionBonus,
   tiesUsed:Array.isArray(x.tiesUsed)?x.tiesUsed.slice(0,20).filter(x=>Number.isInteger(x)&&x>=0):[],notes:text(x.notes,6000),
   pastSessions:Array.isArray(x.pastSessions)?x.pastSessions.slice(0,60).map(y=>({number:number(y?.number,1,9999),day:number(y?.day,1,9999),notes:text(y?.notes,6000),closedAt:text(y?.closedAt,40)})):[],
-  log:Array.isArray(x.log)?x.log.slice(0,80).map(i=>({at:text(i?.at,40),text:text(i?.text,250)})):[]};}
+  log:Array.isArray(x.log)?x.log.slice(0,80).map(i=>({at:text(i?.at,40),text:text(i?.text,250)})):[],
+  roll:normalizeRoll(x.roll)};}
  function normalizeRecord(r){const ch=cleanCharacter(r?.character);if(!ch||!ch.academic)return null;
   return{id:text(r.id,100)||uuid(),createdAt:text(r.createdAt,40)||now(),updatedAt:text(r.updatedAt,40)||now(),character:ch,live:normalizeLive(r.live,ch),session:normalizeSession(r.session)};}
  function read(){let parsed;try{parsed=JSON.parse(localStorage.getItem(KEY)||'null');}catch(_){return[];}

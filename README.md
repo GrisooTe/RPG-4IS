@@ -1,4 +1,4 @@
-# Os Quatro Ís — site oficial do projeto (versão inicial)
+# Os Quatro Ís — site oficial do projeto (v1.9)
 
 Uma edição web editorial e minimalista, pensada para GitHub Pages. Sem backend, sem biblioteca externa e sem necessidade de compilar.
 
@@ -81,3 +81,17 @@ Todos os dados permanecem no `localStorage` do navegador, sem transmissão ao Gi
 - Para **outro estudante**, é necessário iniciar uma ficha nova e realizar a própria rolagem acadêmica. Uma cópia de segurança não é uma nova criação; o botão antigo de duplicação foi retirado.
 - Alertas aparecem sem deslocar o conteúdo; controles em dispositivos móveis foram ampliados.
 - Manual oficial 3.0.1 e suas regras **não foram alterados**.
+
+
+## Ferramentas de rolagem — site v1.9
+
+Na página **Minhas fichas**, cada estudante tem um rolador integrado em **Teste e Acerto Gradual**. O motor `rolagens-core.js` implementa o capítulo 3 e os exemplos 03A–03C, além do dano gradual do capítulo 5. Os dados usam a geração aleatória criptográfica do navegador; a rolagem e as repetições são registradas no histórico e salvas no backup JSON da ficha.
+
+- Atributo define dados (1–7); 5–6 = sucesso; dificuldade 1–4. Teste oposto e defesa precisam de valores acordados na mesa.
+- Especialização pertinente, confirmada pelo narrador, permite **uma repetição de um único dado sem sucesso**.
+- Após falhar, pode Pressionar a Sorte **uma vez** e repetir até dois dados sem sucesso; +1 Tensão imediato, inclusive se falhar. A opção não está disponível com Tensão 6.
+- Auxílio (0–2) exige testes prévios dos aliados; Preparação e Determinação podem ser gastas antes da rolagem. Penalidades de Tensão e FG são aplicadas quando o usuário marca que a situação se enquadra nas regras.
+- Ataque usa Ímpeto e compara sucessos com a defesa; sem reação, defesa 0. A calculadora permite visualizar proteção corporal (−1 PV, custo de Integridade) e Determinação do defensor (−2 PV). **Não altera o defensor automaticamente**: PV, FG e integridade são anotados em sua ficha após decisão na mesa.
+- Cada ficha guarda somente o último teste ativo por sessão e o histórico resumido das rolagens. Iniciar nova sessão limpa o teste ativo; o histórico permanece.
+
+O PDF oficial 3.0.1 continua inalterado e é a fonte definitiva em caso de divergência.
