@@ -1,0 +1,10 @@
+COLOQUE AQUI O PDF OFICIAL DO LIVRO DE REGRAS.
+
+Nome exato esperado pelo site:
+Os_Quatro_Is_Livro_de_Regras_v2_2.pdf
+
+Caminho completo:
+assets/Os_Quatro_Is_Livro_de_Regras_v2_2.pdf
+
+ATENÇÃO: o PDF não foi incluído neste pacote porque o arquivo original não estava acessível.
+Não altere ou reescreva as regras sem atualizar o documento oficial.
