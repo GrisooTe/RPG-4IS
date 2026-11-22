@@ -1,5 +1,5 @@
 'use strict';
-/* Os Quatro Ís · Painel de sessão. Valores, efeitos e limites: Manual do Participante 3.0.1. */
+/* Os Quatro Ís · Painel de sessão. Valores, efeitos e limites: Manual do Participante 3.1.0. */
 const store=window.OQStore;
 const roster=document.getElementById('roster-list');
 const reader=document.getElementById('library-reader');
@@ -31,7 +31,7 @@ function updateBackupStatus(){
  badge.dataset.warning=status.needsBackup?'yes':'no';
 }
 function updatePrintable(rec){
- printable.innerHTML=rec?`<h1>Os Quatro Ís — ${e(rec.character.name)}</h1><p>Manual 3.0.1 · Sessão ${rec.session.number} · Dia ${rec.session.day}</p><div class="session-card"><p>INT ${rec.character.stats.INT} · IMP ${rec.character.stats.IMP} · INF ${rec.character.stats.INF}</p><p>Origem: ${e(rec.character.origin)} · Especializações: ${e(rec.character.specs.join(' / '))}</p><div class="resource-grid">${Object.keys(ranges).map(k=>resource(k,rec)).join('')}</div><h2>Inventário</h2><ul>${rec.live.inventory.map(i=>`<li>${e(i.name)} — ${i.ei} EI</li>`).join('')}</ul><h2>Notas</h2><p style="white-space:pre-wrap">${e(rec.session.notes)}</p></div>`:'';
+ printable.innerHTML=rec?`<h1>Os Quatro Ís — ${e(rec.character.name)}</h1><p>Manual 3.1.0 · Sessão ${rec.session.number} · Dia ${rec.session.day}</p><div class="session-card"><p>INT ${rec.character.stats.INT} · IMP ${rec.character.stats.IMP} · INF ${rec.character.stats.INF}</p><p>Origem: ${e(rec.character.origin)} · Especializações: ${e(rec.character.specs.join(' / '))}</p><div class="resource-grid">${Object.keys(ranges).map(k=>resource(k,rec)).join('')}</div><h2>Inventário</h2><ul>${rec.live.inventory.map(i=>`<li>${e(i.name)} — ${i.ei} EI</li>`).join('')}</ul><h2>Notas</h2><p style="white-space:pre-wrap">${e(rec.session.notes)}</p></div>`:'';
 }
 function refreshSession(rec){
  // Não substitua o DOM dos recursos ou o sumário: preserva o botão em foco e a posição da página.
@@ -109,7 +109,7 @@ function inventory(rec){const sum=rec.live.inventory.reduce((n,i)=>n+i.ei,0),cap
 function alertsMarkup(rec){const messages=statusMessages(rec);return messages.map(m=>`<div class="status-note ${rec.live.life===0||rec.live.fg>=3?'critical':''}">${e(m)}</div>`).join('');}
 function archiveMarkup(rec){const s=rec.session;return s.pastSessions.length?s.pastSessions.map(prev=>`<details class="session-archive"><summary>Sessão ${prev.number} · Dia ${prev.day} · ${e(formatTime(prev.closedAt))}</summary><p>${e(prev.notes)}</p></details>`).join(''):'<p class="session-info">As notas das sessões encerradas ficarão arquivadas aqui.</p>';}
 function logMarkup(rec){return rec.session.log.slice(0,18).map(i=>`<li><span>${e(i.text)}</span><time>${e(formatTime(i.at))}</time></li>`).join('')||'<li>Nenhum evento registrado nesta ficha.</li>';}
-/* Rolagens integradas — capítulos 03, 03A–03C, 04, 05 e 05A do PDF 3.0.1. */
+/* Rolagens integradas — capítulos 03, 03A–03C, 04, 05 e 05A do manual 3.1.0 (PDF disponível no site: 3.0.1). */
 const diceEngine=window.OQRoll;
 let luckSelection=new Set();
 function rollForm(rec){
@@ -351,7 +351,7 @@ document.addEventListener('click',ev=>{
  const act=button.dataset.action;
  if(act==='export-all'){download({format:'os-quatro-is-biblioteca',version:2,exportedAt:new Date().toISOString(),records:store.list()},'os-quatro-is-biblioteca-backup.json');store.markBackup();updateBackupStatus();showNotice('Backup de todas as fichas gerado. Confirme que o arquivo foi salvo e guarde-o em local seguro.');return;}
  const rec=store.get(selectedId);if(!rec)return;
- if(act==='export-one'){download({document:'Os Quatro Ís — ficha e sessão',version:2,manual:'3.0.1',id:rec.id,createdAt:rec.createdAt,updatedAt:rec.updatedAt,character:rec.character,live:rec.live,session:rec.session},'os-quatro-is-'+fileName(rec.character.name)+'.json');return;}
+ if(act==='export-one'){download({document:'Os Quatro Ís — ficha e sessão',version:2,manual:'3.1.0',id:rec.id,createdAt:rec.createdAt,updatedAt:rec.updatedAt,character:rec.character,live:rec.live,session:rec.session},'os-quatro-is-'+fileName(rec.character.name)+'.json');return;}
  if(act==='print'){window.print();return;}
  if(act==='undo'){if(!undoSnapshot||undoSnapshot.id!==selectedId)return;const snap=undoSnapshot;undoSnapshot=null;const restored=store.patch(selectedId,r=>{r.live=snap.live;r.session=snap.session;});if(restored){refreshSession(restored);showNotice('Último ajuste desfeito.');}else showNotice('Não foi possível desfazer.');return;}
  if(act==='delete'){if(!confirmAction(`Excluir permanentemente ${rec.character.name} deste navegador? Exporte antes caso queira preservar a ficha.`))return;store.remove(rec.id);selectedId=null;undoSnapshot=null;render();showNotice('Ficha removida do dispositivo.');return;}

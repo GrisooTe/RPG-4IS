@@ -1,13 +1,14 @@
 'use strict';
 /**
  * OS QUATRO ÍS — ficha interativa.
- * Referência normativa: Livro de Regras 3.0.1, capítulos 02, 02A, 02B,
+ * Referência normativa: Livro de Regras 3.1.0, capítulos 02, 02A, 02B,
  * talentos iniciais do capítulo 04 e vínculos do capítulo 10.
  * Não cria regras: automatiza valores e procedimento publicados.
  */
 const SHEET_VERSION = 1;
 const STORAGE_KEY = 'os-quatro-is:ficha-personagem:v1';
 const OFFICIAL_PDF = 'assets/Os_Quatro_Is_Livro_de_Regras_v3_0_1_Sumario_Corrigido.pdf';
+const stepPages31 = [12,9,12,16,10,10,11,19,12]; // páginas da edição 3.1.0
 const stepInfo = [
   ['Identidade',7],['Origem familiar',4],['Atributos',7],
   ['Especializações',11],['Trajetória escolar',5],['Condições de ensino',5],
@@ -103,7 +104,7 @@ function radioCard(group,value,title,subtitle,rule='',locked=false){
 }
 function intro(index,title,description){
  const page=stepInfo[index][1];
- return `<div class="step-eyebrow"><span>ETAPA ${String(index+1).padStart(2,'0')} DE 09</span><a class="step-page-link" href="${OFFICIAL_PDF}#page=${page}" target="_blank" rel="noopener">Regra oficial · p. ${page} ↗</a></div><h2 id="step-heading">${title}</h2><p class="step-intro">${description}</p>`;
+ return `<div class="step-eyebrow"><span>ETAPA ${String(index+1).padStart(2,'0')} DE 09 · 3.1.0 / P. ${stepPages31[index]}</span><a class="step-page-link" href="${OFFICIAL_PDF}#page=${page}" target="_blank" rel="noopener">PDF anterior 3.0.1 · p. ${page} ↗</a></div><h2 id="step-heading">${title}</h2><p class="step-intro">${description}</p>`;
 }
 function stepMarkup(index) {
  const locked=Boolean(state.academic),d=derived();
@@ -184,7 +185,7 @@ function summaryMarkup(){
 function reviewMarkup(forPrint){
  const d=derived(),a=state.academic;
  const entries=[['Origem',state.origin||'—'],['Família',state.family||'—'],['Trajetória',state.trajectory||'—'],['Condições de ensino',state.schooling||'—'],['Média registrada',a?a.band:'—'],['Resultado dos dados',a?`${a.dice.join(', ')} · mantidos ${a.kept.map(i=>a.dice[i]).join(' e ')} · total ${a.total}`:'—'],['Especializações',state.specs.join(' · ')||'—'],['Talento inicial',state.talent||'—']];
- return `<div class="review-sheet"><span class="smallcaps">DEPARTAMENTO DA ASCENSÃO · REGISTRO DE PARTICIPANTE</span><h3>${esc(state.name||'Estudante')}</h3><p class="field-hint">Ficha inicial · Manual oficial 3.0.1 · ${forPrint?'cópia de mesa':'pré-visualização'}</p>`+
+ return `<div class="review-sheet"><span class="smallcaps">DEPARTAMENTO DA ASCENSÃO · REGISTRO DE PARTICIPANTE</span><h3>${esc(state.name||'Estudante')}</h3><p class="field-hint">Ficha inicial · Manual 3.1.0 · ${forPrint?'cópia de mesa':'pré-visualização'}</p>`+
  `<div class="review-stat-row">${Object.keys(traits).map(key=>`<div class="review-stat"><strong>${state.stats[key]}</strong><small>${key}</small></div>`).join('')}</div>`+
  `<div class="review-grid">${entries.map(([k,v])=>`<div><strong>${esc(k)}</strong><span>${esc(v)}</span></div>`).join('')}</div>`+
  `<div class="review-section-title">VALORES INICIAIS</div><div class="review-grid">${[['Vida atual e máxima',`${d.life} / ${d.life} PV`],['Determinação',d.determination],['Tensão',d.tension],['Ferimentos Graves',0],['Preparação',d.preparation],['Prestígio',d.prestige],['Dívida',d.debt],['Suspeita',d.suspicion]].map(([k,v])=>`<div><strong>${esc(k)}</strong><span>${esc(v)}</span></div>`).join('')}</div>`+
@@ -243,7 +244,7 @@ function rollAcademic(){
 function downloadJSON(){
  if(!state.finished)return;
  const clean={...state,step:undefined,maxStep:undefined,finished:undefined};
- const blob=new Blob([JSON.stringify({document:'Os Quatro Ís — Ficha de personagem',manual:'3.0.1',character:clean,values:derived()},null,2)],{type:'application/json;charset=utf-8'});
+ const blob=new Blob([JSON.stringify({document:'Os Quatro Ís — Ficha de personagem',manual:'3.1.0',character:clean,values:derived()},null,2)],{type:'application/json;charset=utf-8'});
  const url=URL.createObjectURL(blob),a=document.createElement('a');
  a.href=url;a.download='ficha-'+(state.name.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'')||'estudante')+'.json';
  document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),200);
