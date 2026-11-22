@@ -652,7 +652,7 @@ let toastTimer;
 let originalReaderMarkup = '';
 const main = document.getElementById('conteudo');
 const storedTheme = (() => { try { return localStorage.getItem('quatrois-theme'); } catch (_) { return null; }})();
-if (storedTheme === 'dark') document.documentElement.dataset.theme='dark';
+if (storedTheme !== 'light') document.documentElement.dataset.theme='dark'; else document.documentElement.dataset.theme='light';
 
 const e = (value) => String(value).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function showToast(message) {
@@ -673,27 +673,27 @@ function pdfSourcePanel() {
 }
 function homePage() {
   return `<section class="hero container">
-    <div class="hero-copy"><span class="eyebrow">SISTEMA DE RPG · EDIÇÃO DIGITAL</span>
-      <h1>O mundo não é <em>neutro.</em><br>Suas escolhas também não.</h1>
-      <p class="hero-intro">Bem-vindo ao espaço digital de <strong>Os Quatro Ís</strong>. Um lugar para conhecer o projeto, navegar por seus assuntos e consultar o livro de regras — sem perder de vista a versão oficial.</p>
-      <div class="button-row"><a class="btn primary" href="#regras">Explorar o livro <span class="arrow">↗</span></a><a class="btn outline" href="personagens.html">Minhas fichas <span class="arrow">→</span></a><a class="btn outline" href="#sobre">Conhecer o projeto <span class="arrow">→</span></a></div>
-      <div class="hero-note">MANUAL OFICIAL · EDIÇÃO 3.0.1 · 42 PÁGINAS</div>
+    <div class="hero-copy"><span class="eyebrow">TERMINAL DA ASCENSÃO · ARQUIVO DE CAMPANHA</span>
+      <h1>Entre na Ascensão.<br><em>Monte sua mesa.</em></h1>
+      <p class="hero-intro"><strong>Os Quatro Ís</strong> agora funciona como um arquivo de jogo: consulte o manual oficial, crie estudantes, gerencie fichas e acompanhe as rolagens sem sair do universo do sistema.</p>
+      <div class="button-row"><a class="btn primary" href="#regras">Abrir o códice <span class="arrow">↗</span></a><a class="btn outline" href="personagem.html">Criar estudante <span class="arrow">→</span></a><a class="btn outline" href="personagens.html">Abrir arquivo de fichas <span class="arrow">→</span></a></div>
+      <div class="hero-note">MANUAL 3.0.1 · FICHAS LOCAIS · ROLAGENS INTEGRADAS</div>
     </div>
-    <div class="hero-art" role="img" aria-label="Composição editorial com quatro letras Í sobre círculos concêntricos">
-      <div class="art-head"><span>UM UNIVERSO EM CONSTRUÇÃO</span><span>001 / 004</span></div>
+    <div class="hero-art" role="img" aria-label="Painel tático de campanha com o monograma de Os Quatro Ís e módulos do jogo">
+      <div class="art-head"><span>ARQUIVO TÁTICO · NÓ 04</span><span>STATUS / ONLINE</span></div>
       <div class="art-circle"></div><div class="art-circle c2"></div><div class="art-circle c3"></div>
       <div class="art-monogram" aria-hidden="true">ÍÍÍÍ</div>
-      <p class="art-title">Cada escolha<br>tem um peso.</p>
-      <div class="art-foot"><span>OS QUATRO ÍS</span><span>ARQUIVO / 2026</span></div>
+      <p class="art-title">Livro, fichas<br>e rolagens<br>na mesma interface.</p>
+      <div class="art-foot"><span>MÓDULOS · ARQUIVO / PERSONAGEM / CAMPANHA</span><span>ATIVO · 2026</span></div>
     </div></section>
-    <section class="section-band"><div class="container"><div class="section-heading"><div><span class="eyebrow">POR ONDE COMEÇAR</span><h2>Uma biblioteca para<br>encontrar caminhos.</h2></div><p class="section-aside">O índice segue o sumário oficial da edição 3.0.1, incluindo os módulos e o glossário.</p></div>
+    <section class="section-band"><div class="container"><div class="section-heading"><div><span class="eyebrow">ROTAS DE JOGO</span><h2>Um hub mais próximo de uma mesa de RPG.</h2></div><p class="section-aside">Menos aparência de portfólio, mais sensação de dossiê, terminal e biblioteca de campanha.</p></div>
     <div class="path-grid">
-      <a class="path-card" href="#regras"><span class="num">01 / ARQUIVO</span><div><h3>Livro de regras</h3><p>Explore o índice de assuntos, pesquise termos e encontre o documento de referência.</p></div><span class="more" aria-hidden="true">↗</span></a>
-      <a class="path-card" href="personagem.html"><span class="num">02 / PERSONAGEM</span><div><h3>Criar personagem</h3><p>Monte a ficha digital em nove etapas, com atributos, histórico acadêmico e valores calculados.</p></div><span class="more" aria-hidden="true">↗</span></a>
-      <a class="path-card" href="personagens.html"><span class="num">03 / CAMPANHA</span><div><h3>Minhas fichas</h3><p>Gerencie personagens, recursos, inventário e notas durante as sessões.</p></div><span class="more" aria-hidden="true">↗</span></a>
-       <a class="path-card" href="#regras/pdf"><span class="num">04 / FONTE</span><div><h3>PDF oficial</h3><p>Abra ou baixe o livro oficial de 42 páginas diretamente na biblioteca.</p></div><span class="more" aria-hidden="true">↗</span></a>
+      <a class="path-card" href="#regras"><span class="num">01 / CÓDICE</span><div><h3>Livro de regras</h3><p>Abra o sumário, pesquise termos e navegue pelas seções do manual como se estivesse consultando um arquivo tático.</p></div><span class="more" aria-hidden="true">↗</span></a>
+      <a class="path-card" href="personagem.html"><span class="num">02 / DOSSIÊ</span><div><h3>Criar personagem</h3><p>Preencha o registro oficial do estudante em nove etapas e transforme a criação em uma peça jogável da campanha.</p></div><span class="more" aria-hidden="true">↗</span></a>
+      <a class="path-card" href="personagens.html"><span class="num">03 / CAMPANHA</span><div><h3>Biblioteca de fichas</h3><p>Acompanhe recursos, inventário, diário de sessão e testes em um painel que funciona como mesa de jogo.</p></div><span class="more" aria-hidden="true">↗</span></a>
+      <a class="path-card" href="#regras/pdf"><span class="num">04 / FONTE</span><div><h3>PDF oficial</h3><p>Consulte o documento de referência sempre que precisar confirmar uma regra ou ler o texto integral do sistema.</p></div><span class="more" aria-hidden="true">↗</span></a>
     </div></div></section>
-    <section class="manifesto"><div class="container manifesto-inner"><div><span class="mini-label">NOTA EDITORIAL / 01</span><h2>O site organiza a leitura.<br>O livro define as regras.</h2></div><p>O índice e os resumos agora seguem o livro de regras 3.0.1. A íntegra do PDF é a fonte oficial: nenhuma regra foi alterada para esta edição web.</p></div></section>`;
+    <section class="manifesto"><div class="container manifesto-inner"><div><span class="mini-label">PROTOCOLO DE USO / 01</span><h2>O PDF dita as regras.<br>O site serve à mesa.</h2></div><p>O design foi reposicionado para ficar mais próximo de um RPG digital: terminal de campanha, dossiês, módulos e navegação por arquivo. O manual 3.0.1 continua como fonte oficial.</p></div></section>`;
 }
 function sidebar(selected) {
   return `<aside class="book-sidebar" aria-label="Índice do livro"><div class="sidebar-head"><strong>SUMÁRIO DO MANUAL</strong><span>3.0.1</span></div>
@@ -748,7 +748,7 @@ function pdfPage() {
 function aboutPage() {
   return `<section class="about-wrap container"><span class="eyebrow">O PROJETO / NOTA EDITORIAL</span><h1>Sobre<br>Os Quatro Ís.</h1>
     <p><strong>Os Quatro Ís</strong> é um sistema de RPG em desenvolvimento. Esta edição web tem uma proposta simples: tornar o material acessível, pesquisável e legível em computador e celular.</p>
-    <p>A identidade visual usa composição editorial, tipografia clássica, tons de papel e espaços generosos. O resultado se aproxima de um arquivo de leitura, e não de um painel de videogame.</p>
+    <p>A identidade visual se aproxima agora de um arquivo tático de RPG, com painéis escuros, leitura de dossiê e módulos de campanha. O objetivo é servir à mesa de jogo, preservando a clareza do manual.</p>
     <div class="about-card"><span class="eyebrow">COMPROMISSO COM A FONTE</span><h3>Uma regra, uma referência.</h3><p>Os conceitos do site não são substitutos para os procedimentos publicados no livro em PDF. A edição 3.0.1 está incorporada; resumos devem continuar conferidos com ela. O site não altera o livro de regras.</p></div>
     <div class="button-row"><a class="btn primary" href="#regras">Acessar biblioteca <span class="arrow">↗</span></a></div></section>`;
 }
@@ -880,9 +880,9 @@ document.addEventListener('click', event => {
 window.addEventListener('popstate', render);
 window.addEventListener('hashchange',render);
 document.getElementById('theme-toggle').addEventListener('click',()=>{
-  const dark=document.documentElement.dataset.theme!=='dark';
-  if(dark)document.documentElement.dataset.theme='dark';else delete document.documentElement.dataset.theme;
-  try {localStorage.setItem('quatrois-theme',dark?'dark':'light');}catch(_){/* armazenamento opcional */}
+  const light=document.documentElement.dataset.theme!=='light';
+  document.documentElement.dataset.theme=light?'light':'dark';
+  try {localStorage.setItem('quatrois-theme',light?'light':'dark');}catch(_){/* armazenamento opcional */}
 });
 document.getElementById('mobile-menu-toggle').addEventListener('click',()=>{
   const menu=document.getElementById('mobile-menu');

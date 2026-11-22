@@ -95,3 +95,7 @@ Na página **Minhas fichas**, cada estudante tem um rolador integrado em **Teste
 - Cada ficha guarda somente o último teste ativo por sessão e o histórico resumido das rolagens. Iniciar nova sessão limpa o teste ativo; o histórico permanece.
 
 O PDF oficial 3.0.1 continua inalterado e é a fonte definitiva em caso de divergência.
+
+## Identidade visual RPG 2.0
+
+Tema tático escuro inspirado em interfaces de arquivo, códice e dossiê de campanha; detalhes fluorescentes, contraste forte, tipografia utilitária e opção de tema claro. As modificações visuais usam `visual-rpg.css`, separado da lógica de fichas e rolagens. O PDF oficial 3.0.1 permanece inalterado.

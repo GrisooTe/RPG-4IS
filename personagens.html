@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
- <meta name="theme-color" content="#f6f4ef">
+ <meta name="theme-color" content="#0b0f11">
  <meta name="description" content="Biblioteca de fichas e painel de sessão para Os Quatro Ís, com armazenamento local e regras do manual 3.0.1.">
  <title>Minhas fichas | Os Quatro Ís</title>
  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
@@ -10,6 +10,8 @@
  <link rel="stylesheet" href="personagens.css?v=2.2">
  <script src="rolagens-core.js?v=1.9" defer></script>
  <script src="fichas-store.js?v=2.2" defer></script><script src="personagens.js?v=2.2" defer></script>
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem("quatrois-theme")==="light"?"light":"dark";}catch(_){document.documentElement.dataset.theme="dark";}</script>
+  <link rel="stylesheet" href="visual-rpg.css?v=2.0">
 </head>
 <body>
  <a href="#biblioteca" class="skip-link">Pular para a biblioteca</a>
@@ -18,7 +20,7 @@
  <div class="navline container"><a class="brand" href="index.html#inicio"><span class="brand-mark">Í<span class="brand-mark-dot">·</span></span><span class="brand-type"><strong>OS QUATRO ÍS</strong><small>UM SISTEMA DE RPG</small></span></a>
  <nav class="main-nav" aria-label="Navegação principal"><a href="index.html#inicio">Início</a><a href="index.html#regras">Livro de regras</a><a href="personagem.html">Criar personagem</a><a href="personagens.html" class="active" aria-current="page">Minhas fichas</a></nav><a class="library-return" href="index.html#regras">← Regras</a></div></header>
  <main class="container library-main" id="biblioteca">
-  <div class="library-heading"><div><span class="eyebrow">ARQUIVO PRIVADO / CAMPANHA</span><h1>Seus personagens,<br><em>suas histórias.</em></h1><p>Guarde vários estudantes, alterne entre fichas e acompanhe os recursos durante as provas. Os dados ficam neste dispositivo, sem conta ou servidor.</p></div><div class="library-stamp"><span>FICHAS LOCAIS</span><strong id="library-count">00</strong><small>EDIÇÃO DIGITAL</small></div></div>
+  <div class="library-heading"><div><span class="eyebrow">ARQUIVO PRIVADO / CAMPANHA</span><h1>Arquivo de<br><em>personagens.</em></h1><p>Guarde vários estudantes, alterne entre fichas e acompanhe os recursos durante as provas. Os dados ficam neste dispositivo, sem conta ou servidor.</p></div><div class="library-stamp"><span>FICHAS LOCAIS</span><strong id="library-count">00</strong><small>EDIÇÃO DIGITAL</small></div></div>
   <div class="library-actions"><a href="personagem.html?novo=1" class="library-btn dark">+ Criar personagem</a><button type="button" class="library-btn" data-action="export-all">Baixar backup de todas</button><label class="library-btn import-btn" for="import-file">Importar fichas (.json)<input id="import-file" type="file" accept="application/json,.json" hidden></label><span class="library-safe" id="backup-status" role="status">Verificando segurança dos backups…</span></div>
   <div id="notification" class="library-notice" role="status" aria-live="polite" hidden></div>
   <div class="library-layout">
@@ -27,7 +29,7 @@
   </div>
   <div class="library-footer-note"><strong>Referência oficial</strong><span>Manual 3.0.1: criação e atributos nas páginas 4–8, condições e recuperação nas páginas 13–14, inventário na página 30 e política na página 36. A ficha não altera nem substitui essas regras.</span><a href="assets/Os_Quatro_Is_Livro_de_Regras_v3_0_1_Sumario_Corrigido.pdf" target="_blank" rel="noopener">Abrir PDF ↗</a></div>
  </main>
- <footer class="site-footer"><div class="container footer-main"><div><span class="footer-brand">OS QUATRO ÍS</span><p>O livro de regras 3.0.1 permanece a referência oficial. Fichas e anotações são armazenadas localmente.</p></div><div class="footer-links"><a href="index.html#inicio">Início</a><a href="index.html#regras">Livro de regras</a><a href="personagem.html">Criar personagem</a></div><div class="footer-meta">BIBLIOTECA V2.2 · SITE 1.9 · 2026<br>SEM CADASTRO · SEM SINCRONIZAÇÃO</div></div></footer>
+ <footer class="site-footer"><div class="container footer-main"><div><span class="footer-brand">OS QUATRO ÍS</span><p>O livro de regras 3.0.1 permanece a referência oficial. Fichas e anotações são armazenadas localmente.</p></div><div class="footer-links"><a href="index.html#inicio">Início</a><a href="index.html#regras">Livro de regras</a><a href="personagem.html">Criar personagem</a></div><div class="footer-meta">BIBLIOTECA V2.2 · VISUAL RPG 2.0 · 2026<br>SEM CADASTRO · SEM SINCRONIZAÇÃO</div></div></footer>
  </div>
  <div id="session-print" class="session-print"></div>
 </body>

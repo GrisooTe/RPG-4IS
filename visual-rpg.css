@@ -1,0 +1,69 @@
+/* OS QUATRO ÍS — visual RPG 2.0 (sobrescreve somente o tema visual) */
+:root, :root[data-theme="dark"]{--paper:#0b0f11;--surface:#131a1f;--ink:#eef2dd;--muted:#95a08f;--line:#263129;--accent:#d5ff45;--accent-2:#87b53a;--dark:#080b0d;--dark-text:#f3f4e8;--soft:#171f24;--shadow:0 22px 65px rgba(0,0,0,.28);color-scheme:dark}
+:root[data-theme="light"]{--paper:#f4f3ee;--surface:#fbfbf6;--ink:#161a16;--muted:#616a61;--line:#d7ddd1;--accent:#7048e8;--accent-2:#bde844;--dark:#11131a;--dark-text:#f7f7fa;--soft:#eef1ea;--shadow:0 22px 65px rgba(20,20,25,.08);color-scheme:light}
+
+/* ===== VISUAL RPG 2.0 ===== */
+body{background-color:var(--paper);background-image:radial-gradient(circle at top right,rgba(213,255,69,.08),transparent 26%),linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:auto,32px 32px,32px 32px;color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.site-frame{position:relative}
+.site-header{position:sticky;top:0;background:color-mix(in srgb,var(--paper) 88%, transparent);backdrop-filter:blur(10px);box-shadow:0 10px 40px rgba(0,0,0,.12)}
+.topline,.main-nav a,.footer-bottom,.footer-meta,.pdf-status,.source-panel small,.reader-top,.mini-label,.topic-tag,.search-input,.sidebar-head,.chapter-no,.search-help,.eyebrow,.btn,.book-intro p strong{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.topline{color:var(--accent);text-shadow:0 0 10px rgba(213,255,69,.12)}
+.brand-mark{background:linear-gradient(180deg,var(--accent),#8aa72d);color:#0a0c09;border:1px solid rgba(213,255,69,.6);box-shadow:0 0 20px rgba(213,255,69,.14)}
+.brand-mark-dot{color:#0a0c09}
+.brand-type small,.main-nav a,.footer-meta,.footer-bottom,.section-aside,p,.hero-note,.chapter-breadcrumb,.source-box p,.search-help,.sidebar-foot{color:var(--muted)}
+.main-nav a{letter-spacing:.08em;text-transform:uppercase}.main-nav a:hover,.main-nav a.active{color:var(--ink);border-bottom-color:var(--accent)}
+.theme-button{border-color:var(--line);background:var(--surface)}
+.eyebrow{color:var(--accent)}
+.eyebrow::before{background:var(--accent)}
+h1,h2,h3,.serif,.art-title,.path-card .num,.topic-index,.chapter-no,.reader-kicker,.footer-brand,.brand-type strong{font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;letter-spacing:-.03em;text-transform:uppercase}
+h1 em,h2 em,.library-heading em,.character-title-line em{font-style:normal;color:var(--accent)}
+.hero{padding:72px 0 68px;align-items:stretch}.hero h1{max-width:8.5em}.hero-intro{max-width:560px;font-size:16px;line-height:1.8}.hero-art,.path-card,.manifesto-inner,.source-panel,.source-box,.reading-note,.topic-row,.pdf-frame,.book-sidebar,.empty-library,.library-stamp,.session-card,.step-stage,.creation-summary,.choice-card,.review-sheet,.about-card{background:linear-gradient(180deg,rgba(255,255,255,.015),rgba(0,0,0,.05)),var(--surface);border:1px solid var(--line);box-shadow:var(--shadow)}
+.hero-art{border-color:rgba(213,255,69,.25);min-height:500px;overflow:hidden}.hero-art::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(to bottom,rgba(255,255,255,.03),rgba(255,255,255,.03) 1px,transparent 1px,transparent 4px);pointer-events:none;opacity:.28}.art-head,.art-foot{color:#dce6bf}.art-monogram{color:rgba(213,255,69,.08);-webkit-text-stroke:1px rgba(213,255,69,.25)}.art-circle{border-color:rgba(213,255,69,.18)}.art-title{max-width:11ch;text-shadow:0 8px 30px rgba(0,0,0,.24)}
+.btn{border-radius:0;text-transform:uppercase;letter-spacing:.08em;border-color:var(--accent)}.btn.primary{background:var(--accent);color:#0a0d08;border-color:var(--accent);box-shadow:0 0 18px rgba(213,255,69,.14)}.btn.outline{background:transparent;color:var(--ink);border-color:var(--line)}
+.section-band,.chapter-meta,.reader-top,.chapter-menu,.topic-list,.topline,.site-header,.site-footer{border-color:var(--line)}
+.section-heading h2,.reader-area h2,.about-wrap h1{max-width:14ch}
+.path-grid{gap:18px}.path-card{min-height:250px;position:relative;overflow:hidden}.path-card::after{content:"";position:absolute;inset:auto 16px 16px auto;width:34px;height:34px;border-right:1px solid rgba(213,255,69,.35);border-bottom:1px solid rgba(213,255,69,.35)}.path-card:hover{border-color:var(--accent);transform:translateY(-4px)}.path-card .num,.topic-index{color:var(--accent)}.path-card p{color:var(--muted)}.path-card .more,.topic-arrow{color:var(--accent)}
+.manifesto{padding:0 0 76px}.manifesto-inner{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;padding:30px;align-items:end}.mini-label{color:var(--accent);font-size:10px;letter-spacing:.16em;font-weight:800}.manifesto-inner p{max-width:none;font-size:15px;line-height:1.8}
+.book-intro,.about-wrap,.book-shell{position:relative}.book-intro h1,.about-wrap h1{max-width:12ch}.reader-kicker,.reader-top span:first-child,.chapter-meta span,.sidebar-head strong,.summary-header span{color:var(--accent)}
+.search-input{background:#0f1417;border-color:var(--line)}:root[data-theme="light"] .search-input{background:#fff}.chapter-menu a:hover,.chapter-menu a.active,.topic-row:hover{background:rgba(213,255,69,.08);border-left-color:var(--accent)}.topic-row{background:rgba(255,255,255,.01)}
+.topic-tag{background:rgba(213,255,69,.08);border-color:rgba(213,255,69,.25);color:var(--ink)}
+.source-panel,.source-box,.reading-note{border-left:2px solid var(--accent)}
+.pdf-status[data-ready="yes"]{display:inline-flex;align-items:center;gap:8px;color:#0b0d09;background:var(--accent);padding:8px 12px;font-size:11px;font-weight:800}.pdf-status[data-ready="yes"]::before{content:"●"}.pdf-status[data-ready="no"]{background:#402923;color:#ffd6b8;padding:8px 12px}
+.site-footer{margin-top:0;background:linear-gradient(180deg,rgba(255,255,255,.02),rgba(0,0,0,.08)),var(--dark)}.footer-links a:hover{color:var(--accent)}.footer-bottom{border-top:1px solid var(--line)}
+.about-card,.source-box,.source-panel{padding:24px 26px}
+@media(max-width:720px){h1,h2,h3,.serif,.art-title,.path-card .num,.topic-index,.chapter-no,.reader-kicker,.footer-brand,.brand-type strong{letter-spacing:-.02em}.hero{padding-top:52px}.manifesto-inner{grid-template-columns:1fr;padding:22px}.hero-art{min-height:380px}}
+
+/* ===== VISUAL RPG 2.0 — biblioteca ===== */
+.library-heading,.library-layout,.library-footer-note{border-color:var(--line)}
+.library-stamp,.empty-library,.session-card,.resource,.inventory-item,.journal-entry,.log-item,.roll-module,.conflict-box{background:linear-gradient(180deg,rgba(255,255,255,.015),rgba(0,0,0,.05)),var(--surface);border-color:var(--line);box-shadow:var(--shadow)}
+.library-heading h1,.session-card>h2,.session-h3{font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;text-transform:uppercase;letter-spacing:-.03em}
+.library-btn,.roster-heading strong,.resource-label,.session-topline,.library-safe,.resource-help,.inventory-stats,.log-head,.library-return{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.library-btn.dark{background:var(--accent);color:#0a0c09;border-color:var(--accent)}
+.roster-sidebar{background:rgba(10,14,16,.65);padding:12px 14px 14px 0;border-right:1px solid var(--line)}
+.roster-item{border:1px solid transparent;border-left:2px solid transparent;border-radius:0}.roster-item:hover,.roster-item.selected{background:rgba(213,255,69,.08);border-color:var(--line);border-left-color:var(--accent)}
+.session-card{padding:28px}.session-attribute,.summary-chip,.roll-chip,.resource,.inventory-item{background:rgba(255,255,255,.03)}
+.resource-count,.session-attribute strong{color:var(--accent)}
+.resource button,.session-buttons button,.session-buttons a,.inventory-action,.log-toolbar button,.roll-action,.tester button{border-color:var(--line);background:transparent;color:var(--ink)}
+.resource button:hover,.session-buttons button:hover,.session-buttons a:hover,.inventory-action:hover,.log-toolbar button:hover,.tester button:hover{border-color:var(--accent);background:rgba(213,255,69,.08)}
+.library-notice{background:rgba(213,255,69,.08);border-left-color:var(--accent)}
+@media(max-width:760px){.roster-sidebar{padding-right:0;background:transparent}}
+
+/* ===== VISUAL RPG 2.0 — criação ===== */
+.character-header,.creation-layout,.creation-bottom{border-color:var(--line)}
+.character-title-line h1,.step-stage h2,.review-sheet h3{font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;text-transform:uppercase;letter-spacing:-.03em}
+.creation-sidebar,.creation-summary,.step-stage,.choice-card,.attribute-row,.spec-option,.talent-item,.review-sheet,.agreement,.roll-well,.character-disclaimer{background:linear-gradient(180deg,rgba(255,255,255,.015),rgba(0,0,0,.05)),var(--surface);border-color:var(--line);box-shadow:var(--shadow)}
+.creation-sidebar-top,.summary-header,.step-label,.spec-counter,.summary-line span,.summary-divider,.review-section-title,.smallcaps,.character-disclaimer,.aside-reference{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+.step-nav button{background:rgba(255,255,255,.02);border-left-color:transparent}.step-nav button[aria-current="step"]{background:rgba(213,255,69,.08);border-left-color:var(--accent)}
+.choice-card:hover,.spec-option:hover,.talent-item:hover{border-color:var(--accent)}.choice-card.selected,.choice-card[aria-pressed="true"],.spec-option:has(input:checked),.talent-item:has(input:checked){background:rgba(213,255,69,.08)}
+.attribute-control,.tie-remove,.tie-add,.subtle-reset,.review-actions button.secondary,.review-actions a.secondary{background:transparent;border-color:var(--line);color:var(--ink)}
+.roll-button,.review-actions button,.creation-actions .btn.primary{background:var(--accent);border-color:var(--accent);color:#0a0d08}
+.stat-allocation{background:rgba(213,255,69,.08)}.summary-number,.review-stat{background:rgba(255,255,255,.04)}.summary-number strong,.review-stat strong,.attribute-value{color:var(--accent)}
+.character-disclaimer{border-left:2px solid var(--accent)}
+
+
+/* Light/dark theme-aware controls and accessibility */
+:root[data-theme="light"] .brand-mark,:root[data-theme="light"] .btn.primary,:root[data-theme="light"] .library-btn.dark,:root[data-theme="light"] .roll-button,:root[data-theme="light"] .review-actions button{color:#101016}
+:root[data-theme="light"] .roster-sidebar{background:rgba(251,251,246,.88)}
+:root[data-theme="light"] .chapter-menu a:hover,:root[data-theme="light"] .chapter-menu a.active,:root[data-theme="light"] .roster-item:hover,:root[data-theme="light"] .roster-item.selected{background:rgba(112,72,232,.08)}
+:root[data-theme="light"] .stat-allocation,:root[data-theme="light"] .choice-card.selected,:root[data-theme="light"] .spec-option:has(input:checked),:root[data-theme="light"] .talent-item:has(input:checked){background:rgba(112,72,232,.08)}
+@media(prefers-reduced-motion:reduce){.path-card,.btn{transition:none}}
