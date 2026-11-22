@@ -1,0 +1,97 @@
+/* OS QUATRO ÍS — V2.2 / RPG DOCUMENTAL
+   Tom administrativo e de consulta: sem títulos publicitários. */
+:root,:root[data-theme="dark"]{--paper:#182422;--surface:#202e2b;--ink:#e9e7df;--muted:#b3beb5;--line:#485950;--accent:#cfba99;--soft:#293b34;--document:#f1ede2;--document-ink:#29342e;--document-muted:#58675b;--document-line:#c6c9bc;--seal:#875f58}
+:root[data-theme="light"]{--paper:#e9e7df;--surface:#f7f6f0;--ink:#28352f;--muted:#596b5e;--line:#b5c0b2;--accent:#6c5145;--soft:#e0e6dc;--document:#faf8f1;--document-ink:#29342e;--document-muted:#58675b;--document-line:#c7ccbf;--seal:#865b54}
+body{background-image:radial-gradient(ellipse at top right,rgba(200,186,155,.035),transparent 40%);font-size:14px;line-height:1.65}
+/* Quiet document typography. Restrict uppercase to labels and protocols. */
+h1,h2,h3,h4,.serif,.brand-type strong,.reader-area h2,.session-card>h2,.session-h3,.step-stage h2,.review-sheet h3{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.018em;text-transform:none}
+h1{font-size:clamp(34px,4vw,58px);line-height:1.17}
+h2{font-size:clamp(25px,2.6vw,38px);line-height:1.2}
+h3{font-size:22px;line-height:1.34}
+.archive-header{box-shadow:none}
+.archive-header::after{height:1px;bottom:-2px;opacity:.28;background:var(--accent)}
+.archive-header .navline{min-height:75px}
+.archive-header .brand-mark{width:43px;height:43px;border-color:var(--line);box-shadow:none}
+.archive-header .brand-type strong{font-size:17px;letter-spacing:0;font-weight:600}
+.archive-header .brand-type small{font-size:9px;letter-spacing:.025em;text-transform:none}
+.archive-header .main-nav a{font:500 12px/1.3 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:0;text-transform:none;padding:10px 11px}
+.archive-header .main-nav a:hover,.archive-header .main-nav a.active{background:transparent;border-color:transparent;border-bottom-color:var(--accent)}
+.archive-header .topline{letter-spacing:.05em;font-size:9px}
+.archive-toggle{height:34px;border-color:var(--line);background:transparent;min-width:77px}
+.archive-toggle .theme-text{font:500 10px system-ui,sans-serif;letter-spacing:0;text-transform:none}
+.archive-mobile-menu a{text-transform:none;letter-spacing:0;font:500 13px/1.4 system-ui,sans-serif}
+.btn,.library-btn,.session-buttons button,.session-buttons a{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-weight:550;text-transform:none;letter-spacing:0;border-radius:2px}
+.btn{padding:12px 17px;min-height:44px;font-size:13px}
+.btn:hover,.path-card:hover{transform:none}
+.eyebrow,.mini-label,.reader-kicker,.reader-top,.chapter-meta,.chapter-no,.chapter-breadcrumb,.footer-label,.source-panel small,.page-index,.topic-tag,.document-label{letter-spacing:.035em}
+/* Registry home — a work surface, not a marketing hero. */
+.registry-home{padding-top:38px;padding-bottom:80px}
+.registry-toolbar,.registry-foot{display:flex;justify-content:space-between;gap:15px;font:550 10px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.045em;color:var(--muted)}
+.registry-toolbar{padding:10px 2px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.registry-heading{display:grid;grid-template-columns:minmax(0,1fr) 142px;gap:20px;align-items:center;padding:36px 4px 32px}
+.registry-kicker{display:block;font:500 13px/1.45 system-ui,sans-serif;color:var(--accent);margin-bottom:7px}
+.registry-heading h1{margin:0 0 12px;font-size:clamp(33px,4.2vw,54px);color:var(--ink);max-width:none}
+.registry-heading p{margin:0;max-width:635px;font-size:14px;line-height:1.8;color:var(--muted)}
+.registry-mark{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px;color:var(--accent);border-left:1px solid var(--line);height:124px}
+.registry-mark svg{width:73px;height:73px}.registry-mark span{font:600 9px ui-monospace,monospace;letter-spacing:.08em}
+.registry-grid{display:grid;grid-template-columns:minmax(0,1.63fr) minmax(285px,1fr);gap:20px;align-items:stretch}
+.registry-primary{border:1px solid var(--line);background:var(--surface);min-width:0}
+.registry-panel-head,.registry-aside-head{min-height:57px;padding:15px 21px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:center}
+.registry-panel-head h2{font-size:22px;margin:0}.registry-panel-head>span,.registry-aside-head{font:500 10px ui-monospace,monospace;color:var(--muted);letter-spacing:.025em}
+.registry-directory{display:block}
+.registry-directory a{display:grid;grid-template-columns:49px minmax(0,1fr) 26px;gap:13px;align-items:center;padding:21px 20px;border-bottom:1px solid var(--line);color:var(--ink);transition:background .1s}
+.registry-directory a:hover,.registry-directory a:focus-visible{background:var(--soft)}
+.registry-id{font:500 12px ui-monospace,monospace;color:var(--accent);align-self:start;padding-top:5px}
+.registry-entry strong{font:500 20px/1.35 Georgia,serif;display:block;letter-spacing:-.015em}
+.registry-entry small{display:block;font:400 12px/1.55 system-ui,sans-serif;color:var(--muted);margin-top:6px}
+.registry-arrow{color:var(--accent);font-size:17px;font-weight:400}
+.registry-inline-note{display:flex;align-items:start;gap:15px;padding:18px 20px;background:color-mix(in srgb,var(--surface),var(--paper) 30%)}
+.registry-code{flex:none;font:600 9px/1.5 ui-monospace,monospace;color:var(--accent);padding:3px 7px;border:1px solid var(--line)}
+.registry-inline-note p{font-size:12px;line-height:1.65;margin:0}
+.registry-aside{background:var(--document);color:var(--document-ink);border:1px solid var(--document-line);min-width:0}
+.registry-aside-head{color:var(--document-muted);border-color:var(--document-line);padding:17px 20px}
+.registry-aside>h2{color:var(--document-ink);font-size:25px;margin:28px 23px 10px}
+.registry-aside>p{font:13px/1.7 system-ui,sans-serif;color:var(--document-muted);margin:0 23px 22px}
+.registry-facts{margin:0 23px 22px;border-top:1px solid var(--document-line)}
+.registry-facts div{display:grid;grid-template-columns:1fr auto;gap:12px;padding:11px 0;border-bottom:1px solid var(--document-line);align-items:baseline}
+.registry-facts dt{font-size:12px;color:var(--document-muted)}.registry-facts dd{font:500 18px Georgia,serif;color:var(--document-ink);margin:0;font-variant-numeric:tabular-nums}
+.registry-trials{padding:17px 23px 22px}.registry-trials>span{font:600 10px ui-monospace,monospace;color:var(--seal)}
+.registry-trials ol{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 15px;padding:0;margin:10px 0 0;counter-reset:trial}
+.registry-trials li{counter-increment:trial;border-bottom:1px solid var(--document-line)}
+.registry-trials li a{display:flex;gap:7px;align-items:baseline;padding:9px 0;color:var(--document-ink);font-size:12px}
+.registry-trials li a::before{content:counter(trial,decimal-leading-zero);font:600 10px ui-monospace,monospace;color:var(--seal)}
+.registry-trials li a:hover{text-decoration:underline}
+.registry-foot{padding:18px 1px;border-bottom:1px solid var(--line)}
+/* The book should read like a reference manual. */
+.book-intro{padding-top:40px;padding-bottom:20px}
+.book-intro h1{font-size:clamp(30px,3.6vw,46px);margin:12px 0 8px;letter-spacing:-.018em}
+.book-intro p{font-size:13px;margin:0;max-width:780px}
+.book-shell{padding-top:24px}
+.reader-area{box-shadow:none}
+.reader-area h2{font-size:clamp(25px,2.5vw,36px);letter-spacing:-.013em;margin:13px 0 20px}
+.reader-lead{font-size:16px;line-height:1.68;letter-spacing:0}
+.reader-area .reader-kicker{font-size:10px;letter-spacing:.035em}
+.chapter-body h3,.topic-row h3{font-family:Georgia,serif;font-size:20px;font-weight:500;letter-spacing:-.01em;text-transform:none}
+.chapter-menu a{text-transform:none;font-size:12px}
+/* Character creation and session panels should feel like forms, not title pages. */
+.character-header{padding-top:38px;padding-bottom:21px}
+.character-title-line h1,.library-heading h1{font-size:clamp(32px,3.4vw,46px);line-height:1.17;letter-spacing:-.018em;font-style:normal;margin:13px 0}
+.character-title-line em,.library-heading em{font-style:normal;color:var(--ink)}
+.character-title-line p,.library-heading p{font:13px/1.7 system-ui,sans-serif;max-width:670px}
+.edition-stamp,.library-stamp{border:1px solid var(--line);box-shadow:none}
+.edition-stamp::after,.library-stamp::after{display:none}
+.character-main,.library-main{padding-bottom:65px}
+.library-heading{padding-top:38px;padding-bottom:20px}
+.step-stage h2{font-size:clamp(27px,2.7vw,36px);font-weight:500;letter-spacing:-.014em}
+.step-stage h3,.session-h3{font-family:Georgia,serif;font-weight:500;letter-spacing:-.015em}
+.session-card>h2{font-size:clamp(29px,3vw,41px);font-weight:500}
+.empty-library h2{font-size:clamp(26px,3vw,38px);font-weight:500}
+.library-btn{font-size:12px;min-height:40px;letter-spacing:0}
+.session-topline{letter-spacing:.035em}
+/* About copy without slogans. */
+.archive-about h1{font-size:clamp(31px,3.8vw,48px);letter-spacing:-.02em;line-height:1.2;margin:20px 0}
+.archive-about>p{font:15px/1.75 system-ui,sans-serif}
+.about-registries h3,.archive-about .about-card h3{font-size:22px}
+@media(max-width:900px){.registry-grid{grid-template-columns:1fr}.registry-aside{max-width:none}.registry-heading{grid-template-columns:minmax(0,1fr) 100px}.registry-mark{height:105px}.registry-mark svg{width:61px;height:61px}}
+@media(max-width:720px){.registry-home{padding-top:20px;padding-bottom:47px}.registry-toolbar,.registry-foot{font-size:9px;flex-wrap:wrap}.registry-heading{padding:24px 0;grid-template-columns:minmax(0,1fr) 65px;gap:14px}.registry-heading h1{font-size:34px}.registry-heading p{font-size:13px}.registry-mark{border-left:0;height:auto;align-self:start;margin-top:12px}.registry-mark svg{width:52px;height:52px}.registry-mark span{display:none}.registry-panel-head,.registry-aside-head{padding:13px 15px}.registry-panel-head h2{font-size:20px}.registry-directory a{grid-template-columns:32px minmax(0,1fr) 20px;gap:9px;padding:17px 14px}.registry-entry strong{font-size:17px}.registry-entry small{font-size:11px}.registry-inline-note{padding:14px}.registry-aside>h2{margin:20px 17px 8px}.registry-aside>p,.registry-facts{margin-left:17px;margin-right:17px}.registry-trials{padding:14px 17px 20px}.book-intro{padding:28px 0 16px}.book-intro h1{font-size:32px}.reader-area h2{font-size:28px}.character-header,.library-heading{padding-top:28px}.character-title-line h1,.library-heading h1{font-size:33px}}
+@media(prefers-reduced-motion:reduce){.registry-directory a{transition:none}}

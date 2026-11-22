@@ -672,39 +672,31 @@ function pdfSourcePanel() {
   return `<div class="source-panel"><div><strong>Documento de referência · Os Quatro Ís · edição ${PDF_VERSION}</strong><small>O PDF oficial prevalece sobre notas, resumos e índices deste site.</small></div>${pdfStatusPill()}</div>`;
 }
 function homePage() {
-  return `<section class="command-hero container" aria-label="Painel da Ascensão">
-    <div class="command-copy">
-      <div class="command-number"><span>PROTOCOLO 001 / ARQUIVO DE JOGO</span><span>DOCUMENTO PÚBLICO</span></div>
-      <div class="command-meta"><span class="eyebrow">SISTEMA DE ASCENSÃO · CONTROLE DE PARTICIPANTES</span></div>
-      <h1>Toda ascensão<br>tem <em>um preço.</em></h1>
-      <p class="command-description">Mil estudantes convocados. Dez reconhecidos. Quatro provas entre a escolha e a consequência. <strong>Os Quatro Ís</strong> é um RPG de decisões, disputa e poder — e esta é sua central de jogo.</p>
-      <div class="command-actions"><a class="btn primary" href="#regras">Consultar o códice <span aria-hidden="true">↗</span></a><a class="btn outline" href="personagem.html">Registrar estudante <span aria-hidden="true">→</span></a></div>
-      <p class="command-caption">USE ESTE ARQUIVO PARA JOGAR · MANUAL 3.0.1 COMO REFERÊNCIA OFICIAL</p>
-      <div class="command-seal-note"><span class="seal-mini">${archiveSeal()}</span><span>DEPARTAMENTO DA ASCENSÃO<br><small>CONTROLE DE ARQUIVOS / PROTOCOLOS</small></span></div>
+  return `<section class="registry-home container" aria-labelledby="registry-title">
+    <div class="registry-toolbar"><span>ARQUIVO DA ASCENSÃO / ÍNDICE DE CONSULTA</span><span>REGISTRO 00 · MANUAL 3.0.1</span></div>
+    <div class="registry-heading"><div><span class="registry-kicker">Os Quatro Ís · Sistema de RPG</span>
+      <h1 id="registry-title">Arquivo da Ascensão</h1>
+      <p>Documentos de regras e registros de personagens para uso durante a campanha. Esta edição reúne as ferramentas da mesa sem substituir as decisões do narrador.</p>
+      </div><div class="registry-mark" aria-hidden="true">${archiveSeal()}<span>ARQUIVO 04/Í</span></div></div>
+    <div class="registry-grid">
+      <section class="registry-primary" aria-labelledby="registry-access"><div class="registry-panel-head"><h2 id="registry-access">Consultas e registros</h2><span>04 SEÇÕES</span></div>
+        <nav class="registry-directory" aria-label="Acessos às ferramentas do RPG">
+          <a href="#regras"><span class="registry-id">01</span><span class="registry-entry"><strong>Livro de regras</strong><small>Índice do manual, capítulos, exemplos e consulta textual.</small></span><span class="registry-arrow" aria-hidden="true">↗</span></a>
+          <a href="personagem.html"><span class="registry-id">02</span><span class="registry-entry"><strong>Registro de personagem</strong><small>Criação oficial, atributos, origem e histórico acadêmico.</small></span><span class="registry-arrow" aria-hidden="true">↗</span></a>
+          <a href="personagens.html"><span class="registry-id">03</span><span class="registry-entry"><strong>Fichas de sessão</strong><small>Personagens salvos, recursos, testes, inventário e notas.</small></span><span class="registry-arrow" aria-hidden="true">↗</span></a>
+          <a href="#regras/pdf"><span class="registry-id">04</span><span class="registry-entry"><strong>Manual oficial em PDF</strong><small>Documento integral da edição 3.0.1, com 42 páginas.</small></span><span class="registry-arrow" aria-hidden="true">↗</span></a>
+        </nav>
+        <div class="registry-inline-note"><span class="registry-code">NOTA 01</span><p>As fichas ficam armazenadas somente neste navegador. Faça uma cópia de segurança antes de trocar de dispositivo.</p></div>
+      </section>
+      <aside class="registry-aside" aria-labelledby="registry-reference"><div class="registry-aside-head"><span>QUADRO DE REFERÊNCIA</span><span>ED. 3.0.1</span></div>
+        <h2 id="registry-reference">A Ascensão</h2>
+        <p>A competição organiza-se em quatro provas. O manual descreve sua estrutura, a criação dos estudantes e as consequências de cada sessão.</p>
+        <dl class="registry-facts"><div><dt>Convocados</dt><dd>1.000</dd></div><div><dt>Reconhecidos ao final</dt><dd>10</dd></div><div><dt>Provas</dt><dd>04</dd></div><div><dt>Manual</dt><dd>3.0.1</dd></div></dl>
+        <div class="registry-trials"><span>ETAPAS</span><ol><li><a href="#regras/ascensao">Interferência</a></li><li><a href="#regras/ascensao">Intuito</a></li><li><a href="#regras/ascensao">Instinto</a></li><li><a href="#regras/ascensao">Iscas</a></li></ol></div>
+      </aside>
     </div>
-    <div class="command-dossier"><div class="paper-rivet paper-rivet-a"></div><div class="paper-rivet paper-rivet-b"></div>
-       <div class="document-top"><span>DOCUMENTO / 0001-A</span><span>EDIÇÃO 3.0.1</span></div>
-       <div class="dossier-watermark">${archiveSeal()}</div>
-       <div class="dossier-intro"><span class="document-label">PROCESSO SELETIVO / REGULAMENTO</span><h2>As quatro<br>provas.</h2><p>A estrutura da Ascensão, conforme o capítulo inicial do manual.</p></div>
-       <div class="trial-ledger">
-         <a href="#regras/ascensao"><span>Ⅰ</span><strong>INTERFERÊNCIA</strong><small>Controle e sabotagem</small><b>↗</b></a>
-         <a href="#regras/ascensao"><span>Ⅱ</span><strong>INTUITO</strong><small>Investigação</small><b>↗</b></a>
-         <a href="#regras/ascensao"><span>Ⅲ</span><strong>INSTINTO</strong><small>Ambiente hostil</small><b>↗</b></a>
-         <a href="#regras/ascensao"><span>Ⅳ</span><strong>ISCAS</strong><small>Objetivos e confrontos</small><b>↗</b></a>
-       </div>
-       <div class="document-end"><span>REGISTRO PARA CONSULTA EM MESA</span><span class="document-stamp">ARQUIVADO</span></div>
-    </div>
-  </section>
-  <section class="figures-strip container" aria-label="Dados da Ascensão"><div><strong>1.000</strong><span>ESTUDANTES CONVOCADOS</span></div><div><strong>10</strong><span>RECONHECIDOS AO FINAL</span></div><div><strong>04</strong><span>ETAPAS DA ASCENSÃO</span></div><div><strong>3.0.1</strong><span>EDIÇÃO DO MANUAL</span></div></section>
-  <section class="archive-actions container"><div class="archive-section-label"><div><span class="eyebrow">MÓDULOS DISPONÍVEIS</span><h2>O arquivo está aberto.</h2></div><p>Escolha o que precisa para a sessão. Nada aqui exige conta ou altera as regras do PDF.</p></div>
-    <div class="archive-action-grid">
-      <a class="archive-action" href="#regras"><span class="action-tag">MÓDULO / 01</span><span class="action-glyph">Ⅰ</span><h3>Códice regulatório</h3><p>Sumário, pesquisa e consulta às regras do manual oficial.</p><span class="action-foot">ABRIR DOCUMENTAÇÃO <b>↗</b></span></a>
-      <a class="archive-action" href="personagem.html"><span class="action-tag">MÓDULO / 02</span><span class="action-glyph">Ⅱ</span><h3>Novo dossiê</h3><p>Criação do estudante, especializações e histórico acadêmico.</p><span class="action-foot">INICIAR REGISTRO <b>↗</b></span></a>
-      <a class="archive-action" href="personagens.html"><span class="action-tag">MÓDULO / 03</span><span class="action-glyph">Ⅲ</span><h3>Fichas em sessão</h3><p>Vida, Tensão, vínculos, rolagens e diário da campanha.</p><span class="action-foot">ACESSAR PARTICIPANTES <b>↗</b></span></a>
-      <a class="archive-action" href="#regras/pdf"><span class="action-tag">MÓDULO / 04</span><span class="action-glyph">Ⅳ</span><h3>Manual integral</h3><p>Leitor do PDF oficial, com 42 páginas e capítulos completos.</p><span class="action-foot">VER DOCUMENTO OFICIAL <b>↗</b></span></a>
-    </div>
-  </section>
-  <section class="protocol-band"><div class="container protocol-inner"><div><span class="eyebrow">NOTA DE ARQUIVO / 02</span><h2>A instituição registra.<br><em>A mesa decide.</em></h2></div><div><p>O site é uma ferramenta de jogo ambientada na linguagem da Ascensão. Testes, consequências e decisões narrativas pertencem aos participantes e ao narrador.</p><a href="personagens.html">ACESSAR FICHAS <span>↗</span></a></div></div></section>`;
+    <div class="registry-foot"><span>DOCUMENTAÇÃO DE JOGO / ACESSO LOCAL</span><span>As regras e os procedimentos definitivos constam no livro oficial.</span></div>
+  </section>`;
 }
 function archiveSeal() {
   return `<svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="60" cy="60" r="43" fill="none" stroke="currentColor" stroke-width=".6" stroke-dasharray="2 3"/><path d="M60 13v94M13 60h94" stroke="currentColor" opacity=".28" stroke-width=".7"/><path d="M36 43v36M47 43v36M70 43v36M81 43v36" stroke="currentColor" stroke-width="4"/><path d="M30 37h23M30 85h23M64 37h23M64 85h23" stroke="currentColor" stroke-width="1.8"/><path d="M57 60h6M60 57v6" stroke="currentColor" stroke-width="2"/></svg>`;
@@ -721,10 +713,10 @@ function referenceBox() {
   return `<div class="source-box"><div><strong>Confira sempre o documento oficial.</strong><p>O texto definitivo das regras está no PDF. Este site não substitui o original.</p></div>${info}</div>`;
 }
 function libraryPage() {
-  return `${heading('ACERVO / ÍNDICE','Livro de regras','Consulte o sumário da edição 3.0.1, pesquise assuntos ou abra qualquer capítulo diretamente na página correspondente do PDF oficial.')}
+  return `${heading('DOCUMENTAÇÃO / ÍNDICE','Livro de regras','Sumário da edição 3.0.1. Selecione uma seção para consultar o documento original.')}
     <div class="container">${pdfSourcePanel()}</div>
     <div class="book-shell container">${sidebar('')}<div class="reader-area" id="reader-area"><div class="reader-top"><span>EDIÇÃO DIGITAL / ÍNDICE</span><span>${chapters.length} ENTRADAS</span></div>
-      <div class="reader-kicker">BIBLIOTECA · VISÃO GERAL</div><h2>Encontre o que importa.</h2><p class="reader-lead">Pesquise um termo, escolha uma seção ou navegue pelo documento oficial completo.</p>
+      <div class="reader-kicker">BIBLIOTECA · VISÃO GERAL</div><h2>Índice de consulta</h2><p class="reader-lead">Os capítulos e suas páginas estão organizados abaixo. A busca também permite localizar termos do manual.</p>
       <div class="reading-note"><strong>Sobre a fidelidade das regras</strong><p>Este índice acompanha o sumário da edição 3.0.1. Resumos são apoios editoriais; para a regra integral, abra o PDF na página indicada.</p></div>
       <div id="topic-results">${topicRows(chapters)}</div>${referenceBox()}
     </div></div>`;
@@ -735,12 +727,12 @@ function topicRows(arr) {
 }
 function chapterPage(chapter) {
   let i=chapters.indexOf(chapter);
-  return `${heading('ACERVO / CAPÍTULOS','Livro de regras','O sumário corresponde à edição oficial 3.0.1. Cada seção aponta para sua página no PDF.')}
+  return `${heading('DOCUMENTAÇÃO / CAPÍTULOS','Livro de regras','Capítulos organizados conforme o manual 3.0.1. O texto integral permanece no PDF.')}
     <div class="container">${pdfSourcePanel()}</div>
     <div class="book-shell container">${sidebar(chapter.slug)}<article class="reader-area" id="reader-area"><div class="reader-top"><span>SEÇÃO ${chapter.number}</span><span>PÁGINA ${String(chapter.page).padStart(2,"0")}</span></div>
-      <div class="reader-kicker">${chapter.number} · CATÁLOGO TEMÁTICO</div>
+      <div class="reader-kicker">${chapter.number} · REGISTRO DE CAPÍTULO</div>
       <div class="chapter-breadcrumb"><a href="#regras">Livro de regras</a> / ${chapter.title}</div><h2>${chapter.title}</h2><p class="reader-lead">${chapter.lead}</p>
-      <div class="chapter-meta"><span>TIPO · ORGANIZAÇÃO DA LEITURA</span><span>FONTE · MANUAL OFICIAL 3.0.1</span></div>
+      <div class="chapter-meta"><span>TIPO · ORGANIZAÇÃO DA LEITURA</span><span>MANUAL OFICIAL · EDIÇÃO 3.0.1</span></div>
       <div class="chapter-body"><p>${chapter.about}</p><h3>Nesta seção</h3>
       <div class="topic-list">${chapter.points.map((x,j)=>`<div class="topic-row"><span class="topic-index">${String(j+1).padStart(2,'0')}</span><div><h3>${x[0]}</h3><p>${x[1]}</p></div><span></span></div>`).join('')}</div>
       <div class="reading-note"><strong>Nota de edição</strong><p>Estas notas resumem o PDF. O texto completo da seção oficial prevalece em qualquer decisão de jogo.</p></div>
@@ -753,7 +745,7 @@ function chapterPage(chapter) {
     </article></div>`;
 }
 function pdfPage() {
-  return `${heading('ACERVO / FONTE PRIMÁRIA','PDF oficial','O manual oficial 3.0.1 tem 42 páginas, com índice, exemplos visuais, módulos de exploração e glossário.')}
+  return `${heading('DOCUMENTAÇÃO / FONTE','Manual oficial em PDF','Edição 3.0.1 · 42 páginas · capítulos, exemplos e glossário.')}
     <div class="container">${pdfSourcePanel()}</div>
     <div class="book-shell container">${sidebar('pdf')}<section class="reader-area" id="reader-area"><div class="reader-top"><span>EDIÇÃO 3.0.1</span><span>${pdfReady?'42 PÁGINAS':'VERIFICANDO'}</span></div>
     <div class="reader-kicker">FONTE DO SISTEMA</div><h2>${pdfReady?'Leitor do documento':'Adicione o livro oficial.'}</h2>
@@ -764,10 +756,10 @@ function pdfPage() {
 function aboutPage() {
   return `<section class="about-wrap container archive-about">
     <div class="about-head"><span class="eyebrow">FICHA DE REFERÊNCIA / PROJETO</span><span>PROTOCOLO / 00</span></div>
-    <h1>O arquivo<br><em>existe para jogar.</em></h1>
-    <p><strong>Os Quatro Ís</strong> é um RPG de decisões, disputa e repercussões políticas. Esta plataforma reúne as ferramentas para consultar regras, criar estudantes e acompanhar uma campanha.</p>
+    <h1>Informações do arquivo</h1>
+    <p>Este arquivo reúne o manual oficial de <strong>Os Quatro Ís</strong> e as ferramentas de apoio à campanha: registro de estudantes, fichas em sessão e consulta às regras.</p>
     <div class="about-registries"><div><span>REGISTRO 01</span><h3>Manual oficial</h3><p>O livro 3.0.1 define todas as regras. O índice e os resumos auxiliam na consulta, mas nunca substituem sua redação.</p><a href="#regras/pdf">ABRIR O MANUAL ↗</a></div><div><span>REGISTRO 02</span><h3>Ferramentas locais</h3><p>As fichas e os diários ficam no dispositivo do jogador. Faça backups antes de trocar de navegador ou apagar dados.</p><a href="personagens.html">ABRIR FICHAS ↗</a></div></div>
-    <div class="about-card"><span class="eyebrow">COMPROMISSO DE PROJETO</span><h3>Uma interface dentro do universo.</h3><p>Selos, fichários e nomenclaturas evocam a instituição da Ascensão. São elementos visuais ficcionais: não há monitoramento de jogadores nem envio de seus dados ao GitHub. O material de regras continua preservado no PDF.</p></div>
+    <div class="about-card"><span class="eyebrow">COMPROMISSO DE PROJETO</span><h3>Linguagem do arquivo</h3><p>Selos, fichários e nomenclaturas evocam a instituição da Ascensão. São elementos visuais ficcionais: não há monitoramento de jogadores nem envio de seus dados ao GitHub. O material de regras continua preservado no PDF.</p></div>
     <div class="button-row"><a class="btn primary" href="#regras">Consultar códice <span class="arrow">↗</span></a><a class="btn outline" href="personagem.html">Criar estudante <span class="arrow">→</span></a></div>
   </section>`;
 }

@@ -108,3 +108,11 @@ Redesign completo da identidade de Os Quatro Ís, misturando arquivo institucion
 **Arquivos novos:** `arquivo-ascensao.css`, `archive-theme.js`, `assets/selo-ascensao.svg` e um novo `assets/favicon.svg`. O tema claro continua disponível pelo botão Contraste. A versão 2.0 (`visual-rpg.css`) foi substituída visualmente e não é mais carregada.
 
 O sistema de criação e rolagens permanece nas implementações anteriores (`personagem.js`, `personagens.js`, `fichas-store.js`, `rolagens-core.js`). As fichas locais não são apagadas pela troca visual. O PDF oficial 3.0.1 **não foi alterado**. O leitor incorporado passou a aparecer também dentro das páginas dos capítulos.
+
+## Versão 2.2 — apresentação documental
+
+- Entrada transformada em índice de consulta (sem hero publicitária, slogans ou cartões comerciais).
+- Tipografia mais moderada e capitalização natural nos títulos.
+- Biblioteca e criação com nomes funcionais e hierarquia de documento.
+- `documental-v22.css` é uma camada visual isolada, aplicada após o tema 2.1.
+- PDF oficial 3.0.1 e scripts de armazenamento, criação e rolagens preservados.
