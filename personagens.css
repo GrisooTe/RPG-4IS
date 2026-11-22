@@ -15,3 +15,10 @@
 
 .session-archive{border:1px solid var(--line);margin:9px 0;background:var(--paper);padding:13px 15px;font-size:12px}
 .session-archive summary{cursor:pointer;font-weight:800}.session-archive p{white-space:pre-wrap;margin:12px 0 0;line-height:1.75;color:var(--ink)}
+
+/* 1.8: alertas sem deslocar o leitor; indicadores de backup e botões de sessão */
+.library-notice:not([hidden]){position:fixed;right:18px;bottom:18px;z-index:50;max-width:min(420px,calc(100vw - 36px));margin:0;box-shadow:var(--shadow);border:1px solid var(--line);border-left:3px solid var(--accent);background:var(--surface);padding:14px 17px}
+.library-safe[data-warning="yes"]{color:var(--accent);font-weight:800}
+.session-buttons button:disabled{opacity:.4;cursor:not-allowed}
+.resource-count [data-resource-value]{font:inherit}
+@media(max-width:720px){.library-notice:not([hidden]){right:10px;bottom:10px;max-width:calc(100vw - 20px)}.library-actions .library-btn{flex:1 1 auto}.session-buttons a,.session-buttons button{min-height:42px}}

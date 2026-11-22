@@ -26,3 +26,6 @@
 @media print{body>*:not(.character-print){display:none!important}.character-print{display:block!important;padding:0!important;margin:0!important;color:#1d2628!important;background:#fff!important;font-family:Georgia,'Times New Roman',serif}.character-print .review-sheet{margin:0!important;background:white!important;border:none!important;padding:0!important}.character-print .review-sheet h3{font-size:28pt}.character-print .review-actions{display:none!important}.review-grid{break-inside:avoid}.review-paragraph{page-break-inside:avoid}@page{size:A4;margin:16mm}}
 
 .review-actions a.secondary{display:inline-flex;align-items:center;font-size:12px;font-weight:700;padding:12px 15px;border:1px solid var(--accent);color:var(--ink);text-decoration:none}
+
+/* v1.8: manter a navegação das etapas próxima do formulário, sem voltar ao início do site. */
+#step-stage{scroll-margin-top:24px}

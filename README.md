@@ -71,3 +71,13 @@ Os recursos respeitam o Manual do Participante 3.0.1. A interface não substitui
 ### Privacidade e cópias de segurança
 
 Todos os dados permanecem no `localStorage` do navegador, sem transmissão ao GitHub e sem login. Os jogadores devem usar **Baixar backup de todas** e **Importar fichas** ao trocar de dispositivo ou limpar os dados do navegador. Importar gera registros adicionais, não substitui automaticamente os existentes. O PDF oficial permanece intacto.
+
+## Versão 1.8 — estabilidade e backups
+
+- Atualizações da ficha de sessão alteram os recursos no local, **sem reconstruir toda a página**. A rolagem do navegador, o foco dos botões e o campo de notas são preservados.
+- **Desfazer último ajuste** funciona durante a sessão; ao alterar as notas ou trocar de personagem, o histórico de desfazer é limpo para evitar sobrescrever texto posterior.
+- A biblioteca avisa quando as fichas foram alteradas desde o último backup gerado. O backup continua sendo um arquivo local, e o usuário deve confirmar que o navegador o salvou.
+- A importação valida todas as fichas antes de qualquer gravação, preserva os IDs originais e **ignora duplicatas** por ID ou identidade da criação; ela nunca substitui registros já existentes. Indica quantas fichas foram importadas e quantas foram ignoradas.
+- Para **outro estudante**, é necessário iniciar uma ficha nova e realizar a própria rolagem acadêmica. Uma cópia de segurança não é uma nova criação; o botão antigo de duplicação foi retirado.
+- Alertas aparecem sem deslocar o conteúdo; controles em dispositivos móveis foram ampliados.
+- Manual oficial 3.0.1 e suas regras **não foram alterados**.

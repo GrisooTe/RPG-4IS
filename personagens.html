@@ -7,8 +7,8 @@
  <title>Minhas fichas | Os Quatro Ís</title>
  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
  <link rel="stylesheet" href="styles.css?v=1.5">
- <link rel="stylesheet" href="personagens.css?v=2.0">
- <script src="fichas-store.js?v=2.0" defer></script><script src="personagens.js?v=2.0" defer></script>
+ <link rel="stylesheet" href="personagens.css?v=2.1">
+ <script src="fichas-store.js?v=2.1" defer></script><script src="personagens.js?v=2.1" defer></script>
 </head>
 <body>
  <a href="#biblioteca" class="skip-link">Pular para a biblioteca</a>
@@ -18,7 +18,7 @@
  <nav class="main-nav" aria-label="Navegação principal"><a href="index.html#inicio">Início</a><a href="index.html#regras">Livro de regras</a><a href="personagem.html">Criar personagem</a><a href="personagens.html" class="active" aria-current="page">Minhas fichas</a></nav><a class="library-return" href="index.html#regras">← Regras</a></div></header>
  <main class="container library-main" id="biblioteca">
   <div class="library-heading"><div><span class="eyebrow">ARQUIVO PRIVADO / CAMPANHA</span><h1>Seus personagens,<br><em>suas histórias.</em></h1><p>Guarde vários estudantes, alterne entre fichas e acompanhe os recursos durante as provas. Os dados ficam neste dispositivo, sem conta ou servidor.</p></div><div class="library-stamp"><span>FICHAS LOCAIS</span><strong id="library-count">00</strong><small>EDIÇÃO DIGITAL</small></div></div>
-  <div class="library-actions"><a href="personagem.html?novo=1" class="library-btn dark">+ Criar personagem</a><button type="button" class="library-btn" data-action="export-all">Baixar backup de todas</button><label class="library-btn import-btn" for="import-file">Importar fichas (.json)<input id="import-file" type="file" accept="application/json,.json" hidden></label><span class="library-safe">Armazenamento local · Exportar regularmente</span></div>
+  <div class="library-actions"><a href="personagem.html?novo=1" class="library-btn dark">+ Criar personagem</a><button type="button" class="library-btn" data-action="export-all">Baixar backup de todas</button><label class="library-btn import-btn" for="import-file">Importar fichas (.json)<input id="import-file" type="file" accept="application/json,.json" hidden></label><span class="library-safe" id="backup-status" role="status">Verificando segurança dos backups…</span></div>
   <div id="notification" class="library-notice" role="status" aria-live="polite" hidden></div>
   <div class="library-layout">
    <aside class="roster-sidebar" aria-label="Personagens salvos"><div class="roster-heading"><strong>REGISTROS</strong><span id="roster-count">0 PERSONAGENS</span></div><div id="roster-list" class="roster-list"></div><a class="roster-add" href="personagem.html?novo=1">+ Novo registro</a><p class="roster-note">As informações são salvas apenas neste navegador. Exporte um backup para transferi-las a outro aparelho.</p></aside>
@@ -26,7 +26,7 @@
   </div>
   <div class="library-footer-note"><strong>Referência oficial</strong><span>Manual 3.0.1: criação e atributos nas páginas 4–8, condições e recuperação nas páginas 13–14, inventário na página 30 e política na página 36. A ficha não altera nem substitui essas regras.</span><a href="assets/Os_Quatro_Is_Livro_de_Regras_v3_0_1_Sumario_Corrigido.pdf" target="_blank" rel="noopener">Abrir PDF ↗</a></div>
  </main>
- <footer class="site-footer"><div class="container footer-main"><div><span class="footer-brand">OS QUATRO ÍS</span><p>O livro de regras 3.0.1 permanece a referência oficial. Fichas e anotações são armazenadas localmente.</p></div><div class="footer-links"><a href="index.html#inicio">Início</a><a href="index.html#regras">Livro de regras</a><a href="personagem.html">Criar personagem</a></div><div class="footer-meta">BIBLIOTECA V2.0 · 2026<br>SEM CADASTRO · SEM SINCRONIZAÇÃO</div></div></footer>
+ <footer class="site-footer"><div class="container footer-main"><div><span class="footer-brand">OS QUATRO ÍS</span><p>O livro de regras 3.0.1 permanece a referência oficial. Fichas e anotações são armazenadas localmente.</p></div><div class="footer-links"><a href="index.html#inicio">Início</a><a href="index.html#regras">Livro de regras</a><a href="personagem.html">Criar personagem</a></div><div class="footer-meta">BIBLIOTECA V2.1 · 2026<br>SEM CADASTRO · SEM SINCRONIZAÇÃO</div></div></footer>
  </div>
  <div id="session-print" class="session-print"></div>
 </body>

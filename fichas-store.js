@@ -1,7 +1,7 @@
 /* Os Quatro Ís · Biblioteca de personagens — armazenamento local, sem servidor. */
 (function(){
  'use strict';
- const KEY='os-quatro-is:personagens:v2',OLD='os-quatro-is:ficha-personagem:v1';
+ const KEY='os-quatro-is:personagens:v2',OLD='os-quatro-is:ficha-personagem:v1',BACKUP_KEY='os-quatro-is:ultimo-backup:v1';
  const origins=['Tradicional','Empresarial','Política','Comum'];
  const trajectories=['Dedicada','Equilibrada','Interrompida'];
  const schools=['Favorável','Comum','Desfavorável'];
@@ -74,16 +74,37 @@
   if(typeof change==='function')change(r);r.live=normalizeLive(r.live,r.character);r.session=normalizeSession(r.session);r.updatedAt=now();
   return write(recs)?clone(r):null;}
  function remove(id){return write(list().filter(r=>r.id!==id));}
- function duplicate(id){const r=get(id);if(!r)return null;r.id=uuid();r.createdAt=now();r.updatedAt=r.createdAt;r.character.name+=' (cópia)';r.session=normalizeSession({});const arr=list();arr.unshift(r);return write(arr)?r:null;}
- function importRecord(input){const raw=input?.character?input:{character:input};const normalized=normalizeRecord({...raw,id:uuid(),createdAt:now(),updatedAt:now()});
-  if(!normalized)throw new Error('Ficha inválida ou sem rolagem acadêmica registrada.');
-  const arr=list();arr.unshift(normalized);if(!write(arr))throw new Error('Não foi possível salvar no navegador.');return normalized;
+ // A cópia de segurança é um arquivo JSON. Não clonamos um personagem já rolado
+ // como se fosse outro estudante: uma ficha nova precisa cumprir as nove etapas.
+ function fingerprint(record){
+  const c=record.character,a=c.academic;
+  return JSON.stringify([c.name.trim().normalize('NFD').toLowerCase(),c.family.trim().normalize('NFD').toLowerCase(),c.origin,
+   a?.rolledAt||'',a?.condition||'',a?.trajectory||'',a?.dice||[],a?.kept||[],c.stats]);
  }
- function importBackup(input){let payload=input?.records;if(!Array.isArray(payload)||!payload.length)throw new Error('Arquivo não contém uma biblioteca de personagens.');
-  if(payload.length>100)throw new Error('O arquivo excede o limite de 100 fichas por importação.');
-  const recs=payload.map(r=>normalizeRecord({...r,id:uuid(),createdAt:now(),updatedAt:now()}));
-  if(recs.some(r=>!r))throw new Error('O arquivo contém fichas inválidas. Nenhuma ficha foi importada.');
-  const existing=list();if(!write([...recs,...existing]))throw new Error('Falha ao salvar biblioteca.');return recs.length;
+ function importCandidates(input){
+  const rawRecords=Array.isArray(input?.records)?input.records:[input?.character?input:{character:input}];
+  if(!rawRecords.length)throw new Error('O arquivo não contém fichas.');
+  if(rawRecords.length>100)throw new Error('O arquivo excede o limite de 100 fichas por importação.');
+  const candidates=rawRecords.map(r=>normalizeRecord(r));
+  if(candidates.some(r=>!r))throw new Error('O arquivo contém fichas inválidas ou sem rolagem acadêmica. Nada foi importado.');
+  const existing=list();const ids=new Set(existing.map(r=>r.id));const prints=new Set(existing.map(fingerprint));
+  const added=[];let skipped=0;
+  for(const record of candidates){
+   const print=fingerprint(record);
+   if(ids.has(record.id)||prints.has(print)){skipped++;continue;}
+   // IDs antigos são mantidos para reconhecer novas importações do mesmo backup.
+   ids.add(record.id);prints.add(print);added.push(record);
+  }
+  if(added.length&&!write([...added,...existing]))throw new Error('Falha ao salvar a biblioteca; nada foi importado.');
+  return {imported:added.length,skipped,ids:added.map(r=>r.id)};
  }
- window.OQStore={list,get,upsert,patch,remove,duplicate,importRecord,importBackup,initial,normalizeLive,normalizeSession,cleanCharacter,storageKey:KEY};
+ function importRecord(input){return importCandidates(input);}
+ function importBackup(input){if(!Array.isArray(input?.records))throw new Error('Não é um backup de biblioteca.');return importCandidates(input);}
+ function markBackup(){try{localStorage.setItem(BACKUP_KEY,now());return true;}catch(_){return false;}}
+ function backupStatus(){
+  let last='';try{last=localStorage.getItem(BACKUP_KEY)||'';}catch(_){/* armazenamento indisponível */}
+  const latest=list().reduce((acc,r)=>r.updatedAt>acc?r.updatedAt:acc,'');
+  return {last,needsBackup:!!latest&&(!last||latest>last),hasRecords:!!latest};
+ }
+ window.OQStore={list,get,upsert,patch,remove,importRecord,importBackup,markBackup,backupStatus,initial,normalizeLive,normalizeSession,cleanCharacter,storageKey:KEY};
 })();

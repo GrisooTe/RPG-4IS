@@ -215,7 +215,7 @@ function showError(message){
  target.textContent=message;
 }
 function clearError(){const el=document.getElementById('form-error');if(el)el.remove();}
-function navigateStep(next){state.step=next;state.maxStep=Math.max(state.maxStep,next);clearError();render();document.getElementById('criador').scrollIntoView({behavior:'instant',block:'start'});}
+function navigateStep(next){state.step=next;state.maxStep=Math.max(state.maxStep,next);clearError();render();const target=document.getElementById('step-stage');const rect=target?.getBoundingClientRect();if(rect&&(rect.top<0||rect.top>window.innerHeight-140))target.scrollIntoView({behavior:'auto',block:'start'});}
 function finish(){
  const errs=allErrors();if(errs.length){showError(errs[0]);return;}
  state.finished=true;
