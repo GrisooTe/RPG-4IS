@@ -794,10 +794,10 @@ function render() {
     if (currentBook) {
       // Compensa alterações no conteúdo acima do leitor e preserva a altura de leitura.
       const shift = currentBook.getBoundingClientRect().top - previousBookTop;
-      window.scrollTo({top: Math.max(0, oldScroll + shift), behavior:'instant'});
+      window.scrollTo(0, Math.max(0, oldScroll + shift));
     }
   } else {
-    window.scrollTo({top:0,behavior:'instant'});
+    window.scrollTo(0, 0);
   }
 }
 function searchChapters(event) {
@@ -821,9 +821,24 @@ async function checkPdf() {
   try { const r=await fetch(PDF_PATH,{method:'HEAD',cache:'no-store'}); pdfReady=r.ok && (r.headers.get('content-type')||'').toLowerCase().includes('pdf'); }
   catch(_) { pdfReady=false; }
   document.querySelectorAll('[data-pdf-status]').forEach(node=>{node.textContent=pdfReady?'PDF disponível':'PDF ainda não incluído';node.dataset.ready=pdfReady?'yes':'no';});
-  if(currentRoute()==='regras/pdf')render();
+  // O estado do PDF não precisa reconstruir o leitor nem alterar a rolagem.
 }
-window.addEventListener('hashchange',render);
+// Roteamento sem navegação nativa por âncora: evita o salto automático do navegador.
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+document.addEventListener('click', event => {
+  const link = event.target.closest('a[href^="#"]');
+  if (!link || event.defaultPrevented || event.button !== 0 ||
+      event.metaKey || event.ctrlKey || event.shiftKey || event.altKey ||
+      link.hasAttribute('download') || link.target && link.target !== '_self') return;
+  const dest = link.getAttribute('href');
+  if (!/^#(?:inicio|regras(?:\/[^#]*)?|sobre)$/.test(dest)) return;
+  event.preventDefault();
+  if (location.hash === dest) return;
+  history.pushState({route:dest}, '', dest);
+  render();
+});
+window.addEventListener('popstate', render);
+window.addEventListener('hashchange', render);
 document.getElementById('theme-toggle').addEventListener('click',()=>{
   const dark=document.documentElement.dataset.theme!=='dark';
   if(dark)document.documentElement.dataset.theme='dark';else delete document.documentElement.dataset.theme;
