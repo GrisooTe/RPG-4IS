@@ -57,6 +57,17 @@ Revisar a experiência de leitura e acrescentar futuras ferramentas interativas 
 
 © Autor de Os Quatro Ís. Material do RPG e sua documentação reservados ao titular dos direitos. Nenhuma licença de reutilização é concedida por este pacote.
 
-## Ficha interativa de criação de personagens (v1.0)
+## Biblioteca de personagens e painel de sessão (site v1.7)
 
-Acesse `personagem.html` no GitHub Pages. A ferramenta segue os capítulos 02, 02A e 02B do manual oficial 3.0.1, calcula atributos e recursos iniciais, registra uma única rolagem acadêmica e salva localmente o rascunho. É possível exportar JSON e imprimir ou salvar a ficha em PDF pelo navegador. Não requer login nem altera o PDF oficial.
+- `personagens.html`: acervo com múltiplas fichas do mesmo navegador, seleção e acesso a cada ficha em sessão.
+- `personagem.html`: formulário oficial de criação (continua com 9 etapas). Ao concluir, registra ou atualiza a ficha na biblioteca; pode reabrir pelo link **Editar dados de criação**.
+- `fichas-store.js`: armazenamento local versionado; importa ficha única (`{character,...}`), faz backup de toda a biblioteca (`{records:[...]}`) e migra a ficha antiga concluída quando encontrada.
+- `personagens.js` e `personagens.css`: painel de sessão com PV, Tensão, Determinação, Preparação, Ferimentos Graves, Prestígio, Dívida, Suspeita, Evolução, inventário, vínculos, dias/sessões, notas arquivadas e registro dos ajustes.
+
+### Regras e limites
+
+Os recursos respeitam o Manual do Participante 3.0.1. A interface não substitui testes narrativos e exige confirmação para ações que dependem do narrador. A ficha só registra o que o grupo decidiu. A rolagem acadêmica continua única na criação.
+
+### Privacidade e cópias de segurança
+
+Todos os dados permanecem no `localStorage` do navegador, sem transmissão ao GitHub e sem login. Os jogadores devem usar **Baixar backup de todas** e **Importar fichas** ao trocar de dispositivo ou limpar os dados do navegador. Importar gera registros adicionais, não substitui automaticamente os existentes. O PDF oficial permanece intacto.

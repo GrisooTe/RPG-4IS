@@ -67,7 +67,15 @@ function restoreState() {
     return safe;
   } catch(_) {return blankState();}
 }
-let state=restoreState();
+const editorParams=new URLSearchParams(location.search);
+let editingId=editorParams.get('editar')||null;
+let state;
+if(editingId){
+ const registered=window.OQStore?.get(editingId);
+ if(registered){state=Object.assign(blankState(),registered.character,{finished:true,step:8,maxStep:8});}
+ else{editingId=null;state=restoreState();}
+}else if(editorParams.has('novo')){state=blankState();}
+else {state=restoreState();}
 const stage=document.getElementById('step-stage');
 const actionArea=document.getElementById('creation-actions');
 const summary=document.getElementById('character-summary');
@@ -142,7 +150,7 @@ function stepMarkup(index) {
    `<button type="button" class="tie-add" id="add-tie">+ Adicionar vínculo</button></div>`;
  return intro(8,'Seu registro está completo?','Confira a ficha antes de finalizar. Todos os valores abaixo são calculados segundo o manual; a rolagem acadêmica permanece registrada.')+
    `<div id="review-status">${allErrors().length?`<div class="compact-box"><strong>Há ${allErrors().length} pendência(s).</strong><p>${esc(allErrors()[0])}</p></div>`:`<span class="ready-pill">✓ Dados obrigatórios completos</span>`}</div>${reviewMarkup(false)}`+
-   `<div class="review-actions"><button type="button" id="finish-character" ${allErrors().length?'disabled':''}>${state.finished?'Ficha finalizada ✓':'Finalizar ficha'}</button><button type="button" class="secondary" id="export-character" ${state.finished?'':'disabled'}>Baixar ficha (.json)</button><button type="button" class="secondary" id="print-character" ${state.finished?'':'disabled'}>Imprimir / salvar em PDF</button></div>`;
+   `<div class="review-actions"><button type="button" id="finish-character" ${allErrors().length?'disabled':''}>${state.finished?'Ficha finalizada ✓':'Finalizar ficha'}</button><button type="button" class="secondary" id="export-character" ${state.finished?'':'disabled'}>Baixar ficha (.json)</button><button type="button" class="secondary" id="print-character" ${state.finished?'':'disabled'}>Imprimir / salvar em PDF</button>${state.finished&&editingId?`<a class="secondary" href="personagens.html?ficha=${encodeURIComponent(editingId)}">Abrir na biblioteca ↗</a>`:''}</div>`;
 }
 function validateStep(i) {
  const errs=[];
@@ -210,7 +218,12 @@ function clearError(){const el=document.getElementById('form-error');if(el)el.re
 function navigateStep(next){state.step=next;state.maxStep=Math.max(state.maxStep,next);clearError();render();document.getElementById('criador').scrollIntoView({behavior:'instant',block:'start'});}
 function finish(){
  const errs=allErrors();if(errs.length){showError(errs[0]);return;}
- state.finished=true;redrawKeepingPosition();showToast('Ficha concluída e salva neste navegador.');
+ state.finished=true;
+ const saved=window.OQStore?.upsert(state,editingId);
+ if(!saved){showError('Não foi possível guardar a ficha na biblioteca. Exporte os dados antes de sair.');return;}
+ editingId=saved.id;
+ history.replaceState(null,'','personagem.html?editar='+encodeURIComponent(editingId));
+ redrawKeepingPosition();showToast('Ficha salva na biblioteca. Você já pode usá-la em uma sessão.');
 }
 function showToast(message){const n=document.getElementById('toast');n.textContent=message;n.classList.add('visible');}
 function randomDie(){const v=new Uint32Array(1);crypto.getRandomValues(v);return (v[0]%6)+1;}
@@ -299,6 +312,6 @@ actionArea.addEventListener('click',event=>{
 });
 document.getElementById('reset-character').addEventListener('click',()=>{
  if(!window.confirm('Deseja criar uma nova ficha? O rascunho atual será substituído, incluindo a rolagem acadêmica registrada.'))return;
- state=blankState();save();navigateStep(0);
+ editingId=null;state=blankState();history.replaceState(null,'','personagem.html?novo=1');save();navigateStep(0);
 });
 render();

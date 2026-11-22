@@ -153,7 +153,8 @@ p { color:var(--muted); }
 /* Referências de páginas do sumário oficial */
 .page-index{font-family:inherit;font-size:.72em;font-weight:500;letter-spacing:.03em;white-space:nowrap;color:var(--muted);margin-left:.35rem}
 .chapter-menu a .page-index{display:inline-block;font-size:.7rem;margin-top:.1rem}
-/* Livro v1.5: sumario fixo com rolagem propria */
+
+/* Livro v1.5: sumário fixo e independentemente rolável em computadores */
 @media (min-width:721px) {
   .book-shell { align-items:stretch; }
   .book-sidebar {
@@ -185,3 +186,7 @@ p { color:var(--muted); }
   .book-sidebar .chapter-menu a { scroll-snap-align:none; }
   .book-sidebar .chapter-menu a.active { background:var(--soft); }
 }
+
+/* Biblioteca v1.7: quatro acessos na página inicial */
+@media(min-width:1051px){.path-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.path-card{padding:24px 20px}}
+@media(min-width:721px) and (max-width:1050px){.path-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

@@ -647,7 +647,7 @@ const chapters = [
   }
 ];
 
-let pdfReady = true;
+let pdfReady = false;
 let toastTimer;
 let originalReaderMarkup = '';
 const main = document.getElementById('conteudo');
@@ -676,7 +676,7 @@ function homePage() {
     <div class="hero-copy"><span class="eyebrow">SISTEMA DE RPG · EDIÇÃO DIGITAL</span>
       <h1>O mundo não é <em>neutro.</em><br>Suas escolhas também não.</h1>
       <p class="hero-intro">Bem-vindo ao espaço digital de <strong>Os Quatro Ís</strong>. Um lugar para conhecer o projeto, navegar por seus assuntos e consultar o livro de regras — sem perder de vista a versão oficial.</p>
-      <div class="button-row"><a class="btn primary" href="#regras">Explorar o livro <span class="arrow">↗</span></a><a class="btn outline" href="#sobre">Conhecer o projeto <span class="arrow">→</span></a></div>
+      <div class="button-row"><a class="btn primary" href="#regras">Explorar o livro <span class="arrow">↗</span></a><a class="btn outline" href="personagens.html">Minhas fichas <span class="arrow">→</span></a><a class="btn outline" href="#sobre">Conhecer o projeto <span class="arrow">→</span></a></div>
       <div class="hero-note">MANUAL OFICIAL · EDIÇÃO 3.0.1 · 42 PÁGINAS</div>
     </div>
     <div class="hero-art" role="img" aria-label="Composição editorial com quatro letras Í sobre círculos concêntricos">
@@ -690,7 +690,8 @@ function homePage() {
     <div class="path-grid">
       <a class="path-card" href="#regras"><span class="num">01 / ARQUIVO</span><div><h3>Livro de regras</h3><p>Explore o índice de assuntos, pesquise termos e encontre o documento de referência.</p></div><span class="more" aria-hidden="true">↗</span></a>
       <a class="path-card" href="personagem.html"><span class="num">02 / PERSONAGEM</span><div><h3>Criar personagem</h3><p>Monte a ficha digital em nove etapas, com atributos, histórico acadêmico e valores calculados.</p></div><span class="more" aria-hidden="true">↗</span></a>
-      <a class="path-card" href="#regras/pdf"><span class="num">03 / FONTE</span><div><h3>PDF oficial</h3><p>Abra ou baixe o livro oficial de 42 páginas diretamente na biblioteca.</p></div><span class="more" aria-hidden="true">↗</span></a>
+      <a class="path-card" href="personagens.html"><span class="num">03 / CAMPANHA</span><div><h3>Minhas fichas</h3><p>Gerencie personagens, recursos, inventário e notas durante as sessões.</p></div><span class="more" aria-hidden="true">↗</span></a>
+       <a class="path-card" href="#regras/pdf"><span class="num">04 / FONTE</span><div><h3>PDF oficial</h3><p>Abra ou baixe o livro oficial de 42 páginas diretamente na biblioteca.</p></div><span class="more" aria-hidden="true">↗</span></a>
     </div></div></section>
     <section class="manifesto"><div class="container manifesto-inner"><div><span class="mini-label">NOTA EDITORIAL / 01</span><h2>O site organiza a leitura.<br>O livro define as regras.</h2></div><p>O índice e os resumos agora seguem o livro de regras 3.0.1. A íntegra do PDF é a fonte oficial: nenhuma regra foi alterada para esta edição web.</p></div></section>`;
 }
@@ -730,21 +731,18 @@ function chapterPage(chapter) {
       <div class="topic-list">${chapter.points.map((x,j)=>`<div class="topic-row"><span class="topic-index">${String(j+1).padStart(2,'0')}</span><div><h3>${x[0]}</h3><p>${x[1]}</p></div><span></span></div>`).join('')}</div>
       <div class="reading-note"><strong>Nota de edição</strong><p>Estas notas resumem o PDF. O texto completo da seção oficial prevalece em qualquer decisão de jogo.</p></div>
       <div class="topic-tags">${chapter.tags.map(t=>`<span class="topic-tag">${e(t)}</span>`).join('')}</div>
-      <div class="page-actions">${["personagens","criacao-passo-a-passo","exemplo-nara"].includes(chapter.slug)?`<a class="btn primary" href="personagem.html">Criar ficha interativa ↗</a>`:""}<a class="btn outline" href="${PDF_PATH}#page=${chapter.page}" target="_blank" rel="noopener">Ampliar página ${chapter.page} do PDF ↗</a><a class="btn outline" href="${PDF_PATH}" download>Baixar livro completo ↓</a></div>
-       <div class="reading-note"><strong>Texto original do manual · página ${chapter.page}</strong><p>O documento abaixo é o livro oficial 3.0.1, preservado integralmente. Use a barra do leitor para avançar pelas demais páginas.</p></div>
-       <iframe class="pdf-frame" title="Livro oficial Os Quatro Ís — ${e(chapter.title)} — página ${chapter.page}" src="${PDF_PATH}#page=${chapter.page}&view=FitH" loading="lazy"></iframe>
+      <div class="page-actions"><a class="btn primary" href="${PDF_PATH}#page=${chapter.page}" target="_blank" rel="noopener">Ler página ${chapter.page} no PDF <span class="arrow">↗</span></a></div>
       ${referenceBox()}
       <div class="next-topic"><span>${i>0?`<a href="#regras/${chapters[i-1].slug}">← ${chapters[i-1].title}</a>`:`<a href="#regras">← Índice geral</a>`}</span><span>${i<chapters.length-1?`<a href="#regras/${chapters[i+1].slug}">${chapters[i+1].title} →</a>`:`<a href="#regras/pdf">PDF oficial →</a>`}</span></div></div>
     </article></div>`;
 }
 function pdfPage() {
-  return `${heading('ACERVO / FONTE PRIMÁRIA','PDF oficial','A edição 3.0.1 contém 42 páginas. Leia o manual integral ou acesse diretamente os capítulos pelo índice.')}
+  return `${heading('ACERVO / FONTE PRIMÁRIA','PDF oficial','O manual oficial 3.0.1 tem 42 páginas, com índice, exemplos visuais, módulos de exploração e glossário.')}
     <div class="container">${pdfSourcePanel()}</div>
-    <div class="book-shell container">${sidebar('pdf')}<section class="reader-area" id="reader-area"><div class="reader-top"><span>EDIÇÃO 3.0.1</span><span>42 PÁGINAS</span></div>
-    <div class="reader-kicker">FONTE DO SISTEMA</div><h2>Leia o manual completo.</h2>
-    <p class="reader-lead">Este é o PDF original, sem alterações. Caso a visualização embutida não funcione no seu navegador, utilize o botão de abertura em nova aba.</p>
-    <div class="page-actions"><a class="btn primary" href="${PDF_PATH}" target="_blank" rel="noopener">Abrir PDF em nova aba ↗</a><a class="btn outline" href="${PDF_PATH}" download>Baixar PDF ↓</a></div>
-    <iframe class="pdf-frame" title="Livro de regras oficial — Os Quatro Ís — edição 3.0.1" src="${PDF_PATH}#page=1&view=FitH" loading="lazy"></iframe>
+    <div class="book-shell container">${sidebar('pdf')}<section class="reader-area" id="reader-area"><div class="reader-top"><span>EDIÇÃO 3.0.1</span><span>${pdfReady?'42 PÁGINAS':'VERIFICANDO'}</span></div>
+    <div class="reader-kicker">FONTE DO SISTEMA</div><h2>${pdfReady?'Leitor do documento':'Adicione o livro oficial.'}</h2>
+    ${pdfReady ? `<p class="reader-lead">Visualize o livro aqui ou abra-o em uma nova guia para leitura ampliada.</p><div class="page-actions"><a class="btn primary" href="${PDF_PATH}" target="_blank" rel="noopener">Abrir em nova guia <span class="arrow">↗</span></a><a class="btn outline" href="${PDF_PATH}" download>Baixar PDF <span class="arrow">↓</span></a></div><iframe class="pdf-frame" title="Livro de regras oficial — Os Quatro Ís" src="${PDF_PATH}#view=FitH" loading="lazy"></iframe>`:
+    `<p class="reader-lead">O arquivo oficial não está disponível neste momento. Confira a publicação do GitHub Pages ou abra a versão no repositório.</p><div class="reading-note"><strong>Como ativar o leitor</strong><p>Envie o PDF oficial para a pasta <strong>assets</strong> do repositório usando exatamente o nome abaixo. Ao publicar novamente, o leitor passará a exibir o arquivo.</p><div class="file-path">${PDF_PATH}</div><div><button type="button" class="small-btn" data-copy="${PDF_PATH}">Copiar caminho do arquivo</button></div></div><p>Se o PDF oficial mudar de versão ou nome, atualize o arquivo e a constante <code>PDF_PATH</code> no início de <code>app.js</code>.</p>`}
     ${referenceBox()}</section></div>`;
 }
 function aboutPage() {
@@ -783,18 +781,18 @@ function render() {
   if (root === 'regras') {
     const markup = libraryMarkupForRoute(route);
     if (stayingInBook) {
-      // Conserve o sumario e os links: nao recriar a area de navegacao.
+      // Não recrie o sumário: links, foco e posição de rolagem continuam existindo.
       const template = document.createElement('template');
       template.innerHTML = markup;
       const nextReader = template.content.querySelector('#reader-area');
       const reader = document.getElementById('reader-area');
       if (nextReader && reader) {
         previousMinHeight = reader.style.minHeight;
-        reader.style.minHeight = reader.getBoundingClientRect().height + 'px';
+        reader.style.minHeight = `${reader.getBoundingClientRect().height}px`;
         reader.innerHTML = nextReader.innerHTML;
         preservedReader = reader;
         document.querySelectorAll('.chapter-menu a[href^="#regras"]').forEach(link => {
-          const selected = link.getAttribute('href') === '#' + route;
+          const selected = link.getAttribute('href') === `#${route}`;
           link.classList.toggle('active', selected);
           if (selected) link.setAttribute('aria-current', 'page');
           else link.removeAttribute('aria-current');
@@ -835,6 +833,7 @@ function render() {
     const target = Math.max(0, oldY + newTop - oldShellTop);
     window.scrollTo(0, target);
     requestAnimationFrame(() => {
+      // Libera a altura provisória só depois da troca, sem recriar a lateral.
       preservedReader.style.minHeight = previousMinHeight;
       window.scrollTo(0, target);
     });
@@ -863,9 +862,8 @@ async function checkPdf() {
   try { const r=await fetch(PDF_PATH,{method:'HEAD',cache:'no-store'}); pdfReady=r.ok && (r.headers.get('content-type')||'').toLowerCase().includes('pdf'); }
   catch(_) { pdfReady=false; }
   document.querySelectorAll('[data-pdf-status]').forEach(node=>{node.textContent=pdfReady?'PDF disponível':'PDF ainda não incluído';node.dataset.ready=pdfReady?'yes':'no';});
-  // O estado do PDF não precisa reconstruir o leitor nem alterar a rolagem.
+  // Sem renderização secundária.
 }
-// Roteamento sem navegação nativa por âncora: evita o salto automático do navegador.
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 document.addEventListener('click', event => {
   const link = event.target.closest('a[href^="#"]');
@@ -880,7 +878,7 @@ document.addEventListener('click', event => {
   render();
 });
 window.addEventListener('popstate', render);
-window.addEventListener('hashchange', render);
+window.addEventListener('hashchange',render);
 document.getElementById('theme-toggle').addEventListener('click',()=>{
   const dark=document.documentElement.dataset.theme!=='dark';
   if(dark)document.documentElement.dataset.theme='dark';else delete document.documentElement.dataset.theme;
