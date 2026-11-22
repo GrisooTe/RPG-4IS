@@ -8,7 +8,6 @@
 const SHEET_VERSION = 1;
 const STORAGE_KEY = 'os-quatro-is:ficha-personagem:v1';
 const OFFICIAL_PDF = 'assets/Os_Quatro_Is_Livro_de_Regras_v3_1_0_Regulamento_Geral_da_Ascensao.pdf';
-const stepPages31 = [12,9,12,16,10,10,11,19,12]; // páginas da edição 3.1.0
 const stepInfo = [
   ['Identidade',12],['Origem familiar',9],['Atributos',9],
   ['Especializações',16],['Trajetória escolar',10],['Condições de ensino',10],
@@ -104,7 +103,7 @@ function radioCard(group,value,title,subtitle,rule='',locked=false){
 }
 function intro(index,title,description){
  const page=stepInfo[index][1];
- return `<div class="step-eyebrow"><span>ETAPA ${String(index+1).padStart(2,'0')} DE 09 · 3.1.0 / P. ${stepPages31[index]}</span><a class="step-page-link" href="${OFFICIAL_PDF}#page=${page}" target="_blank" rel="noopener">PDF 3.1.0 · p. ${page} ↗</a></div><h2 id="step-heading">${title}</h2><p class="step-intro">${description}</p>`;
+ return `<div class="step-eyebrow"><span>ETAPA ${String(index+1).padStart(2,'0')} DE 09 · 3.1.0 / P. ${page}</span><a class="step-page-link" href="${OFFICIAL_PDF}#page=${page}" target="_blank" rel="noopener">Regra oficial · p. ${page} ↗</a></div><h2 id="step-heading">${title}</h2><p class="step-intro">${description}</p>`;
 }
 function stepMarkup(index) {
  const locked=Boolean(state.academic),d=derived();
