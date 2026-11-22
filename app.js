@@ -757,45 +757,87 @@ function aboutPage() {
 function currentRoute() {
   return (decodeURIComponent(location.hash.replace(/^#/,'')) || 'inicio').replace(/^\/+/, '');
 }
+function libraryMarkupForRoute(route) {
+  const slug = route.split('/')[1];
+  const chapter = chapters.find(c => c.slug === slug);
+  return !slug ? libraryPage() : slug === 'pdf' ? pdfPage() : chapter ? chapterPage(chapter) : libraryPage();
+}
 function render() {
-  // Ao trocar de capítulo, mantenha a posição do leitor no viewport.
-  const previousBook = document.querySelector('.book-shell');
-  const previousBookTop = previousBook?.getBoundingClientRect().top ?? 0;
+  const route = currentRoute();
+  const root = route.split('/')[0];
   const previousRoute = document.body.dataset.currentRoute || '';
-  const nextRoute = currentRoute();
-  const stayingInBook = previousRoute.startsWith('regras') && nextRoute.startsWith('regras') && !!previousBook;
-  const oldScroll = window.scrollY;
-  const route=currentRoute();
-  const root=route.split('/')[0];
-  for(const link of document.querySelectorAll('[data-nav]')) {
-    const active=link.dataset.nav===(root==='regras'?'regras':root==='sobre'?'sobre':'inicio');
-    link.classList.toggle('active',active);
-    if(active)link.setAttribute('aria-current','page'); else link.removeAttribute('aria-current');
-  }
-  if(root==='regras') {
-    const slug=route.split('/')[1];
-    main.innerHTML=!slug?libraryPage():slug==='pdf'?pdfPage():(chapters.find(c=>c.slug===slug) ? chapterPage(chapters.find(c=>c.slug===slug)) : libraryPage());
-  } else if(root==='sobre') {
-    main.innerHTML=aboutPage();
-  } else main.innerHTML=homePage();
-  document.title = root==='regras' ? `Livro de regras | Os Quatro Ís` : root==='sobre' ? 'Sobre | Os Quatro Ís' : 'Os Quatro Ís — RPG';
-  originalReaderMarkup=document.getElementById('reader-area')?.innerHTML || '';
-  const search=document.getElementById('book-search');
-  if(search) search.addEventListener('input', searchChapters);
-  document.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',()=>{
-    if(navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(btn.dataset.copy).then(()=>showToast('Caminho copiado.')).catch(()=>showToast('Selecione o caminho acima para copiá-lo.'));
-    else showToast('Selecione o caminho acima para copiá-lo.');
-  }));
-  document.getElementById('mobile-menu').hidden=true;
-  document.getElementById('mobile-menu-toggle').setAttribute('aria-expanded','false');
-  document.body.dataset.currentRoute = route;
-  if (stayingInBook) {
-    const currentBook = document.querySelector('.book-shell');
-    if (currentBook) {
-      // Compensa alterações no conteúdo acima do leitor e preserva a altura de leitura.
-      const shift = currentBook.getBoundingClientRect().top - previousBookTop;
-      window.scrollTo(0, Math.max(0, oldScroll + shift));
+  const stayingInBook = root === 'regras' && previousRoute.startsWith('regras') && !!document.getElementById('reader-area');
+  const oldY = window.scrollY;
+  const oldShell = document.querySelector('.book-shell');
+  const oldShellTop = oldShell ? oldShell.getBoundingClientRect().top : 0;
+  let previousMinHeight = '';
+  let preservedReader = null;
+
+  document.querySelectorAll('[data-nav]').forEach(link => {
+    const active = link.dataset.nav === (root === 'regras' ? 'regras' : root === 'sobre' ? 'sobre' : 'inicio');
+    link.classList.toggle('active', active);
+    if (active) link.setAttribute('aria-current', 'page');
+    else link.removeAttribute('aria-current');
+  });
+
+  if (root === 'regras') {
+    const markup = libraryMarkupForRoute(route);
+    if (stayingInBook) {
+      // Conserve o sumario e os links: nao recriar a area de navegacao.
+      const template = document.createElement('template');
+      template.innerHTML = markup;
+      const nextReader = template.content.querySelector('#reader-area');
+      const reader = document.getElementById('reader-area');
+      if (nextReader && reader) {
+        previousMinHeight = reader.style.minHeight;
+        reader.style.minHeight = reader.getBoundingClientRect().height + 'px';
+        reader.innerHTML = nextReader.innerHTML;
+        preservedReader = reader;
+        document.querySelectorAll('.chapter-menu a[href^="#regras"]').forEach(link => {
+          const selected = link.getAttribute('href') === '#' + route;
+          link.classList.toggle('active', selected);
+          if (selected) link.setAttribute('aria-current', 'page');
+          else link.removeAttribute('aria-current');
+        });
+        const search = document.getElementById('book-search');
+        if (search) search.value = '';
+      } else {
+        main.innerHTML = markup;
+      }
+    } else {
+      main.innerHTML = markup;
     }
+  } else {
+    main.innerHTML = root === 'sobre' ? aboutPage() : homePage();
+  }
+
+  document.title = root === 'regras' ? 'Livro de regras | Os Quatro Ís' : root === 'sobre' ? 'Sobre | Os Quatro Ís' : 'Os Quatro Ís — RPG';
+  document.body.dataset.currentRoute = route;
+  originalReaderMarkup = document.getElementById('reader-area')?.innerHTML || '';
+  if (!preservedReader) {
+    const search = document.getElementById('book-search');
+    if (search) search.addEventListener('input', searchChapters);
+  }
+  document.querySelectorAll('[data-copy]').forEach(btn => {
+    if (btn.dataset.copyBound) return;
+    btn.dataset.copyBound = 'true';
+    btn.addEventListener('click', () => {
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(btn.dataset.copy).then(() => showToast('Caminho copiado.')).catch(() => showToast('Selecione o caminho acima para copiá-lo.'));
+      else showToast('Selecione o caminho acima para copiá-lo.');
+    });
+  });
+  document.getElementById('mobile-menu').hidden = true;
+  document.getElementById('mobile-menu-toggle').setAttribute('aria-expanded', 'false');
+
+  if (stayingInBook && preservedReader) {
+    const shell = document.querySelector('.book-shell');
+    const newTop = shell?.getBoundingClientRect().top ?? oldShellTop;
+    const target = Math.max(0, oldY + newTop - oldShellTop);
+    window.scrollTo(0, target);
+    requestAnimationFrame(() => {
+      preservedReader.style.minHeight = previousMinHeight;
+      window.scrollTo(0, target);
+    });
   } else {
     window.scrollTo(0, 0);
   }
