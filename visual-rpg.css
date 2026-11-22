@@ -67,3 +67,10 @@ h1 em,h2 em,.library-heading em,.character-title-line em{font-style:normal;color
 :root[data-theme="light"] .chapter-menu a:hover,:root[data-theme="light"] .chapter-menu a.active,:root[data-theme="light"] .roster-item:hover,:root[data-theme="light"] .roster-item.selected{background:rgba(112,72,232,.08)}
 :root[data-theme="light"] .stat-allocation,:root[data-theme="light"] .choice-card.selected,:root[data-theme="light"] .spec-option:has(input:checked),:root[data-theme="light"] .talent-item:has(input:checked){background:rgba(112,72,232,.08)}
 @media(prefers-reduced-motion:reduce){.path-card,.btn{transition:none}}
+/* Corrigir largura do painel hero em telas grandes, sem rolagem horizontal */
+@media (min-width:721px) {
+  .hero { grid-template-columns:minmax(0,1.03fr) minmax(0,.97fr); gap:5%; }
+  .hero-copy,.hero-art { min-width:0; }
+  .hero-art { aspect-ratio:auto; min-height:530px; }
+  .art-title { font-size:clamp(36px,3.8vw,56px); }
+}
