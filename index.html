@@ -3,33 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0b0f11">
-  <meta name="description" content="Os Quatro Ís — site do RPG. Explore a apresentação do sistema e consulte o livro de regras oficial.">
+  <meta name="theme-color" content="#142023">
+  <meta name="description" content="Os Quatro Ís — arquivo da Ascensão. Códice de regras, dossiês de estudantes e fichas digitais para sessões de RPG.">
   <meta property="og:title" content="Os Quatro Ís — RPG">
   <meta property="og:description" content="Um espaço para o universo, as regras e as histórias de Os Quatro Ís.">
   <meta property="og:type" content="website">
   <title>Os Quatro Ís — RPG</title>
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2.1">
+  <link rel="stylesheet" href="styles.css?v=1.9">
   <script src="rules-search.js" defer></script>
-  <script src="app.js?v=2.0" defer></script>
-  <link rel="stylesheet" href="visual-rpg.css?v=2.0.1">
+  <script src="app.js?v=2.1" defer></script>
+  <link rel="stylesheet" href="arquivo-ascensao.css?v=2.1">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem("quatrois-theme")==="light"?"light":"dark";}catch(_){document.documentElement.dataset.theme="dark";}</script>
+  <script src="archive-theme.js?v=2.1" defer></script>
 </head>
 <body>
   <a href="#conteudo" class="skip-link">Pular para o conteúdo</a>
-  <div class="site-frame">
-    <header class="site-header">
-      <div class="topline container"><span>ARQUIVO DO JOGO <span class="star">✳</span> EDIÇÃO DIGITAL</span><span class="topline-edition">PROJETO INDEPENDENTE · VOL. 01</span></div>
-      <div class="navline container">
-        <a class="brand" href="#inicio" aria-label="Os Quatro Ís — início"><span class="brand-mark">Í<span class="brand-mark-dot">·</span></span><span class="brand-type"><strong>OS QUATRO ÍS</strong><small>UM SISTEMA DE RPG</small></span></a>
-        <nav aria-label="Navegação principal" class="main-nav"><a href="#inicio" data-nav="inicio">Início</a><a href="#regras" data-nav="regras">Livro de regras</a><a href="#sobre" data-nav="sobre">Sobre o projeto</a><a href="personagem.html">Criar personagem</a><a href="personagens.html">Minhas fichas</a></nav>
-        <button class="theme-button" type="button" id="theme-toggle" title="Alternar modo de cor" aria-label="Alternar modo de cor"><span aria-hidden="true">◐</span></button>
-        <button class="mobile-menu-button" id="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu"><span></span><span></span></button>
-      </div>
-      <nav id="mobile-menu" class="mobile-menu container" aria-label="Navegação para celular" hidden><a href="#inicio">Início</a><a href="#regras">Livro de regras</a><a href="#sobre">Sobre o projeto</a><a href="personagem.html">Criar personagem</a><a href="personagens.html">Minhas fichas</a></nav>
+  <div class="site-frame archive-frame">
+    <header class="site-header archive-header">
+      <div class="topline container"><span><span class="utility-dot"></span> ARQUIVO CENTRAL / OS QUATRO ÍS</span><span class="topline-edition">EDIÇÃO DIGITAL · MANUAL 3.0.1</span><span class="header-clearance">DOCUMENTO DE JOGO / ACESSO PÚBLICO</span></div>
+      <div class="navline container"><a class="brand" href="#inicio" aria-label="Os Quatro Ís — painel inicial"><span class="brand-mark"><svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="60" cy="60" r="43" fill="none" stroke="currentColor" stroke-width=".6" stroke-dasharray="2 3"/><path d="M60 13v94M13 60h94" stroke="currentColor" opacity=".28" stroke-width=".7"/><path d="M36 43v36M47 43v36M70 43v36M81 43v36" stroke="currentColor" stroke-width="4" stroke-linecap="square"/><path d="M30 37h23M30 85h23M64 37h23M64 85h23" stroke="currentColor" stroke-width="1.8"/><path d="M57 60h6M60 57v6" stroke="currentColor" stroke-width="2"/></svg></span><span class="brand-type"><strong>OS QUATRO ÍS</strong><small>SISTEMA DE ASCENSÃO / ARQUIVO</small></span></a>
+      <nav class="main-nav" aria-label="Navegação principal"><a href="#inicio" data-nav="inicio">Painel</a><a href="#regras" data-nav="regras">Códice</a><a href="personagem.html">Novo dossiê</a><a href="personagens.html">Minhas fichas</a></nav>
+      <button class="theme-button archive-toggle" type="button" id="theme-toggle" title="Alternar contraste" aria-label="Alternar tema"><span aria-hidden="true">◐</span><span class="theme-text">Contraste</span></button><button class="mobile-menu-button" id="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu"><span></span><span></span></button></div>
+      <nav id="mobile-menu" class="mobile-menu container" aria-label="Navegação para celular" hidden><a href="#inicio" >Painel</a><a href="#regras" >Códice</a><a href="personagem.html" >Novo dossiê</a><a href="personagens.html" >Minhas fichas</a></nav>
     </header>
     <main id="conteudo" tabindex="-1"></main>
-    <footer class="site-footer"><div class="container footer-main"><div><span class="footer-brand">OS QUATRO ÍS</span><p>Arquivo de campanha, regras, personagens e fichas de sessão em um único ambiente.</p></div><div class="footer-links"><a href="#inicio">Início</a><a href="#regras">Regras</a><a href="#sobre">Projeto</a><a href="personagem.html">Criar personagem</a><a href="personagens.html">Minhas fichas</a></div><div class="footer-meta">SITE V2.0 · VISUAL RPG · PDF 3.0.1<br>SEM CADASTRO · SEM COLETA DE DADOS</div></div><div class="container footer-bottom"><span>FEITO PARA CONTAR HISTÓRIAS.</span><span>DOCUMENTAÇÃO EM EVOLUÇÃO ↗</span></div></footer>
+    <footer class="site-footer archive-footer"><div class="container footer-main"><div><span class="footer-brand"><svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="60" cy="60" r="43" fill="none" stroke="currentColor" stroke-width=".6" stroke-dasharray="2 3"/><path d="M60 13v94M13 60h94" stroke="currentColor" opacity=".28" stroke-width=".7"/><path d="M36 43v36M47 43v36M70 43v36M81 43v36" stroke="currentColor" stroke-width="4" stroke-linecap="square"/><path d="M30 37h23M30 85h23M64 37h23M64 85h23" stroke="currentColor" stroke-width="1.8"/><path d="M57 60h6M60 57v6" stroke="currentColor" stroke-width="2"/></svg><span>OS QUATRO ÍS</span></span><p>Arquivo digital para consultar o manual, registrar estudantes e acompanhar uma campanha. Projeto ficcional de RPG.</p></div><div class="footer-links"><span class="footer-label">ACESSOS DO SISTEMA</span><a href="#inicio">Painel</a><a href="#regras">Códice</a><a href="personagem.html">Criar estudante</a><a href="personagens.html">Fichas de sessão</a></div><div class="footer-meta">PROTOCOLO DE CAMPANHA<br>MANUAL OFICIAL 3.0.1<br>DADOS GUARDADOS NO NAVEGADOR</div></div><div class="container footer-bottom"><span>ARQUIVO / ASCENSÃO / 2026</span><span>O MANUAL EM PDF PREVALECE SOBRE A INTERFACE</span></div></footer>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>

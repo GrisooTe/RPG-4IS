@@ -2,25 +2,30 @@
 <html lang="pt-BR">
 <head>
  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
- <meta name="theme-color" content="#0b0f11">
+ <meta name="theme-color" content="#142023">
  <meta name="description" content="Biblioteca de fichas e painel de sessão para Os Quatro Ís, com armazenamento local e regras do manual 3.0.1.">
  <title>Minhas fichas | Os Quatro Ís</title>
- <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
- <link rel="stylesheet" href="styles.css?v=1.5">
- <link rel="stylesheet" href="personagens.css?v=2.2">
+ <link rel="icon" type="image/svg+xml" href="assets/favicon.svg?v=2.1">
+ <link rel="stylesheet" href="styles.css?v=1.9">
+ <link rel="stylesheet" href="personagens.css?v=3.0">
  <script src="rolagens-core.js?v=1.9" defer></script>
  <script src="fichas-store.js?v=2.2" defer></script><script src="personagens.js?v=2.2" defer></script>
+  <link rel="stylesheet" href="arquivo-ascensao.css?v=2.1">
   <script>try{document.documentElement.dataset.theme=localStorage.getItem("quatrois-theme")==="light"?"light":"dark";}catch(_){document.documentElement.dataset.theme="dark";}</script>
-  <link rel="stylesheet" href="visual-rpg.css?v=2.0.1">
+  <script src="archive-theme.js?v=2.1" defer></script>
 </head>
 <body>
  <a href="#biblioteca" class="skip-link">Pular para a biblioteca</a>
- <div class="site-frame">
- <header class="site-header"><div class="topline container"><span>DEPARTAMENTO DA ASCENSÃO <span class="star">✳</span> ARQUIVO DE PARTICIPANTES</span><span class="topline-edition">PAINEL DE CAMPANHA · MANUAL 3.0.1</span></div>
- <div class="navline container"><a class="brand" href="index.html#inicio"><span class="brand-mark">Í<span class="brand-mark-dot">·</span></span><span class="brand-type"><strong>OS QUATRO ÍS</strong><small>UM SISTEMA DE RPG</small></span></a>
- <nav class="main-nav" aria-label="Navegação principal"><a href="index.html#inicio">Início</a><a href="index.html#regras">Livro de regras</a><a href="personagem.html">Criar personagem</a><a href="personagens.html" class="active" aria-current="page">Minhas fichas</a></nav><a class="library-return" href="index.html#regras">← Regras</a></div></header>
+ <div class="site-frame archive-frame">
+ <header class="site-header archive-header">
+      <div class="topline container"><span><span class="utility-dot"></span> ARQUIVO CENTRAL / OS QUATRO ÍS</span><span class="topline-edition">EDIÇÃO DIGITAL · MANUAL 3.0.1</span><span class="header-clearance">DOCUMENTO DE JOGO / ACESSO PÚBLICO</span></div>
+      <div class="navline container"><a class="brand" href="index.html#inicio" aria-label="Os Quatro Ís — painel inicial"><span class="brand-mark"><svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="60" cy="60" r="43" fill="none" stroke="currentColor" stroke-width=".6" stroke-dasharray="2 3"/><path d="M60 13v94M13 60h94" stroke="currentColor" opacity=".28" stroke-width=".7"/><path d="M36 43v36M47 43v36M70 43v36M81 43v36" stroke="currentColor" stroke-width="4" stroke-linecap="square"/><path d="M30 37h23M30 85h23M64 37h23M64 85h23" stroke="currentColor" stroke-width="1.8"/><path d="M57 60h6M60 57v6" stroke="currentColor" stroke-width="2"/></svg></span><span class="brand-type"><strong>OS QUATRO ÍS</strong><small>SISTEMA DE ASCENSÃO / ARQUIVO</small></span></a>
+      <nav class="main-nav" aria-label="Navegação principal"><a href="index.html#inicio">Painel</a><a href="index.html#regras">Códice</a><a href="personagem.html">Novo dossiê</a><a href="personagens.html" class="active" aria-current="page">Minhas fichas</a></nav>
+      <button class="theme-button archive-toggle" type="button" id="theme-toggle" title="Alternar contraste" aria-label="Alternar tema"><span aria-hidden="true">◐</span><span class="theme-text">Contraste</span></button><button type="button" class="archive-menu-button" id="archive-menu-toggle" aria-expanded="false" aria-controls="archive-mobile-menu" aria-label="Abrir navegação">☰ <span>MENU</span></button></div>
+      
+    <nav id="archive-mobile-menu" class="archive-mobile-menu container" aria-label="Navegação móvel" hidden><a href="index.html#inicio">Painel</a><a href="index.html#regras">Códice</a><a href="personagem.html">Novo dossiê</a><a href="personagens.html">Minhas fichas</a></nav></header>
  <main class="container library-main" id="biblioteca">
-  <div class="library-heading"><div><span class="eyebrow">ARQUIVO PRIVADO / CAMPANHA</span><h1>Arquivo de<br><em>personagens.</em></h1><p>Guarde vários estudantes, alterne entre fichas e acompanhe os recursos durante as provas. Os dados ficam neste dispositivo, sem conta ou servidor.</p></div><div class="library-stamp"><span>FICHAS LOCAIS</span><strong id="library-count">00</strong><small>EDIÇÃO DIGITAL</small></div></div>
+  <div class="library-heading"><div><span class="eyebrow">DIRETORIA DE PARTICIPANTES / FICHAS EM SESSÃO</span><h1>Registros de<br><em>participantes.</em></h1><p>Consulte cada dossiê durante as provas: recursos, inventário, vínculos, testes e notas permanecem sob controle do grupo.</p></div><div class="library-stamp"><span>FICHAS LOCAIS</span><strong id="library-count">00</strong><small>EDIÇÃO DIGITAL</small></div></div>
   <div class="library-actions"><a href="personagem.html?novo=1" class="library-btn dark">+ Criar personagem</a><button type="button" class="library-btn" data-action="export-all">Baixar backup de todas</button><label class="library-btn import-btn" for="import-file">Importar fichas (.json)<input id="import-file" type="file" accept="application/json,.json" hidden></label><span class="library-safe" id="backup-status" role="status">Verificando segurança dos backups…</span></div>
   <div id="notification" class="library-notice" role="status" aria-live="polite" hidden></div>
   <div class="library-layout">
@@ -29,7 +34,7 @@
   </div>
   <div class="library-footer-note"><strong>Referência oficial</strong><span>Manual 3.0.1: criação e atributos nas páginas 4–8, condições e recuperação nas páginas 13–14, inventário na página 30 e política na página 36. A ficha não altera nem substitui essas regras.</span><a href="assets/Os_Quatro_Is_Livro_de_Regras_v3_0_1_Sumario_Corrigido.pdf" target="_blank" rel="noopener">Abrir PDF ↗</a></div>
  </main>
- <footer class="site-footer"><div class="container footer-main"><div><span class="footer-brand">OS QUATRO ÍS</span><p>O livro de regras 3.0.1 permanece a referência oficial. Fichas e anotações são armazenadas localmente.</p></div><div class="footer-links"><a href="index.html#inicio">Início</a><a href="index.html#regras">Livro de regras</a><a href="personagem.html">Criar personagem</a></div><div class="footer-meta">BIBLIOTECA V2.2 · VISUAL RPG 2.0 · 2026<br>SEM CADASTRO · SEM SINCRONIZAÇÃO</div></div></footer>
+ <footer class="site-footer archive-footer"><div class="container footer-main"><div><span class="footer-brand"><svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="60" cy="60" r="43" fill="none" stroke="currentColor" stroke-width=".6" stroke-dasharray="2 3"/><path d="M60 13v94M13 60h94" stroke="currentColor" opacity=".28" stroke-width=".7"/><path d="M36 43v36M47 43v36M70 43v36M81 43v36" stroke="currentColor" stroke-width="4" stroke-linecap="square"/><path d="M30 37h23M30 85h23M64 37h23M64 85h23" stroke="currentColor" stroke-width="1.8"/><path d="M57 60h6M60 57v6" stroke="currentColor" stroke-width="2"/></svg><span>OS QUATRO ÍS</span></span><p>Arquivo digital para consultar o manual, registrar estudantes e acompanhar uma campanha. Projeto ficcional de RPG.</p></div><div class="footer-links"><span class="footer-label">ACESSOS DO SISTEMA</span><a href="index.html#inicio">Painel</a><a href="index.html#regras">Códice</a><a href="personagem.html">Criar estudante</a><a href="personagens.html">Fichas de sessão</a></div><div class="footer-meta">PROTOCOLO DE CAMPANHA<br>MANUAL OFICIAL 3.0.1<br>DADOS GUARDADOS NO NAVEGADOR</div></div><div class="container footer-bottom"><span>ARQUIVO / ASCENSÃO / 2026</span><span>O MANUAL EM PDF PREVALECE SOBRE A INTERFACE</span></div></footer>
  </div>
  <div id="session-print" class="session-print"></div>
 </body>

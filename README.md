@@ -99,3 +99,12 @@ O PDF oficial 3.0.1 continua inalterado e é a fonte definitiva em caso de diver
 ## Identidade visual RPG 2.0
 
 Tema tático escuro inspirado em interfaces de arquivo, códice e dossiê de campanha; detalhes fluorescentes, contraste forte, tipografia utilitária e opção de tema claro. As modificações visuais usam `visual-rpg.css`, separado da lógica de fichas e rolagens. O PDF oficial 3.0.1 permanece inalterado.
+
+
+## Identidade 2.1 — Arquivo da Ascensão
+
+Redesign completo da identidade de Os Quatro Ís, misturando arquivo institucional distópico e códice tecnopolítico. O site usa um brasão fictício original, uma página inicial de terminal/documento, módulos de acesso, registros de participantes, formulário de dossiê e codex sobre papel.
+
+**Arquivos novos:** `arquivo-ascensao.css`, `archive-theme.js`, `assets/selo-ascensao.svg` e um novo `assets/favicon.svg`. O tema claro continua disponível pelo botão Contraste. A versão 2.0 (`visual-rpg.css`) foi substituída visualmente e não é mais carregada.
+
+O sistema de criação e rolagens permanece nas implementações anteriores (`personagem.js`, `personagens.js`, `fichas-store.js`, `rolagens-core.js`). As fichas locais não são apagadas pela troca visual. O PDF oficial 3.0.1 **não foi alterado**. O leitor incorporado passou a aparecer também dentro das páginas dos capítulos.
