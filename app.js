@@ -3,11 +3,11 @@
 /**
  * Biblioteca digital de Os Quatro Ís.
  * IMPORTANTE: este arquivo traz apenas textos de navegação/editoriais.
- * Este índice e seus resumos foram conferidos com o PDF oficial da edição 3.0.1.
+ * Este índice e seus resumos foram conferidos com o PDF oficial da edição 3.1.0.
  * O PDF em assets/ é a fonte de verdade e tem precedência sobre o site.
  */
-const PDF_PATH = 'assets/Os_Quatro_Is_Livro_de_Regras_v3_0_1_Sumario_Corrigido.pdf';
-const PDF_VERSION = '3.0.1';
+const PDF_PATH = 'assets/Os_Quatro_Is_Livro_de_Regras_v3_1_0_Regulamento_Geral_da_Ascensao.pdf';
+const PDF_VERSION = '3.1.0';
 const chapters = [
   {
     "number": "—",
@@ -37,18 +37,18 @@ const chapters = [
     "number": "01",
     "slug": "ascensao",
     "title": "A Ascensão e a campanha",
-    "page": 3,
-    "description": "A competição, suas quatro etapas e as consequências de participar.",
+    "page": 4,
+    "description": "A Ascensão, suas quatro provas e a campanha; o regulamento de classificação vem a seguir.",
     "lead": "Mil estudantes são convocados; dez recebem reconhecimento e benefícios. As quatro provas são Interferência, Intuito, Instinto e Iscas.",
-    "about": "Esta entrada resume o conteúdo da página 3 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 4 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
-        "As quatro etapas",
-        "Interferência: controle e sabotagem; Intuito: investigação; Instinto: ambiente hostil; Iscas: objetivos e confrontos."
+        "Modalidade nacional padrão",
+        "A progressão oficial é 1.000 → 500 → 200 → 50 → 10; confira a seção 01A."
       ],
       [
         "Ciclo de sessão",
-        "Preparação, prova e repercussão organizam as consequências de cada episódio."
+        "Preparação, prova e repercussão organizam o desenrolar da campanha."
       ]
     ],
     "tags": [
@@ -61,13 +61,108 @@ const chapters = [
     ]
   },
   {
+    "number": "01A",
+    "slug": "regulamento-geral",
+    "title": "Regulamento Geral da Ascensão",
+    "page": 5,
+    "description": "Progressão oficial, vagas, equipes e direitos dos participantes.",
+    "lead": "A modalidade nacional padrão adota a progressão 1.000 → 500 → 200 → 50 → 10; as quatro provas têm condições anunciadas antes de começar.",
+    "about": "Esta entrada orienta a consulta à página 5 do manual oficial 3.1.0. Para aplicar a regra, leia o texto integral do PDF.",
+    "points": [
+      [
+        "Progressão oficial",
+        "Interferência: 500; Intuito: 200; Instinto: 50; Iscas: 10 vencedores."
+      ],
+      [
+        "Eliminação",
+        "A saída da disputa não significa morte nem impede automaticamente a continuidade na campanha."
+      ]
+    ],
+    "tags": [
+      "classificação",
+      "equipes",
+      "vagas"
+    ]
+  },
+  {
+    "number": "01A",
+    "slug": "regulamento-interferencia-intuito",
+    "title": "Regulamento: Interferência e Intuito",
+    "page": 6,
+    "description": "Vitória coletiva, classificação por equipes e desempates.",
+    "lead": "Interferência classifica 125 equipes de quatro; Intuito seleciona as 50 equipes com melhor pontuação.",
+    "about": "Esta entrada orienta a consulta à página 6 do manual oficial 3.1.0. Para aplicar a regra, leia o texto integral do PDF.",
+    "points": [
+      [
+        "Interferência",
+        "Confrontos de duas equipes durante seis rodadas, com desempates pelo controle da Central e setores."
+      ],
+      [
+        "Intuito",
+        "Pontuação de câmaras, enigma final e Clareza restante."
+      ]
+    ],
+    "tags": [
+      "Interferência",
+      "Intuito",
+      "equipes"
+    ]
+  },
+  {
+    "number": "01A",
+    "slug": "regulamento-instinto-iscas",
+    "title": "Regulamento: Instinto e Iscas",
+    "page": 7,
+    "description": "Critérios individuais para a extração e a final.",
+    "lead": "Instinto classifica 50 participantes após 48 horas; Iscas distribui 50 finalistas por cinco arenas e seleciona dois por arena.",
+    "about": "Esta entrada orienta a consulta à página 7 do manual oficial 3.1.0. Para aplicar a regra, leia o texto integral do PDF.",
+    "points": [
+      [
+        "Instinto",
+        "Pontuação por extração, objetivo de região e Suprimentos."
+      ],
+      [
+        "Iscas",
+        "Objetivo público, Isca secreta e saída valem pontos; matar não concede pontuação."
+      ]
+    ],
+    "tags": [
+      "Instinto",
+      "Iscas",
+      "pontuação"
+    ]
+  },
+  {
+    "number": "01A",
+    "slug": "regulamento-desistencia",
+    "title": "Regulamento: desistência e arbitragem",
+    "page": 8,
+    "description": "Direitos de desistência, reservas, equipes incompletas e decisões de arbitragem.",
+    "lead": "Desistir não provoca dano ou morte automáticos; empates, reservas e incidentes devem seguir critérios anunciados.",
+    "about": "Esta entrada orienta a consulta à página 8 do manual oficial 3.1.0. Para aplicar a regra, leia o texto integral do PDF.",
+    "points": [
+      [
+        "Desistência",
+        "O participante pode abandonar voluntariamente a Ascensão."
+      ],
+      [
+        "Arbitragem",
+        "Fraudes, vagas, incapacitação e segurança da mesa têm procedimentos próprios."
+      ]
+    ],
+    "tags": [
+      "desistência",
+      "arbitragem"
+    ]
+  },
+  {
     "number": "02",
     "slug": "personagens",
     "title": "Criação de personagens",
-    "page": 4,
+    "page": 9,
     "description": "Atributos, especializações, origens familiares e histórico acadêmico.",
     "lead": "Distribua 9 pontos entre Intelecto, Ímpeto e Influência (de 1 a 4 na criação); a origem Comum recebe 1 ponto adicional. Escolha duas especializações.",
-    "about": "Esta entrada resume o conteúdo da página 4 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 9 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Atributos",
@@ -96,10 +191,10 @@ const chapters = [
     "number": "02A",
     "slug": "criacao-passo-a-passo",
     "title": "Criação passo a passo",
-    "page": 7,
+    "page": 12,
     "description": "Nove decisões ordenadas para preencher a ficha sem perder etapas.",
     "lead": "O guia reúne identidade, origem, atributos, duas especializações, trajetória, condições de ensino, média, talento, vínculos e valores iniciais.",
-    "about": "Esta entrada resume o conteúdo da página 7 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 12 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Ordem de criação",
@@ -121,10 +216,10 @@ const chapters = [
     "number": "02B",
     "slug": "exemplo-nara",
     "title": "Personagem completo: Nara",
-    "page": 8,
+    "page": 13,
     "description": "Exemplo oficial de personagem de origem Comum.",
     "lead": "Nara possui INT 4, IMP 3 e INF 3; escolhe Tecnologia e Investigação, trajetória Dedicada e obtém média entre 8,0 e 8,9.",
-    "about": "Esta entrada resume o conteúdo da página 8 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 13 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Atributos",
@@ -145,10 +240,10 @@ const chapters = [
     "number": "03",
     "slug": "testes",
     "title": "Testes e cooperação",
-    "page": 9,
+    "page": 14,
     "description": "Reserva de dados, dificuldade, teste oposto, sorte e auxílio.",
     "lead": "Role tantos d6 quanto o atributo apropriado, respeitando 1 a 7 dados. Cada 5 ou 6 representa um sucesso.",
-    "about": "Esta entrada resume o conteúdo da página 9 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 14 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Dificuldades",
@@ -175,10 +270,10 @@ const chapters = [
     "number": "03A",
     "slug": "testes-especializacao",
     "title": "Testes: atributo e especialização",
-    "page": 10,
+    "page": 15,
     "description": "Exemplo visual de uma especialização em um teste.",
     "lead": "O atributo determina os dados; uma especialização pertinente permite repetir uma vez apenas um dado sem sucesso, mantendo o novo resultado.",
-    "about": "Esta entrada resume o conteúdo da página 10 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 15 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Exemplo de Nara",
@@ -200,10 +295,10 @@ const chapters = [
     "number": "03B",
     "slug": "doze-especializacoes",
     "title": "As 12 especializações",
-    "page": 11,
+    "page": 16,
     "description": "Lista das especializações e exemplos de uso.",
     "lead": "Intelecto: Investigação, Lógica, Tecnologia e Estratégia. Ímpeto: Atletismo, Combate, Furtividade e Resistência. Influência: Diplomacia, Manipulação, Percepção social e Comando.",
-    "about": "Esta entrada resume o conteúdo da página 11 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 16 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Atributo pertinente",
@@ -233,10 +328,10 @@ const chapters = [
     "number": "03C",
     "slug": "duvidas-frequentes",
     "title": "Exemplos e dúvidas frequentes",
-    "page": 12,
+    "page": 17,
     "description": "Situações esclarecidas para distinguir regras de teste.",
     "lead": "Os exemplos mostram como proceder sem especialização, como combinar Preparação e auxílio e quando Pressionar a Sorte.",
-    "about": "Esta entrada resume o conteúdo da página 12 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 17 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Sem especialização",
@@ -255,13 +350,36 @@ const chapters = [
     ]
   },
   {
+    "number": "03D",
+    "slug": "especializacoes-consulta",
+    "title": "Especializações sem dúvidas",
+    "page": 18,
+    "description": "Critérios para escolher especialização, limitar repetições e ordenar recursos.",
+    "lead": "Escolha a ação e o atributo antes de decidir se uma especialização é pertinente; no máximo uma repetição de dado por teste.",
+    "about": "Esta entrada orienta a consulta à página 18 do manual oficial 3.1.0. Para aplicar a regra, leia o texto integral do PDF.",
+    "points": [
+      [
+        "Limite",
+        "Duas especializações relacionadas não concedem duas repetições."
+      ],
+      [
+        "Ordem",
+        "Prepare dados antes, aplique especialização depois e Pressionar a Sorte conforme as condições da falha."
+      ]
+    ],
+    "tags": [
+      "especialização",
+      "teste"
+    ]
+  },
+  {
     "number": "04",
     "slug": "condicoes-e-evolucao",
     "title": "Condições e evolução",
-    "page": 13,
+    "page": 19,
     "description": "Vida, Tensão, Ferimentos Graves, Determinação, recuperação e talentos.",
     "lead": "Vida máxima = 6 + Ímpeto; Ferimentos Graves variam de 0 a 3; Tensão de 0 a 6.",
-    "about": "Esta entrada resume o conteúdo da página 13 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 19 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Recuperação",
@@ -283,13 +401,37 @@ const chapters = [
     ]
   },
   {
+    "number": "04A",
+    "slug": "recuperacao-ferimentos",
+    "title": "Recuperação e Ferimentos Graves",
+    "page": 21,
+    "description": "Sequência da lesão, estabilização e recuperação.",
+    "lead": "Calcule dano, reduções e PV antes de verificar FG; atingir 0 PV exige estabilização antes de recuperar Vida.",
+    "about": "Esta entrada orienta a consulta à página 21 do manual oficial 3.1.0. Para aplicar a regra, leia o texto integral do PDF.",
+    "points": [
+      [
+        "Ferimentos Graves",
+        "Máximo de um FG por acontecimento."
+      ],
+      [
+        "Recuperação",
+        "Descanso e tratamento de FG têm procedimentos diferentes."
+      ]
+    ],
+    "tags": [
+      "PV",
+      "FG",
+      "recuperação"
+    ]
+  },
+  {
     "number": "05",
     "slug": "embates",
     "title": "Embates: regras de luta",
-    "page": 14,
+    "page": 20,
     "description": "Turnos, ataque, defesa, zonas, manobras e dano gradual.",
     "lead": "Por rodada, cada participante dispõe de 1 movimento, 1 ação principal e 1 reação. Os ataques usam testes de Ímpeto e a defesa ativa requer reação.",
-    "about": "Esta entrada resume o conteúdo da página 14 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 20 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Acerto gradual",
@@ -313,10 +455,10 @@ const chapters = [
     "number": "05A",
     "slug": "acerto-gradual",
     "title": "Acerto Gradual: exemplo visual",
-    "page": 18,
+    "page": 25,
     "description": "Exemplo completo com comparação de ataque e defesa.",
     "lead": "Davi obtém 2 sucessos e a guarda 1: margem de 1, causando 2 PV. Se a guarda não reagisse, a margem seria 2 e o dano seria 3 PV.",
-    "about": "Esta entrada resume o conteúdo da página 18 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 25 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Resultado",
@@ -335,13 +477,36 @@ const chapters = [
     ]
   },
   {
+    "number": "05B",
+    "slug": "reacoes-sucessivas",
+    "title": "Reações e ataques sucessivos",
+    "page": 26,
+    "description": "Uma reação por rodada e consequências defensivas.",
+    "lead": "Sem reação válida, a defesa passiva conta como zero sucessos, observadas cobertura e possibilidade física.",
+    "about": "Esta entrada orienta a consulta à página 26 do manual oficial 3.1.0. Para aplicar a regra, leia o texto integral do PDF.",
+    "points": [
+      [
+        "Reação",
+        "Uma defesa ativa consome a reação da rodada."
+      ],
+      [
+        "Defesa total",
+        "Concede dado à próxima defesa ativa, mas não cria nova reação."
+      ]
+    ],
+    "tags": [
+      "embate",
+      "reação"
+    ]
+  },
+  {
     "number": "06",
     "slug": "exploracao",
     "title": "Exploração: jornadas e perigos",
-    "page": 19,
+    "page": 27,
     "description": "Regiões, turnos, ritmos de viagem, suprimentos e riscos.",
     "lead": "Um turno de exploração representa aproximadamente uma hora; a equipe escolhe seu ritmo.",
-    "about": "Esta entrada resume o conteúdo da página 19 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 27 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Ritmos",
@@ -363,10 +528,10 @@ const chapters = [
     "number": "06A",
     "slug": "exploracao-avancada",
     "title": "Exploração avançada",
-    "page": 21,
+    "page": 29,
     "description": "Encontros, rastreamento, perseguição e fuga, com exemplos práticos.",
     "lead": "Este módulo distingue turnos de exploração, encontros, perseguições de 1 a 5 minutos e embates.",
-    "about": "Esta entrada resume o conteúdo da página 21 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 29 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Relógios",
@@ -388,10 +553,10 @@ const chapters = [
     "number": "06A·1",
     "slug": "ameacas",
     "title": "Ameaças e encontros prontos",
-    "page": 28,
+    "page": 36,
     "description": "Patrulha, drone, equipe rival e tabela opcional de eventos.",
     "lead": "A página apresenta uma patrulha de reconhecimento, a sentinela SR-4 e a Equipe Vesper.",
-    "about": "Esta entrada resume o conteúdo da página 28 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 36 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Encontros",
@@ -414,10 +579,10 @@ const chapters = [
     "number": "06A·2",
     "slug": "exemplo-perseguicao",
     "title": "Exemplo completo de perseguição",
-    "page": 29,
+    "page": 37,
     "description": "Três rodadas de fuga na Estação.",
     "lead": "Caio, Helena e Nara se alternam na liderança e a trilha passa de 0 para +2, depois +1 e finalmente +3.",
-    "about": "Esta entrada resume o conteúdo da página 29 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 37 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Desfecho",
@@ -440,10 +605,10 @@ const chapters = [
     "number": "07",
     "slug": "inventario",
     "title": "Inventário e equipamentos",
-    "page": 30,
+    "page": 38,
     "description": "Espaços de inventário, Integridade, equipamentos e reparos.",
     "lead": "A capacidade pessoal é 5 + Ímpeto Espaços de Inventário (EI). Os itens ocupam espaços conforme seu porte.",
-    "about": "Esta entrada resume o conteúdo da página 30 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 38 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Integridade",
@@ -466,10 +631,10 @@ const chapters = [
     "number": "07A",
     "slug": "armas",
     "title": "Armas e equipamentos ofensivos",
-    "page": 32,
+    "page": 40,
     "description": "Alcances e possibilidades táticas de armas e equipamentos.",
     "lead": "Armas não conferem bônus automático de dano: definem alcance, propriedades e manobras possíveis.",
-    "about": "Esta entrada resume o conteúdo da página 32 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 40 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Dano",
@@ -490,13 +655,36 @@ const chapters = [
     ]
   },
   {
+    "number": "07B",
+    "slug": "armas-contencao",
+    "title": "Armas e contenção: consulta",
+    "page": 41,
+    "description": "Alcance, manobras e limites do equipamento.",
+    "lead": "Armas não dão rolagem adicional de dano; equipamentos de contenção seguem as manobras normais.",
+    "about": "Esta entrada orienta a consulta à página 41 do manual oficial 3.1.0. Para aplicar a regra, leia o texto integral do PDF.",
+    "points": [
+      [
+        "Contenção",
+        "Substitui dano por uma manobra apropriada."
+      ],
+      [
+        "Integridade",
+        "Equipamentos seguem os limites do capítulo 7."
+      ]
+    ],
+    "tags": [
+      "armas",
+      "contenção"
+    ]
+  },
+  {
     "number": "08",
     "slug": "interferencia",
     "title": "Manual da Interferência",
-    "page": 33,
-    "description": "Operações, controle de setores, pontuação e sabotagem.",
+    "page": 42,
+    "description": "Controle territorial e sabotagem; consulte 08A e 08B para rodadas, OP e pontuação.",
     "lead": "Interferência é a prova de controle territorial, informação e sabotagem, estruturada em equipes, setores e seis rodadas.",
-    "about": "Esta entrada resume o conteúdo da página 33 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 42 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Recursos",
@@ -515,13 +703,59 @@ const chapters = [
     ]
   },
   {
+    "number": "08A",
+    "slug": "interferencia-roteiro",
+    "title": "Interferência: roteiro de rodada",
+    "page": 44,
+    "description": "Procedimento de seis rodadas, OP e pontuação.",
+    "lead": "Na primeira rodada, cada equipe começa com 3 OP, sem recuperação; da segunda em diante, recupera +2 OP conforme as condições.",
+    "about": "Esta entrada orienta a consulta à página 44 do manual oficial 3.1.0. Para aplicar a regra, leia o texto integral do PDF.",
+    "points": [
+      [
+        "OP",
+        "Controle do Depósito pode conceder +1 OP no início da rodada seguinte."
+      ],
+      [
+        "Pontuação",
+        "Terminal +1, Central +2 e Depósito +1 ponto de vitória ao fim da rodada."
+      ]
+    ],
+    "tags": [
+      "interferência",
+      "OP"
+    ]
+  },
+  {
+    "number": "08B",
+    "slug": "operacoes-pontuacao",
+    "title": "Operações e pontuação: timing de OP",
+    "page": 45,
+    "description": "Momento exato de recuperação de OP, custos e controle.",
+    "lead": "A equipe não ultrapassa 5 OP; controlar o Depósito durante uma rodada só produz bônus na seguinte.",
+    "about": "Esta entrada orienta a consulta à página 45 do manual oficial 3.1.0. Para aplicar a regra, leia o texto integral do PDF.",
+    "points": [
+      [
+        "Primeira rodada",
+        "Exatamente 3 OP, sem recuperação inicial."
+      ],
+      [
+        "Rodadas seguintes",
+        "Recuperação de +2 OP, com bônus do Depósito se já controlado."
+      ]
+    ],
+    "tags": [
+      "OP",
+      "pontuação"
+    ]
+  },
+  {
     "number": "09",
     "slug": "outras-provas",
     "title": "Intuito, Instinto e Iscas",
-    "page": 35,
-    "description": "Estruturas jogáveis para as outras três provas.",
+    "page": 46,
+    "description": "Estruturas de Intuito, Instinto e Iscas; a classificação nacional está em 01A.",
     "lead": "Intuito propõe investigação; Instinto usa exploração e suprimentos; Iscas combina embates com objetivos ocultos.",
-    "about": "Esta entrada resume o conteúdo da página 35 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 46 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Intuito",
@@ -544,13 +778,82 @@ const chapters = [
     ]
   },
   {
+    "number": "09A",
+    "slug": "intuito-mesa",
+    "title": "Intuito: investigação em mesa",
+    "page": 47,
+    "description": "Câmaras, pistas, Clareza e investigação sem bloqueios.",
+    "lead": "Três câmaras interligadas e dois pontos iniciais de Clareza por equipe; o regulamento da classificação nacional está na seção 01A.",
+    "about": "Esta entrada orienta a consulta à página 47 do manual oficial 3.1.0. Para aplicar a regra, leia o texto integral do PDF.",
+    "points": [
+      [
+        "Clareza",
+        "Permite obter pistas, eliminar hipóteses ou antecipar consequências."
+      ],
+      [
+        "Falhas",
+        "Custam tempo, atenção ou recursos, mas não removem todas as pistas essenciais."
+      ]
+    ],
+    "tags": [
+      "Intuito",
+      "investigação"
+    ]
+  },
+  {
+    "number": "09B",
+    "slug": "instinto-mesa",
+    "title": "Instinto: sobrevivência em mesa",
+    "page": 48,
+    "description": "Exploração, suprimentos, rotas e prazo de extração.",
+    "lead": "A equipe começa com 6 Suprimentos e consome 2 por dia; o prazo oficial da etapa nacional é 48 horas, conforme 01A.",
+    "about": "Esta entrada orienta a consulta à página 48 do manual oficial 3.1.0. Para aplicar a regra, leia o texto integral do PDF.",
+    "points": [
+      [
+        "Exploração",
+        "Escolhas entre segurança, velocidade, informações e recursos."
+      ],
+      [
+        "Classificação",
+        "Os pontos e desempates da modalidade nacional estão no Regulamento Geral."
+      ]
+    ],
+    "tags": [
+      "Instinto",
+      "exploração"
+    ]
+  },
+  {
+    "number": "09C",
+    "slug": "iscas-mesa",
+    "title": "Iscas: objetivos e confronto",
+    "page": 49,
+    "description": "Objetivos públicos e secretos, arena e alternativas não letais.",
+    "lead": "A prova admite negociações e estratégias não letais; a modalidade nacional seleciona dois finalistas por arena.",
+    "about": "Esta entrada orienta a consulta à página 49 do manual oficial 3.1.0. Para aplicar a regra, leia o texto integral do PDF.",
+    "points": [
+      [
+        "Objetivos",
+        "Cada participante possui uma Isca individual e metas de arena."
+      ],
+      [
+        "Classificação",
+        "Consulte o Regulamento Geral 01A para pontos e critérios de desempate."
+      ]
+    ],
+    "tags": [
+      "Iscas",
+      "objetivos"
+    ]
+  },
+  {
     "number": "10",
     "slug": "politica",
     "title": "Política: o custo de vencer",
-    "page": 36,
+    "page": 50,
     "description": "Prestígio, Dívida, Suspeita, patrocínios e vínculos.",
     "lead": "A Ascensão influencia a posição de famílias e seus compromissos institucionais.",
-    "about": "Esta entrada resume o conteúdo da página 36 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 50 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Indicadores",
@@ -571,13 +874,36 @@ const chapters = [
     ]
   },
   {
+    "number": "10A",
+    "slug": "vinculos-intensidade",
+    "title": "Vínculos e intensidade",
+    "page": 51,
+    "description": "Intensidade narrativa e bônus único por sessão.",
+    "lead": "Intensidades de 1 a 3 descrevem relações; o bônus continua sendo +1 dado, uma vez por sessão, sem acumular.",
+    "about": "Esta entrada orienta a consulta à página 51 do manual oficial 3.1.0. Para aplicar a regra, leia o texto integral do PDF.",
+    "points": [
+      [
+        "Escala",
+        "1 inicial, 2 significativa, 3 profunda."
+      ],
+      [
+        "Bônus",
+        "Intensidade não multiplica dados nem usos por sessão."
+      ]
+    ],
+    "tags": [
+      "vínculos",
+      "política"
+    ]
+  },
+  {
     "number": "11",
     "slug": "narrador",
     "title": "Orientações ao narrador",
-    "page": 37,
+    "page": 52,
     "description": "Preparação de cenas, consequências e antagonistas.",
     "lead": "Uma cena deve ter objetivo, oposição, informação disponível, consequência de fracasso e pelo menos duas escolhas significativas.",
-    "about": "Esta entrada resume o conteúdo da página 37 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 52 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Falhas",
@@ -599,10 +925,10 @@ const chapters = [
     "number": "12",
     "slug": "referencia-rapida",
     "title": "Referência rápida de mesa",
-    "page": 38,
+    "page": 53,
     "description": "Resumo dos procedimentos de testes, combate, exploração e política.",
     "lead": "Reúne valores e limites fundamentais para consulta durante a sessão.",
-    "about": "Esta entrada resume o conteúdo da página 38 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 53 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Testes",
@@ -623,10 +949,10 @@ const chapters = [
     "number": "—",
     "slug": "glossario",
     "title": "Glossário de regras",
-    "page": 40,
+    "page": 55,
     "description": "Definições organizadas das páginas 40 a 42.",
     "lead": "Define os principais termos usados pelo sistema, como Acerto Gradual, Determinação, Ferimento Grave, OP e Tensão.",
-    "about": "Esta entrada resume o conteúdo da página 40 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
+    "about": "Esta entrada resume o conteúdo da página 55 do manual oficial. Para uma decisão de regras, consulte sempre a redação integral do PDF.",
     "points": [
       [
         "Termos",
@@ -673,13 +999,13 @@ function pdfSourcePanel() {
 }
 function homePage() {
   return `<section class="folio-home container" aria-labelledby="folio-title">
-    <div class="folio-locator"><span>OQÍ / BASE DE JOGO</span><span>ARQUIVO 00—04</span><span>MANUAL 3.0.1</span></div>
+    <div class="folio-locator"><span>OQÍ / BASE DE JOGO</span><span>ARQUIVO 00—04</span><span>MANUAL 3.1.0</span></div>
     <div class="folio-canvas">
       <div class="folio-heading">
         <div class="folio-heading-code"><span>DOCUMENTAÇÃO INTERNA</span><span>REGISTROS DE CAMPANHA</span></div>
         <h1 id="folio-title">Os Quatro <span>Ís</span><sup>04</sup></h1>
         <p>Arquivo digital de consulta. Regras, estudantes e registros de sessão disponíveis neste dispositivo.</p>
-        <div class="folio-classify"><span>Tipo / Sistema de RPG</span><span>Fonte / Edição 3.0.1</span><span>Local / Navegador</span></div>
+        <div class="folio-classify"><span>Tipo / Sistema de RPG</span><span>Fonte / Edição 3.1.0</span><span>Local / Navegador</span></div>
       </div>
       <div class="folio-imprint" aria-label="Diagrama abstrato das quatro provas da Ascensão">
         <div class="folio-scanlines" aria-hidden="true"><span class="raster-ring r1"></span><span class="raster-ring r2"></span><span class="raster-ring r3"></span><span class="raster-cross">+</span><span class="raster-center">04</span></div>
@@ -691,11 +1017,11 @@ function homePage() {
       <a href="#regras" class="folio-module"><span class="folio-module-no">01 / MANUAL</span><div class="folio-module-symbol" aria-hidden="true">≡</div><div><h2>Livro de regras</h2><p>Sumário, capítulos e pesquisa textual.</p></div><span class="folio-link" aria-hidden="true">↗</span></a>
       <a href="personagem.html" class="folio-module"><span class="folio-module-no">02 / CADASTRO</span><div class="folio-module-symbol" aria-hidden="true">⊞</div><div><h2>Criar personagem</h2><p>Origem, atributos e histórico acadêmico.</p></div><span class="folio-link" aria-hidden="true">↗</span></a>
       <a href="personagens.html" class="folio-module"><span class="folio-module-no">03 / SESSÃO</span><div class="folio-module-symbol" aria-hidden="true">◎</div><div><h2>Fichas de jogo</h2><p>Recursos, rolagens e registros da mesa.</p></div><span class="folio-link" aria-hidden="true">↗</span></a>
-      <a href="#regras/pdf" class="folio-module"><span class="folio-module-no">04 / FONTE</span><div class="folio-module-symbol" aria-hidden="true">⌑</div><div><h2>PDF oficial</h2><p>Texto integral do manual, 42 páginas.</p></div><span class="folio-link" aria-hidden="true">↗</span></a>
+      <a href="#regras/pdf" class="folio-module"><span class="folio-module-no">04 / FONTE</span><div class="folio-module-symbol" aria-hidden="true">⌑</div><div><h2>PDF oficial</h2><p>Texto integral do manual, 57 páginas.</p></div><span class="folio-link" aria-hidden="true">↗</span></a>
     </div>
     <div class="folio-bottom">
       <div class="folio-trials"><div class="folio-smallheading"><span>ESTRUTURA DA ASCENSÃO</span><span>04 ETAPAS</span></div><div class="folio-trial-grid"><a href="#regras/ascensao"><span>01</span>Interferência</a><a href="#regras/ascensao"><span>02</span>Intuito</a><a href="#regras/ascensao"><span>03</span>Instinto</a><a href="#regras/ascensao"><span>04</span>Iscas</a></div></div>
-      <div class="folio-manual"><div class="folio-smallheading"><span>NOTA DO ARQUIVO</span><span>3.0.1</span></div><p>Este site auxilia o jogo. As regras permanecem no manual original; a interpretação de situações cabe ao narrador.</p><a href="#regras/pdf">Consultar documento de referência ↗</a></div>
+      <div class="folio-manual"><div class="folio-smallheading"><span>NOTA DO ARQUIVO</span><span>3.1.0</span></div><p>Este site auxilia o jogo. As regras permanecem no manual original; a interpretação de situações cabe ao narrador.</p><a href="#regras/pdf">Consultar documento de referência ↗</a></div>
     </div>
     <div class="folio-end"><span>OS QUATRO ÍS / ARQUIVO DIGITAL</span><span>DADOS DE PERSONAGENS SALVOS NESTE NAVEGADOR</span></div>
   </section>`;
@@ -704,22 +1030,22 @@ function archiveSeal() {
   return `<svg viewBox="0 0 120 120" aria-hidden="true" focusable="false"><circle cx="60" cy="60" r="52" fill="none" stroke="currentColor" stroke-width="1.3"/><circle cx="60" cy="60" r="43" fill="none" stroke="currentColor" stroke-width=".6" stroke-dasharray="2 3"/><path d="M60 13v94M13 60h94" stroke="currentColor" opacity=".28" stroke-width=".7"/><path d="M36 43v36M47 43v36M70 43v36M81 43v36" stroke="currentColor" stroke-width="4"/><path d="M30 37h23M30 85h23M64 37h23M64 85h23" stroke="currentColor" stroke-width="1.8"/><path d="M57 60h6M60 57v6" stroke="currentColor" stroke-width="2"/></svg>`;
 }
 function sidebar(selected) {
-  return `<aside class="book-sidebar" aria-label="Índice do livro"><div class="sidebar-head"><strong>SUMÁRIO DO MANUAL</strong><span>3.0.1</span></div>
+  return `<aside class="book-sidebar" aria-label="Índice do livro"><div class="sidebar-head"><strong>SUMÁRIO DO MANUAL</strong><span>3.1.0</span></div>
     <div class="search-wrap"><label class="sr-only" for="book-search">Pesquisar assunto</label><input class="search-input" type="search" id="book-search" placeholder="Pesquisar assunto..." autocomplete="off" aria-label="Pesquisar assunto"></div>
     <div class="search-help">Busque títulos, termos ou páginas do manual.</div>
     <nav class="chapter-menu" aria-label="Capítulos da biblioteca">${chapters.map(c=>`<a href="#regras/${c.slug}" class="${selected===c.slug?'active':''}" ${selected===c.slug?'aria-current="page"':''}><span class="chapter-no">${c.number}</span><span>${c.title} <small class="page-index">p. ${String(c.page).padStart(2,'0')}</small></span></a>`).join('')}<a href="#regras/pdf" class="${selected==='pdf'?'active':''}" ${selected==='pdf'?'aria-current="page"':''}><span class="chapter-no">↗</span><span>PDF oficial</span></a></nav>
-    <p class="sidebar-foot">Sumário baseado no manual oficial 3.0.1. As entradas 06A·1 e 06A·2 distinguem anexos do módulo 06A.</p></aside>`;
+    <p class="sidebar-foot">Sumário baseado no manual oficial 3.1.0. As seções 01A detalham a progressão nacional oficial e os critérios de cada prova.</p></aside>`;
 }
 function referenceBox() {
   const info = pdfReady ? `<a class="btn primary" href="${PDF_PATH}" target="_blank" rel="noopener">Abrir PDF <span class="arrow">↗</span></a>` : `<a class="btn outline" href="#regras/pdf">Como incluir o PDF <span class="arrow">→</span></a>`;
   return `<div class="source-box"><div><strong>Confira sempre o documento oficial.</strong><p>O texto definitivo das regras está no PDF. Este site não substitui o original.</p></div>${info}</div>`;
 }
 function libraryPage() {
-  return `${heading('DOCUMENTAÇÃO / ÍNDICE','Livro de regras','Sumário da edição 3.0.1. Selecione uma seção para consultar o documento original.')}
+  return `${heading('DOCUMENTAÇÃO / ÍNDICE','Livro de regras','Sumário da edição 3.1.0. Selecione uma seção para consultar o documento original.')}
     <div class="container">${pdfSourcePanel()}</div>
     <div class="book-shell container">${sidebar('')}<div class="reader-area" id="reader-area"><div class="reader-top"><span>EDIÇÃO DIGITAL / ÍNDICE</span><span>${chapters.length} ENTRADAS</span></div>
       <div class="reader-kicker">BIBLIOTECA · VISÃO GERAL</div><h2>Índice de consulta</h2><p class="reader-lead">Os capítulos e suas páginas estão organizados abaixo. A busca também permite localizar termos do manual.</p>
-      <div class="reading-note"><strong>Sobre a fidelidade das regras</strong><p>Este índice acompanha o sumário da edição 3.0.1. Resumos são apoios editoriais; para a regra integral, abra o PDF na página indicada.</p></div>
+      <div class="reading-note"><strong>Sobre a fidelidade das regras</strong><p>Este índice acompanha o sumário da edição 3.1.0. Resumos são apoios editoriais; para a regra integral, abra o PDF na página indicada.</p></div>
       <div id="topic-results">${topicRows(chapters)}</div>${referenceBox()}
     </div></div>`;
 }
@@ -729,12 +1055,12 @@ function topicRows(arr) {
 }
 function chapterPage(chapter) {
   let i=chapters.indexOf(chapter);
-  return `${heading('DOCUMENTAÇÃO / CAPÍTULOS','Livro de regras','Capítulos organizados conforme o manual 3.0.1. O texto integral permanece no PDF.')}
+  return `${heading('DOCUMENTAÇÃO / CAPÍTULOS','Livro de regras','Capítulos organizados conforme o manual 3.1.0. O texto integral permanece no PDF.')}
     <div class="container">${pdfSourcePanel()}</div>
     <div class="book-shell container">${sidebar(chapter.slug)}<article class="reader-area" id="reader-area"><div class="reader-top"><span>SEÇÃO ${chapter.number}</span><span>PÁGINA ${String(chapter.page).padStart(2,"0")}</span></div>
       <div class="reader-kicker">${chapter.number} · REGISTRO DE CAPÍTULO</div>
       <div class="chapter-breadcrumb"><a href="#regras">Livro de regras</a> / ${chapter.title}</div><h2>${chapter.title}</h2><p class="reader-lead">${chapter.lead}</p>
-      <div class="chapter-meta"><span>TIPO · ORGANIZAÇÃO DA LEITURA</span><span>MANUAL OFICIAL · EDIÇÃO 3.0.1</span></div>
+      <div class="chapter-meta"><span>TIPO · ORGANIZAÇÃO DA LEITURA</span><span>MANUAL OFICIAL · EDIÇÃO 3.1.0</span></div>
       <div class="chapter-body"><p>${chapter.about}</p><h3>Nesta seção</h3>
       <div class="topic-list">${chapter.points.map((x,j)=>`<div class="topic-row"><span class="topic-index">${String(j+1).padStart(2,'0')}</span><div><h3>${x[0]}</h3><p>${x[1]}</p></div><span></span></div>`).join('')}</div>
       <div class="reading-note"><strong>Nota de edição</strong><p>Estas notas resumem o PDF. O texto completo da seção oficial prevalece em qualquer decisão de jogo.</p></div>
@@ -747,9 +1073,9 @@ function chapterPage(chapter) {
     </article></div>`;
 }
 function pdfPage() {
-  return `${heading('DOCUMENTAÇÃO / FONTE','Manual oficial em PDF','Edição 3.0.1 · 42 páginas · capítulos, exemplos e glossário.')}
+  return `${heading('DOCUMENTAÇÃO / FONTE','Manual oficial em PDF','Edição 3.1.0 · 57 páginas · capítulos, exemplos e glossário.')}
     <div class="container">${pdfSourcePanel()}</div>
-    <div class="book-shell container">${sidebar('pdf')}<section class="reader-area" id="reader-area"><div class="reader-top"><span>EDIÇÃO 3.0.1</span><span>${pdfReady?'42 PÁGINAS':'VERIFICANDO'}</span></div>
+    <div class="book-shell container">${sidebar('pdf')}<section class="reader-area" id="reader-area"><div class="reader-top"><span>EDIÇÃO 3.1.0</span><span>${pdfReady?'57 PÁGINAS':'VERIFICANDO'}</span></div>
     <div class="reader-kicker">FONTE DO SISTEMA</div><h2>${pdfReady?'Leitor do documento':'Adicione o livro oficial.'}</h2>
     ${pdfReady ? `<p class="reader-lead">Visualize o livro aqui ou abra-o em uma nova guia para leitura ampliada.</p><div class="page-actions"><a class="btn primary" href="${PDF_PATH}" target="_blank" rel="noopener">Abrir em nova guia <span class="arrow">↗</span></a><a class="btn outline" href="${PDF_PATH}" download>Baixar PDF <span class="arrow">↓</span></a></div><iframe class="pdf-frame" title="Livro de regras oficial — Os Quatro Ís" src="${PDF_PATH}#view=FitH" loading="lazy"></iframe>`:
     `<p class="reader-lead">O arquivo oficial não está disponível neste momento. Confira a publicação do GitHub Pages ou abra a versão no repositório.</p><div class="reading-note"><strong>Como ativar o leitor</strong><p>Envie o PDF oficial para a pasta <strong>assets</strong> do repositório usando exatamente o nome abaixo. Ao publicar novamente, o leitor passará a exibir o arquivo.</p><div class="file-path">${PDF_PATH}</div><div><button type="button" class="small-btn" data-copy="${PDF_PATH}">Copiar caminho do arquivo</button></div></div><p>Se o PDF oficial mudar de versão ou nome, atualize o arquivo e a constante <code>PDF_PATH</code> no início de <code>app.js</code>.</p>`}
@@ -760,7 +1086,7 @@ function aboutPage() {
     <div class="about-head"><span class="eyebrow">FICHA DE REFERÊNCIA / PROJETO</span><span>PROTOCOLO / 00</span></div>
     <h1>Informações do arquivo</h1>
     <p>Este arquivo reúne o manual oficial de <strong>Os Quatro Ís</strong> e as ferramentas de apoio à campanha: registro de estudantes, fichas em sessão e consulta às regras.</p>
-    <div class="about-registries"><div><span>REGISTRO 01</span><h3>Manual oficial</h3><p>O livro 3.0.1 define todas as regras. O índice e os resumos auxiliam na consulta, mas nunca substituem sua redação.</p><a href="#regras/pdf">ABRIR O MANUAL ↗</a></div><div><span>REGISTRO 02</span><h3>Ferramentas locais</h3><p>As fichas e os diários ficam no dispositivo do jogador. Faça backups antes de trocar de navegador ou apagar dados.</p><a href="personagens.html">ABRIR FICHAS ↗</a></div></div>
+    <div class="about-registries"><div><span>REGISTRO 01</span><h3>Manual oficial</h3><p>O livro 3.1.0 define todas as regras. O índice e os resumos auxiliam na consulta, mas nunca substituem sua redação.</p><a href="#regras/pdf">ABRIR O MANUAL ↗</a></div><div><span>REGISTRO 02</span><h3>Ferramentas locais</h3><p>As fichas e os diários ficam no dispositivo do jogador. Faça backups antes de trocar de navegador ou apagar dados.</p><a href="personagens.html">ABRIR FICHAS ↗</a></div></div>
     <div class="about-card"><span class="eyebrow">COMPROMISSO DE PROJETO</span><h3>Linguagem do arquivo</h3><p>Selos, fichários e nomenclaturas evocam a instituição da Ascensão. São elementos visuais ficcionais: não há monitoramento de jogadores nem envio de seus dados ao GitHub. O material de regras continua preservado no PDF.</p></div>
     <div class="button-row"><a class="btn primary" href="#regras">Consultar códice <span class="arrow">↗</span></a><a class="btn outline" href="personagem.html">Criar estudante <span class="arrow">→</span></a></div>
   </section>`;
@@ -868,7 +1194,7 @@ function searchPDFPages(query) {
   if (!query || !Array.isArray(window.OQ_PDF_SEARCH)) return '';
   const hits = window.OQ_PDF_SEARCH.filter(entry => String(entry.text).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().includes(query)).slice(0,12);
   if (!hits.length) return '';
-  return `<div class="reading-note"><strong>Também encontrado no texto do PDF</strong><p>Pesquisa nas páginas da edição 3.0.1. Selecione uma página para ler o texto original.</p></div><div class="topic-list">${hits.map(hit=>`<a class="topic-row" href="${PDF_PATH}#page=${hit.page}" target="_blank" rel="noopener"><span class="topic-index">${String(hit.page).padStart(2,'0')}</span><div><h3>Página ${hit.page}</h3><p>${e(hit.preview)}</p></div><span class="topic-arrow" aria-hidden="true">↗</span></a>`).join('')}</div>`;
+  return `<div class="reading-note"><strong>Também encontrado no texto do PDF</strong><p>Pesquisa nas páginas da edição 3.1.0. Selecione uma página para ler o texto original.</p></div><div class="topic-list">${hits.map(hit=>`<a class="topic-row" href="${PDF_PATH}#page=${hit.page}" target="_blank" rel="noopener"><span class="topic-index">${String(hit.page).padStart(2,'0')}</span><div><h3>Página ${hit.page}</h3><p>${e(hit.preview)}</p></div><span class="topic-arrow" aria-hidden="true">↗</span></a>`).join('')}</div>`;
 }
 
 async function checkPdf() {

@@ -109,7 +109,7 @@ function inventory(rec){const sum=rec.live.inventory.reduce((n,i)=>n+i.ei,0),cap
 function alertsMarkup(rec){const messages=statusMessages(rec);return messages.map(m=>`<div class="status-note ${rec.live.life===0||rec.live.fg>=3?'critical':''}">${e(m)}</div>`).join('');}
 function archiveMarkup(rec){const s=rec.session;return s.pastSessions.length?s.pastSessions.map(prev=>`<details class="session-archive"><summary>Sessão ${prev.number} · Dia ${prev.day} · ${e(formatTime(prev.closedAt))}</summary><p>${e(prev.notes)}</p></details>`).join(''):'<p class="session-info">As notas das sessões encerradas ficarão arquivadas aqui.</p>';}
 function logMarkup(rec){return rec.session.log.slice(0,18).map(i=>`<li><span>${e(i.text)}</span><time>${e(formatTime(i.at))}</time></li>`).join('')||'<li>Nenhum evento registrado nesta ficha.</li>';}
-/* Rolagens integradas — capítulos 03, 03A–03C, 04, 05 e 05A do manual 3.1.0 (PDF disponível no site: 3.0.1). */
+/* Rolagens integradas — capítulos 03, 03A–03C, 04, 05 e 05A do manual 3.1.0 (PDF disponível no site: 3.1.0). */
 const diceEngine=window.OQRoll;
 let luckSelection=new Set();
 function rollForm(rec){
@@ -169,7 +169,7 @@ function rollResult(rec){
   <div class="dice-result-foot"><button type="button" class="dice-secondary" data-roll-clear>Encerrar este resultado</button><span>Rolagem registrada: ${e(formatTime(r.createdAt))}</span></div>
  </div>`;
 }
-function rollPanel(rec){return `<section class="roll-panel" id="rolagens" aria-label="Rolagens integradas"><div class="roll-panel-head"><div><span class="dice-eyebrow">FERRAMENTAS DA SESSÃO / 01</span><h3>Teste e Acerto Gradual</h3></div><a href="assets/Os_Quatro_Is_Livro_de_Regras_v3_0_1_Sumario_Corrigido.pdf#page=9" target="_blank" rel="noopener">Regras dos testes ↗</a></div><p class="session-section-note">Prepare a ação com o narrador. O sistema lança dados, registra gastos e calcula resultados, mas não substitui decisões narrativas.</p>${rollForm(rec)}<div data-roll-result>${rollResult(rec)}</div><p class="dice-official">Referência: capítulo 3 (p. 9), especializações (pp. 10–12), condições (p. 13) e embates (pp. 15–18).</p></section>`;}
+function rollPanel(rec){return `<section class="roll-panel" id="rolagens" aria-label="Rolagens integradas"><div class="roll-panel-head"><div><span class="dice-eyebrow">FERRAMENTAS DA SESSÃO / 01</span><h3>Teste e Acerto Gradual</h3></div><a href="assets/Os_Quatro_Is_Livro_de_Regras_v3_1_0_Regulamento_Geral_da_Ascensao.pdf#page=9" target="_blank" rel="noopener">Regras dos testes ↗</a></div><p class="session-section-note">Prepare a ação com o narrador. O sistema lança dados, registra gastos e calcula resultados, mas não substitui decisões narrativas.</p>${rollForm(rec)}<div data-roll-result>${rollResult(rec)}</div><p class="dice-official">Referência: capítulo 3 (p. 9), especializações (pp. 10–12), condições (p. 13) e embates (pp. 15–18).</p></section>`;}
 function refreshRoll(rec){
  const container=reader.querySelector('[data-roll-result]');
  if(container)container.innerHTML=rollResult(rec);
@@ -274,7 +274,7 @@ function sessionMarkup(rec){const c=rec.character,l=rec.live,s=rec.session,cap=6
  <h3 class="session-h3">Sessões anteriores</h3>
  <div data-section="archive">${archiveMarkup(rec)}</div>
  <h3 class="session-h3">Histórico de alterações</h3><ol class="session-log" data-section="log">${logMarkup(rec)}</ol>
- <div class="session-callout"><strong>Regras da mesa</strong><br>PV máximo = 6 + Ímpeto. O rolador aplica testes e gastos quando autorizado pelo jogador; decisões narrativas permanecem na mesa. Um FG por acontecimento; em 0 PV, estabilize antes de recuperar Vida. PDF oficial 3.0.1 sempre prevalece.</div>
+ <div class="session-callout"><strong>Regras da mesa</strong><br>PV máximo = 6 + Ímpeto. O rolador aplica testes e gastos quando autorizado pelo jogador; decisões narrativas permanecem na mesa. Um FG por acontecimento; em 0 PV, estabilize antes de recuperar Vida. PDF oficial 3.1.0 sempre prevalece.</div>
  </div>`;
 }
 function render(){const characters=store.list();document.getElementById('library-count').textContent=String(characters.length).padStart(2,'0');document.getElementById('roster-count').textContent=`${characters.length} FICHA${characters.length===1?'':'S'}`;

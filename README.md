@@ -121,3 +121,10 @@ O sistema de criação e rolagens permanece nas implementações anteriores (`pe
 ## Design 2.3 — Grade modular de consulta
 
 Uma atualização exclusivamente de apresentação. A entrada organiza consultas, fichas e o manual em uma grade de arquivo com tipografia utilitária, preto, cinza técnico e laranja usado como sinalização. O desenho gráfico é feito em CSS, sem imagens ou dependências externas. Não existem textos de marketing ou métricas fictícias. O livro oficial 3.0.1, as regras e os dados dos personagens não foram alterados.
+
+## Manual oficial 3.1.0
+
+- `assets/Os_Quatro_Is_Livro_de_Regras_v3_1_0_Regulamento_Geral_da_Ascensao.pdf` é o documento oficial (57 páginas).
+- Índice do site atualizado para o sumário da edição 3.1.0, com Regulamento Geral 01A, subdivisões, páginas e links diretos.
+- A ficha e a biblioteca digital seguem a edição 3.1.0, preservando os dados locais de personagens e o visual 2.3.1.
+- A edição anterior 3.0.1 foi conservada no repositório por histórico, mas os leitores e referências do site apontam para a 3.1.0.
