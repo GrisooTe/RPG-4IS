@@ -689,7 +689,7 @@ function homePage() {
     <section class="section-band"><div class="container"><div class="section-heading"><div><span class="eyebrow">POR ONDE COMEÇAR</span><h2>Uma biblioteca para<br>encontrar caminhos.</h2></div><p class="section-aside">O índice segue o sumário oficial da edição 3.0.1, incluindo os módulos e o glossário.</p></div>
     <div class="path-grid">
       <a class="path-card" href="#regras"><span class="num">01 / ARQUIVO</span><div><h3>Livro de regras</h3><p>Explore o índice de assuntos, pesquise termos e encontre o documento de referência.</p></div><span class="more" aria-hidden="true">↗</span></a>
-      <a class="path-card" href="#regras/personagens"><span class="num">02 / PERSONAGEM</span><div><h3>Criação de personagens</h3><p>Acesse os procedimentos e exemplos oficiais de criação nas páginas 4 a 8.</p></div><span class="more" aria-hidden="true">↗</span></a>
+      <a class="path-card" href="personagem.html"><span class="num">02 / PERSONAGEM</span><div><h3>Criar personagem</h3><p>Monte a ficha digital em nove etapas, com atributos, histórico acadêmico e valores calculados.</p></div><span class="more" aria-hidden="true">↗</span></a>
       <a class="path-card" href="#regras/pdf"><span class="num">03 / FONTE</span><div><h3>PDF oficial</h3><p>Abra ou baixe o livro oficial de 42 páginas diretamente na biblioteca.</p></div><span class="more" aria-hidden="true">↗</span></a>
     </div></div></section>
     <section class="manifesto"><div class="container manifesto-inner"><div><span class="mini-label">NOTA EDITORIAL / 01</span><h2>O site organiza a leitura.<br>O livro define as regras.</h2></div><p>O índice e os resumos agora seguem o livro de regras 3.0.1. A íntegra do PDF é a fonte oficial: nenhuma regra foi alterada para esta edição web.</p></div></section>`;
@@ -730,7 +730,7 @@ function chapterPage(chapter) {
       <div class="topic-list">${chapter.points.map((x,j)=>`<div class="topic-row"><span class="topic-index">${String(j+1).padStart(2,'0')}</span><div><h3>${x[0]}</h3><p>${x[1]}</p></div><span></span></div>`).join('')}</div>
       <div class="reading-note"><strong>Nota de edição</strong><p>Estas notas resumem o PDF. O texto completo da seção oficial prevalece em qualquer decisão de jogo.</p></div>
       <div class="topic-tags">${chapter.tags.map(t=>`<span class="topic-tag">${e(t)}</span>`).join('')}</div>
-      <div class="page-actions"><a class="btn primary" href="${PDF_PATH}#page=${chapter.page}" target="_blank" rel="noopener">Ampliar página ${chapter.page} do PDF <span class="arrow">↗</span></a><a class="btn outline" href="${PDF_PATH}" download>Baixar livro completo ↓</a></div>
+      <div class="page-actions">${["personagens","criacao-passo-a-passo","exemplo-nara"].includes(chapter.slug)?`<a class="btn primary" href="personagem.html">Criar ficha interativa ↗</a>`:""}<a class="btn outline" href="${PDF_PATH}#page=${chapter.page}" target="_blank" rel="noopener">Ampliar página ${chapter.page} do PDF ↗</a><a class="btn outline" href="${PDF_PATH}" download>Baixar livro completo ↓</a></div>
        <div class="reading-note"><strong>Texto original do manual · página ${chapter.page}</strong><p>O documento abaixo é o livro oficial 3.0.1, preservado integralmente. Use a barra do leitor para avançar pelas demais páginas.</p></div>
        <iframe class="pdf-frame" title="Livro oficial Os Quatro Ís — ${e(chapter.title)} — página ${chapter.page}" src="${PDF_PATH}#page=${chapter.page}&view=FitH" loading="lazy"></iframe>
       ${referenceBox()}

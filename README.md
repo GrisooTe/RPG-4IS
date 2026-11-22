@@ -56,3 +56,7 @@ Depois abra http://localhost:8000. O servidor local é recomendado para verifica
 Revisar a experiência de leitura e acrescentar futuras ferramentas interativas sem alterar o texto oficial do manual.
 
 © Autor de Os Quatro Ís. Material do RPG e sua documentação reservados ao titular dos direitos. Nenhuma licença de reutilização é concedida por este pacote.
+
+## Ficha interativa de criação de personagens (v1.0)
+
+Acesse `personagem.html` no GitHub Pages. A ferramenta segue os capítulos 02, 02A e 02B do manual oficial 3.0.1, calcula atributos e recursos iniciais, registra uma única rolagem acadêmica e salva localmente o rascunho. É possível exportar JSON e imprimir ou salvar a ficha em PDF pelo navegador. Não requer login nem altera o PDF oficial.

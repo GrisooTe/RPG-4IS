@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ef">
+  <meta name="description" content="Crie uma ficha de estudante de Os Quatro Ís seguindo o Manual do Participante 3.0.1, capítulos 02, 02A e 02B.">
+  <meta property="og:title" content="Ficha de personagem — Os Quatro Ís">
+  <title>Criar personagem | Os Quatro Ís</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css?v=1.5">
+  <link rel="stylesheet" href="personagem.css?v=1.0">
+  <script src="personagem.js?v=1.0" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#criador">Pular para a criação de personagens</a>
+  <div class="site-frame">
+    <header class="site-header">
+      <div class="topline container"><span>ARQUIVO DO JOGO <span class="star">✳</span> REGISTRO DE ESTUDANTES</span><span class="topline-edition">EDIÇÃO DIGITAL · 3.0.1</span></div>
+      <div class="navline container">
+        <a class="brand" href="index.html#inicio" aria-label="Os Quatro Ís — início"><span class="brand-mark">Í<span class="brand-mark-dot">·</span></span><span class="brand-type"><strong>OS QUATRO ÍS</strong><small>UM SISTEMA DE RPG</small></span></a>
+        <nav class="main-nav" aria-label="Navegação principal"><a href="index.html#inicio">Início</a><a href="index.html#regras/personagens">Livro de regras</a><a href="personagem.html" class="active" aria-current="page">Criar personagem</a></nav>
+        <a class="return-link" href="index.html#regras/personagens">← Livro de regras</a>
+      </div>
+    </header>
+    <main id="criador" class="container character-main">
+      <div class="character-header">
+        <span class="eyebrow">DEPARTAMENTO DA ASCENSÃO / CADASTRO</span>
+        <div class="character-title-line"><div><h1>Seu próximo<br><em>participante.</em></h1><p>Um registro por vez, nove decisões e uma história para contar. Crie a ficha seguindo o procedimento oficial do manual.</p></div><div class="edition-stamp"><span>FICHA DIGITAL</span><strong>3.0.1</strong><small>02 · 02A · 02B</small></div></div>
+        <div class="character-disclaimer"><span class="disclaimer-icon" aria-hidden="true">i</span><p>Esta ferramenta automatiza o capítulo 2 e o guia 02A. Em caso de divergência, prevalece o <a href="assets/Os_Quatro_Is_Livro_de_Regras_v3_0_1_Sumario_Corrigido.pdf#page=4" target="_blank" rel="noopener">manual oficial (p. 4–8)</a>. O rascunho fica salvo <strong>somente neste navegador</strong>, sem cadastro ou envio ao servidor.</p></div>
+      </div>
+      <div class="creation-layout">
+        <aside class="creation-sidebar" aria-label="Etapas da criação">
+          <div class="creation-sidebar-top"><strong>PROCESSO DE CRIAÇÃO</strong><span id="step-counter">01 / 09</span></div>
+          <div class="step-meter" aria-hidden="true"><span id="step-meter-fill"></span></div>
+          <nav id="step-nav" class="step-nav" aria-label="Etapas de personagem"></nav>
+          <a href="assets/Os_Quatro_Is_Livro_de_Regras_v3_0_1_Sumario_Corrigido.pdf#page=7" target="_blank" rel="noopener" class="aside-reference">Consultar guia 02A ↗</a>
+        </aside>
+        <section class="creation-work" aria-label="Formulário de criação">
+          <div class="step-stage" id="step-stage" aria-live="off"></div>
+          <div class="creation-actions" id="creation-actions"></div>
+        </section>
+        <aside class="creation-summary" aria-label="Resumo da ficha">
+          <div class="summary-header"><span>ACOMPANHAMENTO</span><small>EM TEMPO REAL</small></div>
+          <div id="character-summary"></div>
+        </aside>
+      </div>
+      <div class="creation-bottom"><a href="index.html#regras/personagens">← Voltar ao livro de regras</a><button type="button" class="subtle-reset" id="reset-character">Começar outra ficha</button></div>
+    </main>
+    <footer class="site-footer"><div class="container footer-main"><div><span class="footer-brand">OS QUATRO ÍS</span><p>Esta ficha digital é uma ferramenta auxiliar. O livro de regras 3.0.1 permanece como referência oficial.</p></div><div class="footer-links"><a href="index.html#inicio">Início</a><a href="index.html#regras">Livro de regras</a><a href="personagem.html">Criar personagem</a></div><div class="footer-meta">FICHA V1.0 · MANUAL 3.0.1<br>SALVAMENTO LOCAL · SEM CONTA</div></div></footer>
+  </div>
+  <div class="character-print" id="character-print" aria-hidden="true"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
