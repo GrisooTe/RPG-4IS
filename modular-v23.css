@@ -115,3 +115,33 @@ p{color:var(--muted)}
 @media(max-width:410px){.folio-module{min-height:177px}.folio-module h2{font-size:15px}.folio-heading h1{font-size:40px}.folio-heading-code span:last-child{display:none}}
 @media(prefers-reduced-motion:reduce){.folio-module{transition:none}}
 @media print{.folio-home{border:0}.folio-imprint{display:none}.folio-canvas{display:block}.folio-module{border:1px solid #bbb}}
+/* v2.3.1 — legibilidade do emblema 04 no contraste noturno */
+:root[data-theme="dark"] .folio-imprint {
+  background:#272e2c;
+}
+:root[data-theme="dark"] .folio-scanlines {
+  background-color:#272e2c;
+  background-image:
+    repeating-linear-gradient(0deg,transparent 0 5px,rgba(238,241,234,.24) 5px 6px),
+    radial-gradient(circle at 50% 48%,rgba(255,150,106,.10),transparent 68%);
+}
+:root[data-theme="dark"] .folio-scanlines::before {
+  mix-blend-mode:normal;
+  opacity:.30;
+  background:#43504b;
+  border-color:#b0b9b2;
+}
+:root[data-theme="dark"] .raster-center {
+  mix-blend-mode:normal;
+  opacity:1;
+  color:#ffaf8d;
+  text-shadow:0 2px 18px rgba(0,0,0,.25);
+}
+:root[data-theme="dark"] .raster-ring {
+  border-color:#c8d2cb;
+  opacity:.44;
+}
+:root[data-theme="dark"] .r3 { opacity:.25; }
+:root[data-theme="dark"] .folio-heading h1 sup {
+  color:#ffaf8d;
+}
