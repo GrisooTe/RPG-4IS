@@ -758,6 +758,13 @@ function currentRoute() {
   return (decodeURIComponent(location.hash.replace(/^#/,'')) || 'inicio').replace(/^\/+/, '');
 }
 function render() {
+  // Ao trocar de capítulo, mantenha a posição do leitor no viewport.
+  const previousBook = document.querySelector('.book-shell');
+  const previousBookTop = previousBook?.getBoundingClientRect().top ?? 0;
+  const previousRoute = document.body.dataset.currentRoute || '';
+  const nextRoute = currentRoute();
+  const stayingInBook = previousRoute.startsWith('regras') && nextRoute.startsWith('regras') && !!previousBook;
+  const oldScroll = window.scrollY;
   const route=currentRoute();
   const root=route.split('/')[0];
   for(const link of document.querySelectorAll('[data-nav]')) {
@@ -781,7 +788,17 @@ function render() {
   }));
   document.getElementById('mobile-menu').hidden=true;
   document.getElementById('mobile-menu-toggle').setAttribute('aria-expanded','false');
-  window.scrollTo({top:0,behavior:'auto'});
+  document.body.dataset.currentRoute = route;
+  if (stayingInBook) {
+    const currentBook = document.querySelector('.book-shell');
+    if (currentBook) {
+      // Compensa alterações no conteúdo acima do leitor e preserva a altura de leitura.
+      const shift = currentBook.getBoundingClientRect().top - previousBookTop;
+      window.scrollTo({top: Math.max(0, oldScroll + shift), behavior:'instant'});
+    }
+  } else {
+    window.scrollTo({top:0,behavior:'instant'});
+  }
 }
 function searchChapters(event) {
   const query=event.target.value.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
