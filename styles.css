@@ -2,7 +2,7 @@
 :root { --paper:#f6f4ef; --surface:#fdfcf9; --ink:#222d30; --muted:#747b79; --line:#dcded8; --accent:#8e6c43; --accent-2:#c8ad82; --dark:#1c282a; --dark-text:#f4efe5; --soft:#eeeae1; --shadow:0 22px 65px rgba(34,45,48,.07); color-scheme:light; }
 :root[data-theme="dark"] { --paper:#1b2325; --surface:#222d2f; --ink:#f3efe4; --muted:#b5b7b1; --line:#3a4545; --accent:#d9bc8c; --accent-2:#9b7a4e; --dark:#11191b; --dark-text:#f8f3e8; --soft:#293537; --shadow:0 22px 65px rgba(0,0,0,.16); color-scheme:dark; }
 *, *::before, *::after { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+html { scroll-behavior:auto; overflow-anchor:none; }
 body { margin:0; background:var(--paper); color:var(--ink); font-family:ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; font-size:15px; line-height:1.65; -webkit-font-smoothing:antialiased; }
 button,input { font:inherit; }
 a { color:inherit; text-decoration:none; }
